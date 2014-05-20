@@ -40,7 +40,7 @@ public class DealerQuoteTest {
 	public static final String AUTOMATE_KEY = "XsPyFTirN4mH8aCLMB9A";
 
 	String folder = "";
-	String name="ResponsivePageLoads/" + timeStamp + "_" + "hondacar.png";
+	String name="ResponsivePageLoads/" + timeStamp + "_" + ".png";
 	String local=(new java.io.File("").getAbsolutePath());
 	String data="" + local + "/" + "infoqa.xls";	
 	String myTitle;
