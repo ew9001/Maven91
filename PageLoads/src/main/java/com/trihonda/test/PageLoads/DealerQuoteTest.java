@@ -45,6 +45,7 @@ public class DealerQuoteTest {
 	String data="" + local + "/" + "infoqa.xls";	
 	String myTitle;
     String urlname ="http://yandex.ru";
+    String safe ="http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads";
    
     @Test(groups = {"first"})
 	@Parameters({"param"})
@@ -60,7 +61,7 @@ public class DealerQuoteTest {
 		    WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
 
 
-		    driver.get("http://trihondas.com");
+		    driver.get("http://trihonda.com");
 
 		
 
@@ -70,7 +71,8 @@ public class DealerQuoteTest {
 		    File screenshot = ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
 		    myTitle = driver.getTitle();
 		    FileUtils.copyFile(screenshot, new File(name));
-	    	Reporter.log("<a href='"+ local+"/" + name + "'> <img src='"+ local+"/"+ name + " ' height='100' width='100'/>" + "<a href='"+ urlname+"'>'"+ urlname+"'</a> " + " </a>");
+	    	//Reporter.log("<a href='"+ local+"/" + name + "'> <img src='"+ local+"/"+ name + " ' height='100' width='100'/>" + "<a href='"+ urlname+"'>'"+ urlname+"'</a> " + " </a>");
+	    	Reporter.log("<a href='"+ safe+"/" + name + "'> <img src='"+ safe+"/"+ name + " ' height='100' width='100'/>" + "<a href='"+ urlname+"'>'"+ urlname+"'</a> " + " </a>");
 			   
 		
 
