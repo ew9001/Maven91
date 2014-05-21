@@ -1,16 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
  
 <suite name="Example" verbose="1">
-    <parameter name="param" value="Windows 7 with Firefox"/>
-    <test name="ObjectExitTest simple example">
-        <parameter name="browser" value="Firefox Contact Form"/>
+    <parameter name="param" value="Chrome Contact Form"/>
+    <test name="Contact Form">
+    
         <classes>
-            <class name="com.trihonda.test.PageLoads.ContactFormFirefox"/>
+            <class name="com.trihonda.test.PageLoads.ContactFormChrome"/>
         </classes>
  
         <groups>
             <run>
-                <include name="Firefox Contact Form"/>
+                <include name="Chrome Contact Form"/>
             </run>
         </groups>
     </test>

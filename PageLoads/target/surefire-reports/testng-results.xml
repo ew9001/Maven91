@@ -1,33 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
     <line>
-      <![CDATA[<a href='http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads/ResponsivePageLoads/20140520_161959_.png'> <img src='http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads/ResponsivePageLoads/20140520_161959_.png ' height='100' width='100'/><a href='http://yandex.ru'>'http://yandex.ru'</a>  </a>]]>
+      <![CDATA[<a href='http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads/ResponsivePageLoads/20140521_180300_Successful-Contact-Submit-Chrome-1.png'> <img src='http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads/ResponsivePageLoads/20140521_180300_Successful-Contact-Submit-Chrome-1.png ' height='100' width='100'/><a href='Contact Us | COFFEE-MATE®'>'Contact Us | COFFEE-MATE®'</a>  </a>]]>
+    </line>
+    <line>
+      <![CDATA[<a href='http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads/ResponsivePageLoads/20140521_180300_Successful-Contact-Submit-Firefox-1.png'> <img src='http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads/ResponsivePageLoads/20140521_180300_Successful-Contact-Submit-Firefox-1.png ' height='100' width='100'/><a href='Contact Us | COFFEE-MATE®'>'Contact Us | COFFEE-MATE®'</a>  </a>]]>
     </line>
   </reporter-output>
-  <suite name="Example" duration-ms="11203" started-at="2014-05-20T20:19:59Z" finished-at="2014-05-20T20:20:10Z">
+  <suite name="Example" duration-ms="30778" started-at="2014-05-21T18:03:00Z" finished-at="2014-05-21T18:03:31Z">
     <groups>
-      <group name="first">
-        <method signature="DealerQuoteTest.testMe(java.lang.String)[pri:0, instance:com.trihonda.test.PageLoads.DealerQuoteTest@1f6bb14e]" name="testMe" class="com.trihonda.test.PageLoads.DealerQuoteTest"/>
-      </group> <!-- first -->
+      <group name="Chrome Contact Form">
+        <method signature="com.trihonda.test.PageLoads.ContactFormChrome.testMe(java.lang.String)" name="testMe" class="com.trihonda.test.PageLoads.ContactFormChrome"/>
+      </group>
     </groups>
-    <test name="ObjectExitTest simple example" duration-ms="11203" started-at="2014-05-20T20:19:59Z" finished-at="2014-05-20T20:20:10Z">
-      <class name="com.trihonda.test.PageLoads.DealerQuoteTest">
-        <test-method status="PASS" signature="testMe(java.lang.String)[pri:0, instance:com.trihonda.test.PageLoads.DealerQuoteTest@1f6bb14e]" name="testMe" duration-ms="11190" started-at="2014-05-20T16:19:59Z" finished-at="2014-05-20T16:20:10Z">
+    <test name="Contact Form" duration-ms="30778" started-at="2014-05-21T18:03:00Z" finished-at="2014-05-21T18:03:31Z">
+      <class name="com.trihonda.test.PageLoads.ContactFormChrome">
+        <test-method status="PASS" signature="testMe(java.lang.String)" name="testMe" duration-ms="30769" started-at="2014-05-21T18:03:00Z" finished-at="2014-05-21T18:03:31Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Laramie]]>
+                <![CDATA[Chrome Contact Form]]>
               </value>
             </param>
           </params>
-          <reporter-output>
-            <line>
-              <![CDATA[<a href='http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads/ResponsivePageLoads/20140520_161959_.png'> <img src='http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads/ResponsivePageLoads/20140520_161959_.png ' height='100' width='100'/><a href='http://yandex.ru'>'http://yandex.ru'</a>  </a>]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- testMe -->
-      </class> <!-- com.trihonda.test.PageLoads.DealerQuoteTest -->
-    </test> <!-- ObjectExitTest simple example -->
-  </suite> <!-- Example -->
+        </test-method>
+      </class>
+    </test>
+  </suite>
+  <suite name="Example" duration-ms="34015" started-at="2014-05-21T18:03:31Z" finished-at="2014-05-21T18:04:05Z">
+    <groups>
+      <group name="Firefox Contact Form">
+        <method signature="com.trihonda.test.PageLoads.ContactFormFirefox.testMe(java.lang.String)" name="testMe" class="com.trihonda.test.PageLoads.ContactFormFirefox"/>
+      </group>
+    </groups>
+    <test name="Contact Form" duration-ms="34015" started-at="2014-05-21T18:03:31Z" finished-at="2014-05-21T18:04:05Z">
+      <class name="com.trihonda.test.PageLoads.ContactFormFirefox">
+        <test-method status="PASS" signature="testMe(java.lang.String)" name="testMe" duration-ms="34015" started-at="2014-05-21T18:03:31Z" finished-at="2014-05-21T18:04:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox Contact Form]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+      </class>
+    </test>
+  </suite>
 </testng-results>

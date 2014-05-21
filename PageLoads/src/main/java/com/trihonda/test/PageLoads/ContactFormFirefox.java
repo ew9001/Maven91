@@ -45,7 +45,7 @@ public class ContactFormFirefox {
 	public static final String AUTOMATE_KEY = "XsPyFTirN4mH8aCLMB9A";
     public String baseUrl = "http://stage.coffee-mate.com";
 	String folder = "";
-	String name="ResponsivePageLoads/" + timeStamp + "_" + "Successful-Contact-Submit-1.png";
+	String name="ResponsivePageLoads/" + timeStamp + "_" + "Successful-Contact-Submit-Firefox-1.png";
 	String local=(new java.io.File("").getAbsolutePath());
 	String data="" + local + "/" + "infoqa.xls";	
 	String myTitle;
@@ -113,7 +113,7 @@ public class ContactFormFirefox {
 		    FileUtils.copyFile(screenshot, new File(name));
 	    	//Reporter.log("<a href='"+ local+"/" + name + "'> <img src='"+ local+"/"+ name + " ' height='100' width='100'/>" + "<a href='"+ urlname+"'>'"+ urlname+"'</a> " + " </a>");
 	    	Reporter.log("<a href='"+ safe+"/" + name + "'> <img src='"+ safe+"/"+ name + " ' height='100' width='100'/>" + "<a href='"+  myTitle+"'>'"+  myTitle+"'</a> " + " </a>");
-			   
+	    	 driver.quit();   
 		
 
   }
