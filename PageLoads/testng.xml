@@ -10,7 +10,7 @@
  
         <groups>
             <run>
-                <include name="first"/>
+                <include name="Firefox Contact Form"/>
             </run>
         </groups>
     </test>
