@@ -2,25 +2,25 @@
 <testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
     <line>
-      <![CDATA[<a href='http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads/ResponsivePageLoads/20140521_180300_Successful-Contact-Submit-Chrome-1.png'> <img src='http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads/ResponsivePageLoads/20140521_180300_Successful-Contact-Submit-Chrome-1.png ' height='100' width='100'/><a href='Contact Us | COFFEE-MATE®'>'Contact Us | COFFEE-MATE®'</a>  </a>]]>
+      <![CDATA[<a href='http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads/ResponsivePageLoads/20140521_181432_Successful-Contact-Submit-Chrome-1.png'> <img src='http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads/ResponsivePageLoads/20140521_181432_Successful-Contact-Submit-Chrome-1.png ' height='100' width='100'/><a href='Contact Us | COFFEE-MATE®'>'Contact Us | COFFEE-MATE®'</a>  </a>]]>
     </line>
     <line>
-      <![CDATA[<a href='http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads/ResponsivePageLoads/20140521_180300_Successful-Contact-Submit-Firefox-1.png'> <img src='http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads/ResponsivePageLoads/20140521_180300_Successful-Contact-Submit-Firefox-1.png ' height='100' width='100'/><a href='Contact Us | COFFEE-MATE®'>'Contact Us | COFFEE-MATE®'</a>  </a>]]>
+      <![CDATA[<a href='http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads/ResponsivePageLoads/20140521_181432_Successful-Contact-Submit-Firefox-1.png'> <img src='http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads/ResponsivePageLoads/20140521_181432_Successful-Contact-Submit-Firefox-1.png ' height='100' width='100'/><a href='Contact Us | COFFEE-MATE®'>'Contact Us | COFFEE-MATE®'</a>  </a>]]>
     </line>
   </reporter-output>
-  <suite name="Example" duration-ms="30778" started-at="2014-05-21T18:03:00Z" finished-at="2014-05-21T18:03:31Z">
+  <suite name="Firefox Contact Form" duration-ms="29309" started-at="2014-05-21T18:15:05Z" finished-at="2014-05-21T18:15:35Z">
     <groups>
-      <group name="Chrome Contact Form">
-        <method signature="com.trihonda.test.PageLoads.ContactFormChrome.testMe(java.lang.String)" name="testMe" class="com.trihonda.test.PageLoads.ContactFormChrome"/>
+      <group name="Firefox Contact Form">
+        <method signature="ContactFormFirefox.testMe(java.lang.String)[pri:0, instance:com.trihonda.test.PageLoads.ContactFormFirefox@2df0d2a3]" name="testMe" class="com.trihonda.test.PageLoads.ContactFormFirefox"/>
       </group>
     </groups>
-    <test name="Contact Form" duration-ms="30778" started-at="2014-05-21T18:03:00Z" finished-at="2014-05-21T18:03:31Z">
-      <class name="com.trihonda.test.PageLoads.ContactFormChrome">
-        <test-method status="PASS" signature="testMe(java.lang.String)" name="testMe" duration-ms="30769" started-at="2014-05-21T18:03:00Z" finished-at="2014-05-21T18:03:31Z">
+    <test name="Contact Form" duration-ms="29309" started-at="2014-05-21T18:15:05Z" finished-at="2014-05-21T18:15:35Z">
+      <class name="com.trihonda.test.PageLoads.ContactFormFirefox">
+        <test-method status="PASS" signature="testMe(java.lang.String)[pri:0, instance:com.trihonda.test.PageLoads.ContactFormFirefox@2df0d2a3]" name="testMe" duration-ms="29308" started-at="2014-05-21T18:15:05Z" finished-at="2014-05-21T18:15:35Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Chrome Contact Form]]>
+                <![CDATA[Firefox Contact Form]]>
               </value>
             </param>
           </params>
@@ -28,19 +28,19 @@
       </class>
     </test>
   </suite>
-  <suite name="Example" duration-ms="34015" started-at="2014-05-21T18:03:31Z" finished-at="2014-05-21T18:04:05Z">
+  <suite name="Chrome Contact Form" duration-ms="33407" started-at="2014-05-21T18:14:32Z" finished-at="2014-05-21T18:15:05Z">
     <groups>
-      <group name="Firefox Contact Form">
-        <method signature="com.trihonda.test.PageLoads.ContactFormFirefox.testMe(java.lang.String)" name="testMe" class="com.trihonda.test.PageLoads.ContactFormFirefox"/>
+      <group name="Chrome Contact Form">
+        <method signature="ContactFormChrome.testMe(java.lang.String)[pri:0, instance:com.trihonda.test.PageLoads.ContactFormChrome@395b0933]" name="testMe" class="com.trihonda.test.PageLoads.ContactFormChrome"/>
       </group>
     </groups>
-    <test name="Contact Form" duration-ms="34015" started-at="2014-05-21T18:03:31Z" finished-at="2014-05-21T18:04:05Z">
-      <class name="com.trihonda.test.PageLoads.ContactFormFirefox">
-        <test-method status="PASS" signature="testMe(java.lang.String)" name="testMe" duration-ms="34015" started-at="2014-05-21T18:03:31Z" finished-at="2014-05-21T18:04:05Z">
+    <test name="Contact Form" duration-ms="33407" started-at="2014-05-21T18:14:32Z" finished-at="2014-05-21T18:15:05Z">
+      <class name="com.trihonda.test.PageLoads.ContactFormChrome">
+        <test-method status="PASS" signature="testMe(java.lang.String)[pri:0, instance:com.trihonda.test.PageLoads.ContactFormChrome@395b0933]" name="testMe" duration-ms="33396" started-at="2014-05-21T18:14:32Z" finished-at="2014-05-21T18:15:05Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Firefox Contact Form]]>
+                <![CDATA[Chrome Contact Form]]>
               </value>
             </param>
           </params>
