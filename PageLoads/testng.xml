@@ -3,9 +3,9 @@
 <suite name="Example" verbose="1">
     <parameter name="param" value="Windows 7 with Firefox"/>
     <test name="ObjectExitTest simple example">
-        <parameter name="param2" value="Laramie2"/>
+        <parameter name="browser" value="Firefox Contact Form"/>
         <classes>
-            <class name="com.trihonda.test.PageLoads.DealerQuoteTest"/>
+            <class name="com.trihonda.test.PageLoads.ContactFormFirefox"/>
         </classes>
  
         <groups>
