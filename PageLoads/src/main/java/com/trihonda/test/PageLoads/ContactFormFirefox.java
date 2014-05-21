@@ -49,7 +49,6 @@ public class ContactFormFirefox {
 	String local=(new java.io.File("").getAbsolutePath());
 	String data="" + local + "/" + "infoqa.xls";	
 	String myTitle;
-    String urlname ="http://yandex.ru";
     String safe = "http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads";
     private boolean acceptNextAlert = true;
     private StringBuffer verificationErrors = new StringBuffer();
@@ -113,7 +112,7 @@ public class ContactFormFirefox {
 		    myTitle = driver.getTitle();
 		    FileUtils.copyFile(screenshot, new File(name));
 	    	//Reporter.log("<a href='"+ local+"/" + name + "'> <img src='"+ local+"/"+ name + " ' height='100' width='100'/>" + "<a href='"+ urlname+"'>'"+ urlname+"'</a> " + " </a>");
-	    	Reporter.log("<a href='"+ safe+"/" + name + "'> <img src='"+ safe+"/"+ name + " ' height='100' width='100'/>" + "<a href='"+ urlname+"'>'"+ urlname+"'</a> " + " </a>");
+	    	Reporter.log("<a href='"+ safe+"/" + name + "'> <img src='"+ safe+"/"+ name + " ' height='100' width='100'/>" + "<a href='"+  myTitle+"'>'"+  myTitle+"'</a> " + " </a>");
 			   
 		
 
