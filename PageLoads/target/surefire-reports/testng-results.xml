@@ -2,18 +2,18 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
     <line>
-      <![CDATA[<a href='/Users/agolubev1/Desktop/Maven91/PageLoads/ResponsivePageLoads/20140520_151735_hondacar.png'> <img src='/Users/agolubev1/Desktop/Maven91/PageLoads/ResponsivePageLoads/20140520_151735_hondacar.png ' height='100' width='100'/><a href='http://yandex.ru'>'http://yandex.ru'</a>  </a>]]>
+      <![CDATA[<a href='http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads/ResponsivePageLoads/20140520_161959_.png'> <img src='http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads/ResponsivePageLoads/20140520_161959_.png ' height='100' width='100'/><a href='http://yandex.ru'>'http://yandex.ru'</a>  </a>]]>
     </line>
   </reporter-output>
-  <suite name="Example" duration-ms="6390" started-at="2014-05-20T19:17:35Z" finished-at="2014-05-20T19:17:41Z">
+  <suite name="Example" duration-ms="11203" started-at="2014-05-20T20:19:59Z" finished-at="2014-05-20T20:20:10Z">
     <groups>
       <group name="first">
-        <method signature="DealerQuoteTest.testMe(java.lang.String)[pri:0, instance:com.trihonda.test.PageLoads.DealerQuoteTest@313179e3]" name="testMe" class="com.trihonda.test.PageLoads.DealerQuoteTest"/>
+        <method signature="DealerQuoteTest.testMe(java.lang.String)[pri:0, instance:com.trihonda.test.PageLoads.DealerQuoteTest@1f6bb14e]" name="testMe" class="com.trihonda.test.PageLoads.DealerQuoteTest"/>
       </group> <!-- first -->
     </groups>
-    <test name="ObjectExitTest simple example" duration-ms="6390" started-at="2014-05-20T19:17:35Z" finished-at="2014-05-20T19:17:41Z">
+    <test name="ObjectExitTest simple example" duration-ms="11203" started-at="2014-05-20T20:19:59Z" finished-at="2014-05-20T20:20:10Z">
       <class name="com.trihonda.test.PageLoads.DealerQuoteTest">
-        <test-method status="PASS" signature="testMe(java.lang.String)[pri:0, instance:com.trihonda.test.PageLoads.DealerQuoteTest@313179e3]" name="testMe" duration-ms="6378" started-at="2014-05-20T15:17:35Z" finished-at="2014-05-20T15:17:41Z">
+        <test-method status="PASS" signature="testMe(java.lang.String)[pri:0, instance:com.trihonda.test.PageLoads.DealerQuoteTest@1f6bb14e]" name="testMe" duration-ms="11190" started-at="2014-05-20T16:19:59Z" finished-at="2014-05-20T16:20:10Z">
           <params>
             <param index="0">
               <value>
@@ -23,7 +23,7 @@
           </params>
           <reporter-output>
             <line>
-              <![CDATA[<a href='/Users/agolubev1/Desktop/Maven91/PageLoads/ResponsivePageLoads/20140520_151735_hondacar.png'> <img src='/Users/agolubev1/Desktop/Maven91/PageLoads/ResponsivePageLoads/20140520_151735_hondacar.png ' height='100' width='100'/><a href='http://yandex.ru'>'http://yandex.ru'</a>  </a>]]>
+              <![CDATA[<a href='http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads/ResponsivePageLoads/20140520_161959_.png'> <img src='http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads/ResponsivePageLoads/20140520_161959_.png ' height='100' width='100'/><a href='http://yandex.ru'>'http://yandex.ru'</a>  </a>]]>
             </line>
           </reporter-output>
         </test-method> <!-- testMe -->
