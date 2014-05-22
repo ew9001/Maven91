@@ -63,11 +63,11 @@ public class ContactFormTablet {
 		 DesiredCapabilities caps = new DesiredCapabilities();
 		 caps.setCapability("browserName", "iPad");
 		 caps.setCapability("platform", "MAC");
-		 caps.setCapability("device", "iPad 3rd (6.0)");
+		 caps.setCapability("device", "iPad 3rd (7.0)");
 
 		    WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
 		    WebDriver augmentedDriver = new Augmenter().augment(driver);
-
+		    Thread.sleep(100);
 		    driver.get("http://trihondas.com");
 		    driver.get(baseUrl + "/Contact-Us.aspx");
 		    try { 
