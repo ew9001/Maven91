@@ -168,10 +168,12 @@ public class ContactFormAndroid {
   }
   @AfterClass
   public void afterClass() {
+	  driver.quit(); 
   }
 
   @AfterTest
   public void afterTest() {
+	  driver.quit(); 
 	
   }
 
