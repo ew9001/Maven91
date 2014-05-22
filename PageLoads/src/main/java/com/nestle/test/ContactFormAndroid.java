@@ -45,7 +45,7 @@ public class ContactFormAndroid {
 	public static final String AUTOMATE_KEY = "XsPyFTirN4mH8aCLMB9A";
     public String baseUrl = "http://stage.coffee-mate.com";
 	String folder = "";
-	String name="Tablet/" + timeStamp + "_" + "Successful-Contact-Submit-Tablet-1.png";
+	String name="Android/" + timeStamp + "_" + "Successful-Contact-Submit-Android-1.png";
 	String local=(new java.io.File("").getAbsolutePath());
 	String data="" + local + "/" + "infoqa.xls";	
 	String myTitle;
@@ -105,7 +105,7 @@ public class ContactFormAndroid {
 		    	Thread.sleep(1000);
 		    }
 		    WebDriver augmentedDriver = new Augmenter().augment(driver);
-		    System.out.println("Faield to find the button " +"1");
+		    System.out.println("Take a screenshot for  " +"Android");
 		    File screenshot = ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
 		    myTitle = driver.getTitle();
 		    FileUtils.copyFile(screenshot, new File(name));

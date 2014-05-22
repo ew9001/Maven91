@@ -45,7 +45,7 @@ public class ContactFormIE9 {
 	public static final String AUTOMATE_KEY = "XsPyFTirN4mH8aCLMB9A";
     public String baseUrl = "http://stage.coffee-mate.com";
 	String folder = "";
-	String name="IE9/" + timeStamp + "_" + "Successful-Contact-Submit-Firefox-1.png";
+	String name="IE9/" + timeStamp + "_" + "Successful-Contact-Submit-IE9-1.png";
 	String local=(new java.io.File("").getAbsolutePath());
 	String data="" + local + "/" + "infoqa.xls";	
 	String myTitle;
