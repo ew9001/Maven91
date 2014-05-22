@@ -2,21 +2,21 @@
 <testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
     <line>
-      <![CDATA[<a href='http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads/ResponsivePageLoads/20140521_181432_Successful-Contact-Submit-Chrome-1.png'> <img src='http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads/ResponsivePageLoads/20140521_181432_Successful-Contact-Submit-Chrome-1.png ' height='100' width='100'/><a href='Contact Us | COFFEE-MATE®'>'Contact Us | COFFEE-MATE®'</a>  </a>]]>
+      <![CDATA[<a href='http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads/ResponsivePageLoads/20140522_100952_Successful-Contact-Submit-Chrome-1.png'> <img src='http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads/ResponsivePageLoads/20140522_100952_Successful-Contact-Submit-Chrome-1.png ' height='100' width='100'/><a href='Contact Us | COFFEE-MATE®'>'Contact Us | COFFEE-MATE®'</a>  </a>]]>
     </line>
     <line>
-      <![CDATA[<a href='http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads/ResponsivePageLoads/20140521_181432_Successful-Contact-Submit-Firefox-1.png'> <img src='http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads/ResponsivePageLoads/20140521_181432_Successful-Contact-Submit-Firefox-1.png ' height='100' width='100'/><a href='Contact Us | COFFEE-MATE®'>'Contact Us | COFFEE-MATE®'</a>  </a>]]>
+      <![CDATA[<a href='http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads/ResponsivePageLoads/20140522_100952_Successful-Contact-Submit-Firefox-1.png'> <img src='http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads/ResponsivePageLoads/20140522_100952_Successful-Contact-Submit-Firefox-1.png ' height='100' width='100'/><a href='Contact Us | COFFEE-MATE®'>'Contact Us | COFFEE-MATE®'</a>  </a>]]>
     </line>
   </reporter-output>
-  <suite name="Firefox Contact Form" duration-ms="29309" started-at="2014-05-21T18:15:05Z" finished-at="2014-05-21T18:15:35Z">
+  <suite name="Firefox Contact Form" duration-ms="29751" started-at="2014-05-22T10:10:27Z" finished-at="2014-05-22T10:10:57Z">
     <groups>
-      <group name="Firefox Contact Form">
-        <method signature="ContactFormFirefox.testMe(java.lang.String)[pri:0, instance:com.trihonda.test.PageLoads.ContactFormFirefox@2df0d2a3]" name="testMe" class="com.trihonda.test.PageLoads.ContactFormFirefox"/>
+      <group name="Firefox">
+        <method signature="ContactFormFirefox.testMe(java.lang.String)[pri:0, instance:com.nestle.test.ContactFormFirefox@19bc378f]" name="testMe" class="com.nestle.test.ContactFormFirefox"/>
       </group>
     </groups>
-    <test name="Contact Form" duration-ms="29309" started-at="2014-05-21T18:15:05Z" finished-at="2014-05-21T18:15:35Z">
-      <class name="com.trihonda.test.PageLoads.ContactFormFirefox">
-        <test-method status="PASS" signature="testMe(java.lang.String)[pri:0, instance:com.trihonda.test.PageLoads.ContactFormFirefox@2df0d2a3]" name="testMe" duration-ms="29308" started-at="2014-05-21T18:15:05Z" finished-at="2014-05-21T18:15:35Z">
+    <test name="Contact Form" duration-ms="29751" started-at="2014-05-22T10:10:27Z" finished-at="2014-05-22T10:10:57Z">
+      <class name="com.nestle.test.ContactFormFirefox">
+        <test-method status="PASS" signature="testMe(java.lang.String)[pri:0, instance:com.nestle.test.ContactFormFirefox@19bc378f]" name="testMe" duration-ms="29749" started-at="2014-05-22T10:10:27Z" finished-at="2014-05-22T10:10:57Z">
           <params>
             <param index="0">
               <value>
@@ -28,15 +28,15 @@
       </class>
     </test>
   </suite>
-  <suite name="Chrome Contact Form" duration-ms="33407" started-at="2014-05-21T18:14:32Z" finished-at="2014-05-21T18:15:05Z">
+  <suite name="Chrome Contact Form" duration-ms="34991" started-at="2014-05-22T10:09:52Z" finished-at="2014-05-22T10:10:27Z">
     <groups>
-      <group name="Chrome Contact Form">
-        <method signature="ContactFormChrome.testMe(java.lang.String)[pri:0, instance:com.trihonda.test.PageLoads.ContactFormChrome@395b0933]" name="testMe" class="com.trihonda.test.PageLoads.ContactFormChrome"/>
+      <group name="Chrome">
+        <method signature="ContactFormChrome.testMe(java.lang.String)[pri:0, instance:com.nestle.test.ContactFormChrome@6f696c6]" name="testMe" class="com.nestle.test.ContactFormChrome"/>
       </group>
     </groups>
-    <test name="Contact Form" duration-ms="33407" started-at="2014-05-21T18:14:32Z" finished-at="2014-05-21T18:15:05Z">
-      <class name="com.trihonda.test.PageLoads.ContactFormChrome">
-        <test-method status="PASS" signature="testMe(java.lang.String)[pri:0, instance:com.trihonda.test.PageLoads.ContactFormChrome@395b0933]" name="testMe" duration-ms="33396" started-at="2014-05-21T18:14:32Z" finished-at="2014-05-21T18:15:05Z">
+    <test name="Contact Form" duration-ms="34991" started-at="2014-05-22T10:09:52Z" finished-at="2014-05-22T10:10:27Z">
+      <class name="com.nestle.test.ContactFormChrome">
+        <test-method status="PASS" signature="testMe(java.lang.String)[pri:0, instance:com.nestle.test.ContactFormChrome@6f696c6]" name="testMe" duration-ms="34980" started-at="2014-05-22T10:09:52Z" finished-at="2014-05-22T10:10:27Z">
           <params>
             <param index="0">
               <value>

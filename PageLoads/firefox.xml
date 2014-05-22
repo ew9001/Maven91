@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+ 
+<suite name="Firefox Contact Form" verbose="1">
+    <parameter name="param" value="Firefox Contact Form"/>
+    <test name="Contact Form">
+    
+        <classes>
+            <class name="com.nestle.test.ContactFormFirefox"/>
+        </classes>
+ 
+        <groups>
+            <run>
+                <include name="Firefox"/>
+            </run>
+        </groups>
+    </test>
+</suite>
