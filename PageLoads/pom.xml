@@ -118,10 +118,11 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
                     <suiteXmlFiles>
+                         <suiteXmlFile>chrome.xml</suiteXmlFile>
                         <suiteXmlFile>ie9.xml</suiteXmlFile>
-                        <suiteXmlFile>chrome.xml</suiteXmlFile>
-                        <suiteXmlFile>firefox.xml</suiteXmlFile>
                      
+                        <suiteXmlFile>firefox.xml</suiteXmlFile>
+                     <suiteXmlFile>android.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
