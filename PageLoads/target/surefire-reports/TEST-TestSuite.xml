@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="1" time="177.995" errors="0" skipped="0" tests="1" name="TestSuite">
+<testsuite failures="1" time="127.955" errors="0" skipped="0" tests="1" name="TestSuite">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/jre/lib"/>
@@ -62,18 +62,18 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="177.013" classname="com.nestle.test.ContactFormTablet" name="testMe">
-    <failure message="Session terminated (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 150.58 seconds
+  <testcase time="127.152" classname="com.nestle.test.ContactFormTablet" name="testMe">
+    <failure message="Unable to communicate to node (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 100.67 seconds
 Build info: version: &apos;2.37.0&apos;, revision: &apos;a7c61cbd68657e133ae96672cf995890bad2ee42&apos;, time: &apos;2013-10-18 09:51:02&apos;
 System info: host: &apos;nycpusagolube.local&apos;, ip: &apos;10.211.55.2&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.8.5&apos;, java.version: &apos;1.7.0_40&apos;
-Session ID: 735e37664aedc958993de34d3fd107233159fcc2
+Session ID: adeb4450add2d2da35b8f21cf4bfa4deeb7e2596
 Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities [{platform=MAC, databaseEnabled=true, javascriptEnabled=true, browserName=iPad, webStorageEnabled=true, locationContextEnabled=true, takesScreenshot=true, version=6.0}]" type="org.openqa.selenium.WebDriverException">org.openqa.selenium.WebDriverException: Session terminated (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 150.58 seconds
+Capabilities [{platform=MAC, databaseEnabled=true, javascriptEnabled=true, browserName=iPad, webStorageEnabled=true, locationContextEnabled=true, takesScreenshot=true, version=6.0}]" type="org.openqa.selenium.WebDriverException">org.openqa.selenium.WebDriverException: Unable to communicate to node (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 100.67 seconds
 Build info: version: &apos;2.37.0&apos;, revision: &apos;a7c61cbd68657e133ae96672cf995890bad2ee42&apos;, time: &apos;2013-10-18 09:51:02&apos;
 System info: host: &apos;nycpusagolube.local&apos;, ip: &apos;10.211.55.2&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.8.5&apos;, java.version: &apos;1.7.0_40&apos;
-Session ID: 735e37664aedc958993de34d3fd107233159fcc2
+Session ID: adeb4450add2d2da35b8f21cf4bfa4deeb7e2596
 Driver info: org.openqa.selenium.remote.RemoteWebDriver
 Capabilities [{platform=MAC, databaseEnabled=true, javascriptEnabled=true, browserName=iPad, webStorageEnabled=true, locationContextEnabled=true, takesScreenshot=true, version=6.0}]
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)

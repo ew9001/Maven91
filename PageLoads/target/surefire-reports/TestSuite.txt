@@ -1,13 +1,13 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 177.995 sec <<< FAILURE!
-testMe(com.nestle.test.ContactFormTablet)  Time elapsed: 177.013 sec  <<< FAILURE!
-org.openqa.selenium.WebDriverException: Session terminated (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 150.58 seconds
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 127.954 sec <<< FAILURE!
+testMe(com.nestle.test.ContactFormTablet)  Time elapsed: 127.152 sec  <<< FAILURE!
+org.openqa.selenium.WebDriverException: Unable to communicate to node (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 100.67 seconds
 Build info: version: '2.37.0', revision: 'a7c61cbd68657e133ae96672cf995890bad2ee42', time: '2013-10-18 09:51:02'
 System info: host: 'nycpusagolube.local', ip: '10.211.55.2', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.8.5', java.version: '1.7.0_40'
-Session ID: 735e37664aedc958993de34d3fd107233159fcc2
+Session ID: adeb4450add2d2da35b8f21cf4bfa4deeb7e2596
 Driver info: org.openqa.selenium.remote.RemoteWebDriver
 Capabilities [{platform=MAC, databaseEnabled=true, javascriptEnabled=true, browserName=iPad, webStorageEnabled=true, locationContextEnabled=true, takesScreenshot=true, version=6.0}]
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)

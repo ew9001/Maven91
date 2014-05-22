@@ -2,27 +2,27 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="IE9 Contact Form" duration-ms="0" started-at="2014-05-22T13:19:53Z" finished-at="2014-05-22T13:19:53Z">
+  <suite name="IE9 Contact Form" duration-ms="0" started-at="2014-05-22T14:00:41Z" finished-at="2014-05-22T14:00:41Z">
     <groups>
     </groups>
-    <test name="Contact Form" duration-ms="0" started-at="2014-05-22T13:19:53Z" finished-at="2014-05-22T13:19:53Z">
+    <test name="Contact Form" duration-ms="0" started-at="2014-05-22T14:00:41Z" finished-at="2014-05-22T14:00:41Z">
     </test>
   </suite>
-  <suite name="Firefox Contact Form" duration-ms="0" started-at="2014-05-22T13:19:53Z" finished-at="2014-05-22T13:19:53Z">
+  <suite name="Firefox Contact Form" duration-ms="0" started-at="2014-05-22T14:00:41Z" finished-at="2014-05-22T14:00:41Z">
     <groups>
     </groups>
-    <test name="Contact Form" duration-ms="0" started-at="2014-05-22T13:19:53Z" finished-at="2014-05-22T13:19:53Z">
+    <test name="Contact Form" duration-ms="0" started-at="2014-05-22T14:00:41Z" finished-at="2014-05-22T14:00:41Z">
     </test>
   </suite>
-  <suite name="Tablet Contact Form" duration-ms="177024" started-at="2014-05-22T13:16:56Z" finished-at="2014-05-22T13:19:53Z">
+  <suite name="Tablet Contact Form" duration-ms="127165" started-at="2014-05-22T13:58:34Z" finished-at="2014-05-22T14:00:41Z">
     <groups>
       <group name="Tablet">
-        <method signature="ContactFormTablet.testMe(java.lang.String)[pri:0, instance:com.nestle.test.ContactFormTablet@1e8de47d]" name="testMe" class="com.nestle.test.ContactFormTablet"/>
+        <method signature="ContactFormTablet.testMe(java.lang.String)[pri:0, instance:com.nestle.test.ContactFormTablet@7f5f987f]" name="testMe" class="com.nestle.test.ContactFormTablet"/>
       </group>
     </groups>
-    <test name="Contact Form" duration-ms="177024" started-at="2014-05-22T13:16:56Z" finished-at="2014-05-22T13:19:53Z">
+    <test name="Contact Form" duration-ms="127165" started-at="2014-05-22T13:58:34Z" finished-at="2014-05-22T14:00:41Z">
       <class name="com.nestle.test.ContactFormTablet">
-        <test-method status="FAIL" signature="testMe(java.lang.String)[pri:0, instance:com.nestle.test.ContactFormTablet@1e8de47d]" name="testMe" duration-ms="176834" started-at="2014-05-22T13:16:56Z" finished-at="2014-05-22T13:19:53Z">
+        <test-method status="FAIL" signature="testMe(java.lang.String)[pri:0, instance:com.nestle.test.ContactFormTablet@7f5f987f]" name="testMe" duration-ms="127022" started-at="2014-05-22T13:58:34Z" finished-at="2014-05-22T14:00:41Z">
           <params>
             <param index="0">
               <value>
@@ -32,20 +32,20 @@
           </params>
           <exception class="org.openqa.selenium.WebDriverException">
             <message>
-              <![CDATA[Session terminated (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 150.58 seconds
+              <![CDATA[Unable to communicate to node (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 100.67 seconds
 Build info: version: '2.37.0', revision: 'a7c61cbd68657e133ae96672cf995890bad2ee42', time: '2013-10-18 09:51:02'
 System info: host: 'nycpusagolube.local', ip: '10.211.55.2', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.8.5', java.version: '1.7.0_40'
-Session ID: 735e37664aedc958993de34d3fd107233159fcc2
+Session ID: adeb4450add2d2da35b8f21cf4bfa4deeb7e2596
 Driver info: org.openqa.selenium.remote.RemoteWebDriver
 Capabilities [{platform=MAC, databaseEnabled=true, javascriptEnabled=true, browserName=iPad, webStorageEnabled=true, locationContextEnabled=true, takesScreenshot=true, version=6.0}]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: Session terminated (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 150.58 seconds
+              <![CDATA[org.openqa.selenium.WebDriverException: Unable to communicate to node (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 100.67 seconds
 Build info: version: '2.37.0', revision: 'a7c61cbd68657e133ae96672cf995890bad2ee42', time: '2013-10-18 09:51:02'
 System info: host: 'nycpusagolube.local', ip: '10.211.55.2', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.8.5', java.version: '1.7.0_40'
-Session ID: 735e37664aedc958993de34d3fd107233159fcc2
+Session ID: adeb4450add2d2da35b8f21cf4bfa4deeb7e2596
 Driver info: org.openqa.selenium.remote.RemoteWebDriver
 Capabilities [{platform=MAC, databaseEnabled=true, javascriptEnabled=true, browserName=iPad, webStorageEnabled=true, locationContextEnabled=true, takesScreenshot=true, version=6.0}]
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
@@ -77,10 +77,10 @@ Capabilities [{platform=MAC, databaseEnabled=true, javascriptEnabled=true, brows
       </class>
     </test>
   </suite>
-  <suite name="Chrome Contact Form" duration-ms="0" started-at="2014-05-22T13:19:53Z" finished-at="2014-05-22T13:19:53Z">
+  <suite name="Chrome Contact Form" duration-ms="0" started-at="2014-05-22T14:00:41Z" finished-at="2014-05-22T14:00:41Z">
     <groups>
     </groups>
-    <test name="Contact Form" duration-ms="0" started-at="2014-05-22T13:19:53Z" finished-at="2014-05-22T13:19:53Z">
+    <test name="Contact Form" duration-ms="0" started-at="2014-05-22T14:00:41Z" finished-at="2014-05-22T14:00:41Z">
     </test>
   </suite>
 </testng-results>

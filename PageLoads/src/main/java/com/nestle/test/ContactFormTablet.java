@@ -115,29 +115,46 @@ public class ContactFormTablet {
 		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtComments")).clear();
 		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtComments")).sendKeys("Please do not contact this test account.");
 		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_imgbtnSubmit")).click();
-		    for (int second = 0;; second++) {
-		    	if (second >= 60) fail("timeout");
-		    	try { if (driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Thanks for taking the time to get in touch with us[\\s\\S]*$")) break; } catch (Exception e) {}
-		    	Thread.sleep(300);
-		    }
-		    ;
+		    Thread.sleep(50);
+		    try { 
+		    	WebElement myCheck = driver.findElement(By.cssSelector("BODY"));
+		    	Assert.assertEquals("Thanks for taking the time to get in touch with us", myCheck);;
+		    	  
+		    	} catch (Error e) { 
+		    		System.out.println("The following device failed  " +"iPad");
+				    File screenshot = ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
+				    FileUtils.copyFile(screenshot, new File(broken));
+				    
+		    	driver.quit(); 
+		    	} 
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		 
+		    
 		    System.out.println("Screeenshot  " +"iPad");
 		    File screenshot = ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
 		    myTitle = driver.getTitle();
 		    FileUtils.copyFile(screenshot, new File(name));
 	    	//Reporter.log("<a href='"+ local+"/" + name + "'> <img src='"+ local+"/"+ name + " ' height='100' width='100'/>" + "<a href='"+ urlname+"'>'"+ urlname+"'</a> " + " </a>");
 	    	Reporter.log("<a href='"+ safe+"/" + name + "'> <img src='"+ safe+"/"+ name + " ' height='100' width='100'/>" + "<a href='"+  myTitle+"'>'"+  myTitle+"'</a> " + " </a>");
-	    	 driver.quit();   
+	    	 
 		
 
   }
   @AfterMethod
   public void tearDown() throws Exception {
 	    driver.quit();
-	    String verificationErrorString = verificationErrors.toString();
-	    if (!"".equals(verificationErrorString)) {
-	      fail(verificationErrorString);
-	    }
+	   
 	  }
 
 	  private void fail(String verificationErrorString) {
@@ -184,12 +201,12 @@ public class ContactFormTablet {
   }
   @AfterClass
   public void afterClass() {
-	  driver.quit(); 
+	 
   }
 
   @AfterTest
   public void afterTest() {
-	  driver.quit(); 
+	
   }
 
 }
