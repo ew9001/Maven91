@@ -70,21 +70,22 @@ public class ContactFormTablet {
 
 		    driver.get("http://trihondas.com");
 		    driver.get(baseUrl + "/Contact-Us.aspx");
-		    new Select(driver.findElement(By.id("ctl00_ContentPlaceHolder1_ddlReason"))).selectByVisibleText("General Inquiry or Question");
-		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtFirstName")).clear();
-		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtFirstName")).sendKeys("PubmoTestFirst");
-		    
 		    try { 
-		    	WebElement myCheck = driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtFirstName"));
-		    	Assert.assertEquals("Lakshay Sharma", myCheck);;
+		    	//WebElement myCheck = driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtFirstName"));
+		    	//Assert.assertEquals("Lakshay Sharma", myCheck);;
+		    	  new Select(driver.findElement(By.id("ctl00_ContentPlaceHolder1_ddlReason"))).selectByVisibleText("General Inquiry or Question");
 		    	} catch (Error e) { 
 		    		System.out.println("The following device failed  " +"iPad");
 				    File screenshot = ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
-				    myTitle = driver.getTitle();
 				    FileUtils.copyFile(screenshot, new File(broken));
 				    
 		    	driver.quit(); 
 		    	} 
+		  
+		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtFirstName")).clear();
+		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtFirstName")).sendKeys("PubmoTestFirst");
+		    
+		   
 		  
 		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtLastName")).clear();
 		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtLastName")).sendKeys("PubmoTestLast");
@@ -117,7 +118,7 @@ public class ContactFormTablet {
 		    for (int second = 0;; second++) {
 		    	if (second >= 60) fail("timeout");
 		    	try { if (driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Thanks for taking the time to get in touch with us[\\s\\S]*$")) break; } catch (Exception e) {}
-		    	Thread.sleep(1000);
+		    	Thread.sleep(300);
 		    }
 		    ;
 		    System.out.println("Screeenshot  " +"iPad");
@@ -183,11 +184,12 @@ public class ContactFormTablet {
   }
   @AfterClass
   public void afterClass() {
+	  driver.quit(); 
   }
 
   @AfterTest
   public void afterTest() {
-	
+	  driver.quit(); 
   }
 
 }

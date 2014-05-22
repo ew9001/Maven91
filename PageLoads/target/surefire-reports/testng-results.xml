@@ -1,74 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="3" passed="3">
+<testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
-    <line>
-      <![CDATA[<a href='http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads/Chrome/20140522_105507_Successful-Contact-Submit-Chrome-1.png'> <img src='http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads/Chrome/20140522_105507_Successful-Contact-Submit-Chrome-1.png ' height='100' width='100'/><a href='Contact Us | COFFEE-MATE®'>'Contact Us | COFFEE-MATE®'</a>  </a>]]>
-    </line>
-    <line>
-      <![CDATA[<a href='http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads/IE9/20140522_105508_Successful-Contact-Submit-Firefox-1.png'> <img src='http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads/IE9/20140522_105508_Successful-Contact-Submit-Firefox-1.png ' height='100' width='100'/><a href='Contact Us | COFFEE-MATE®'>'Contact Us | COFFEE-MATE®'</a>  </a>]]>
-    </line>
-    <line>
-      <![CDATA[<a href='http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads/Firefox/20140522_105508_Successful-Contact-Submit-Firefox-1.png'> <img src='http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads/Firefox/20140522_105508_Successful-Contact-Submit-Firefox-1.png ' height='100' width='100'/><a href='Contact Us | COFFEE-MATE®'>'Contact Us | COFFEE-MATE®'</a>  </a>]]>
-    </line>
   </reporter-output>
-  <suite name="IE9 Contact Form" duration-ms="33038" started-at="2014-05-22T10:55:40Z" finished-at="2014-05-22T10:56:13Z">
+  <suite name="IE9 Contact Form" duration-ms="0" started-at="2014-05-22T13:19:53Z" finished-at="2014-05-22T13:19:53Z">
     <groups>
-      <group name="IE9">
-        <method signature="ContactFormIE9.testMe(java.lang.String)[pri:0, instance:com.nestle.test.ContactFormIE9@5724e7ae]" name="testMe" class="com.nestle.test.ContactFormIE9"/>
+    </groups>
+    <test name="Contact Form" duration-ms="0" started-at="2014-05-22T13:19:53Z" finished-at="2014-05-22T13:19:53Z">
+    </test>
+  </suite>
+  <suite name="Firefox Contact Form" duration-ms="0" started-at="2014-05-22T13:19:53Z" finished-at="2014-05-22T13:19:53Z">
+    <groups>
+    </groups>
+    <test name="Contact Form" duration-ms="0" started-at="2014-05-22T13:19:53Z" finished-at="2014-05-22T13:19:53Z">
+    </test>
+  </suite>
+  <suite name="Tablet Contact Form" duration-ms="177024" started-at="2014-05-22T13:16:56Z" finished-at="2014-05-22T13:19:53Z">
+    <groups>
+      <group name="Tablet">
+        <method signature="ContactFormTablet.testMe(java.lang.String)[pri:0, instance:com.nestle.test.ContactFormTablet@1e8de47d]" name="testMe" class="com.nestle.test.ContactFormTablet"/>
       </group>
     </groups>
-    <test name="Contact Form" duration-ms="33038" started-at="2014-05-22T10:55:40Z" finished-at="2014-05-22T10:56:13Z">
-      <class name="com.nestle.test.ContactFormIE9">
-        <test-method status="PASS" signature="testMe(java.lang.String)[pri:0, instance:com.nestle.test.ContactFormIE9@5724e7ae]" name="testMe" duration-ms="33036" started-at="2014-05-22T10:55:40Z" finished-at="2014-05-22T10:56:13Z">
+    <test name="Contact Form" duration-ms="177024" started-at="2014-05-22T13:16:56Z" finished-at="2014-05-22T13:19:53Z">
+      <class name="com.nestle.test.ContactFormTablet">
+        <test-method status="FAIL" signature="testMe(java.lang.String)[pri:0, instance:com.nestle.test.ContactFormTablet@1e8de47d]" name="testMe" duration-ms="176834" started-at="2014-05-22T13:16:56Z" finished-at="2014-05-22T13:19:53Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[IE9 Contact Form]]>
+                <![CDATA[Tablet Contact Form]]>
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[Session terminated (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 150.58 seconds
+Build info: version: '2.37.0', revision: 'a7c61cbd68657e133ae96672cf995890bad2ee42', time: '2013-10-18 09:51:02'
+System info: host: 'nycpusagolube.local', ip: '10.211.55.2', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.8.5', java.version: '1.7.0_40'
+Session ID: 735e37664aedc958993de34d3fd107233159fcc2
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=MAC, databaseEnabled=true, javascriptEnabled=true, browserName=iPad, webStorageEnabled=true, locationContextEnabled=true, takesScreenshot=true, version=6.0}]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: Session terminated (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 150.58 seconds
+Build info: version: '2.37.0', revision: 'a7c61cbd68657e133ae96672cf995890bad2ee42', time: '2013-10-18 09:51:02'
+System info: host: 'nycpusagolube.local', ip: '10.211.55.2', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.8.5', java.version: '1.7.0_40'
+Session ID: 735e37664aedc958993de34d3fd107233159fcc2
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=MAC, databaseEnabled=true, javascriptEnabled=true, browserName=iPad, webStorageEnabled=true, locationContextEnabled=true, takesScreenshot=true, version=6.0}]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:193)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:145)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:554)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:307)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:348)
+	at org.openqa.selenium.By$ById.findElement(By.java:220)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:299)
+	at com.nestle.test.ContactFormTablet.testMe(ContactFormTablet.java:85)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:122)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:92)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:101)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+]]>
+            </full-stacktrace>
+          </exception>
         </test-method>
       </class>
     </test>
   </suite>
-  <suite name="Firefox Contact Form" duration-ms="32665" started-at="2014-05-22T10:56:13Z" finished-at="2014-05-22T10:56:45Z">
+  <suite name="Chrome Contact Form" duration-ms="0" started-at="2014-05-22T13:19:53Z" finished-at="2014-05-22T13:19:53Z">
     <groups>
-      <group name="Firefox">
-        <method signature="ContactFormFirefox.testMe(java.lang.String)[pri:0, instance:com.nestle.test.ContactFormFirefox@492c04b1]" name="testMe" class="com.nestle.test.ContactFormFirefox"/>
-      </group>
     </groups>
-    <test name="Contact Form" duration-ms="32665" started-at="2014-05-22T10:56:13Z" finished-at="2014-05-22T10:56:45Z">
-      <class name="com.nestle.test.ContactFormFirefox">
-        <test-method status="PASS" signature="testMe(java.lang.String)[pri:0, instance:com.nestle.test.ContactFormFirefox@492c04b1]" name="testMe" duration-ms="32664" started-at="2014-05-22T10:56:13Z" finished-at="2014-05-22T10:56:45Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Firefox Contact Form]]>
-              </value>
-            </param>
-          </params>
-        </test-method>
-      </class>
-    </test>
-  </suite>
-  <suite name="Chrome Contact Form" duration-ms="31960" started-at="2014-05-22T10:55:08Z" finished-at="2014-05-22T10:55:40Z">
-    <groups>
-      <group name="Chrome">
-        <method signature="ContactFormChrome.testMe(java.lang.String)[pri:0, instance:com.nestle.test.ContactFormChrome@19e09de7]" name="testMe" class="com.nestle.test.ContactFormChrome"/>
-      </group>
-    </groups>
-    <test name="Contact Form" duration-ms="31960" started-at="2014-05-22T10:55:08Z" finished-at="2014-05-22T10:55:40Z">
-      <class name="com.nestle.test.ContactFormChrome">
-        <test-method status="PASS" signature="testMe(java.lang.String)[pri:0, instance:com.nestle.test.ContactFormChrome@19e09de7]" name="testMe" duration-ms="31946" started-at="2014-05-22T10:55:08Z" finished-at="2014-05-22T10:55:40Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Chrome Contact Form]]>
-              </value>
-            </param>
-          </params>
-        </test-method>
-      </class>
+    <test name="Contact Form" duration-ms="0" started-at="2014-05-22T13:19:53Z" finished-at="2014-05-22T13:19:53Z">
     </test>
   </suite>
 </testng-results>
