@@ -13,8 +13,8 @@ import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import junit.framework.Assert;
 import jxl.Sheet;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -23,6 +23,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -46,6 +47,7 @@ public class ContactFormTablet {
     public String baseUrl = "http://stage.coffee-mate.com";
 	String folder = "";
 	String name="Tablet/" + timeStamp + "_" + "Successful-Contact-Submit-Tablet-1.png";
+	String broken="Broken/" + timeStamp + "_" + "Failed Device-Tablet-1.png";
 	String local=(new java.io.File("").getAbsolutePath());
 	String data="" + local + "/" + "infoqa.xls";	
 	String myTitle;
@@ -64,13 +66,26 @@ public class ContactFormTablet {
 		 caps.setCapability("device", "iPad 3rd (6.0)");
 
 		    WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
-
+		    WebDriver augmentedDriver = new Augmenter().augment(driver);
 
 		    driver.get("http://trihondas.com");
 		    driver.get(baseUrl + "/Contact-Us.aspx");
 		    new Select(driver.findElement(By.id("ctl00_ContentPlaceHolder1_ddlReason"))).selectByVisibleText("General Inquiry or Question");
 		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtFirstName")).clear();
 		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtFirstName")).sendKeys("PubmoTestFirst");
+		    
+		    try { 
+		    	WebElement myCheck = driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtFirstName"));
+		    	Assert.assertEquals("Lakshay Sharma", myCheck);;
+		    	} catch (Error e) { 
+		    		System.out.println("The following device failed  " +"iPad");
+				    File screenshot = ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
+				    myTitle = driver.getTitle();
+				    FileUtils.copyFile(screenshot, new File(broken));
+				    
+		    	driver.quit(); 
+		    	} 
+		  
 		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtLastName")).clear();
 		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtLastName")).sendKeys("PubmoTestLast");
 		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtEmail")).clear();
@@ -104,8 +119,8 @@ public class ContactFormTablet {
 		    	try { if (driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Thanks for taking the time to get in touch with us[\\s\\S]*$")) break; } catch (Exception e) {}
 		    	Thread.sleep(1000);
 		    }
-		    WebDriver augmentedDriver = new Augmenter().augment(driver);
-		    System.out.println("Faield to find the button " +"1");
+		    ;
+		    System.out.println("Screeenshot  " +"iPad");
 		    File screenshot = ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
 		    myTitle = driver.getTitle();
 		    FileUtils.copyFile(screenshot, new File(name));
