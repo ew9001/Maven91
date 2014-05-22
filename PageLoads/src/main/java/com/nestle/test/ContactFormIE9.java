@@ -36,7 +36,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
 
 
-public class ContactFormFirefox {
+public class ContactFormIE9 {
 
 	static String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
 	Sheet s; 	
@@ -45,7 +45,7 @@ public class ContactFormFirefox {
 	public static final String AUTOMATE_KEY = "XsPyFTirN4mH8aCLMB9A";
     public String baseUrl = "http://stage.coffee-mate.com";
 	String folder = "";
-	String name="Firefox/" + timeStamp + "_" + "Successful-Contact-Submit-Firefox-1.png";
+	String name="IE9/" + timeStamp + "_" + "Successful-Contact-Submit-Firefox-1.png";
 	String local=(new java.io.File("").getAbsolutePath());
 	String data="" + local + "/" + "infoqa.xls";	
 	String myTitle;
@@ -54,16 +54,16 @@ public class ContactFormFirefox {
     private StringBuffer verificationErrors = new StringBuffer();
     
     
-    @Test(groups = {"Firefox"})
+    @Test(groups = {"IE9"})
 	@Parameters({"param"})
 	 public void testMe(String param) throws Exception {
 		String URL = "http://" + USERNAME + ":" + AUTOMATE_KEY + "@hub.browserstack.com/wd/hub";
-		 DesiredCapabilities caps = DesiredCapabilities.firefox();
-		  caps.setCapability("browser", "FireFox");
-		  caps.setCapability("browser_version", "22.0");
-		  caps.setCapability("os", "Windows");
-		  caps.setCapability("os_version", "7");
-		  caps.setCapability("browserstack.debug", "true");
+		 DesiredCapabilities caps = new DesiredCapabilities();
+		 caps.setCapability("browser", "IE");
+		 caps.setCapability("browser_version", "9.0");
+		 caps.setCapability("os", "Windows");
+		 caps.setCapability("os_version", "7");
+		 caps.setCapability("resolution", "1024x768");
 
 		    WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
 
@@ -107,7 +107,7 @@ public class ContactFormFirefox {
 		    	Thread.sleep(1000);
 		    }
 		    WebDriver augmentedDriver = new Augmenter().augment(driver);
-		    System.out.println("Take a screenshot for  " +"Firefox");
+		    System.out.println("Take a screenshot for  " +"IE9");
 		    File screenshot = ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
 		    myTitle = driver.getTitle();
 		    FileUtils.copyFile(screenshot, new File(name));
