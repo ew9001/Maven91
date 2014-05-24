@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+ 
+<suite name="Create New Contact" verbose="1">
+    <parameter name="param" value="Chrome"/>
+    <test name="New Contact Form">
+    
+        <classes>
+            <class name="test.nestle.CreateNewAccount.Firefox"/>
+        </classes>
+ 
+        <groups>
+            <run>
+                <include name="Chrome"/>
+            </run>
+        </groups>
+    </test>
+</suite>

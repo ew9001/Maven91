@@ -2,62 +2,39 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="IE9 Contact Form" duration-ms="0" started-at="2014-05-22T14:00:41Z" finished-at="2014-05-22T14:00:41Z">
+  <suite name="Create New Contact" duration-ms="30345" started-at="2014-05-23T22:02:36Z" finished-at="2014-05-23T22:03:06Z">
     <groups>
-    </groups>
-    <test name="Contact Form" duration-ms="0" started-at="2014-05-22T14:00:41Z" finished-at="2014-05-22T14:00:41Z">
-    </test>
-  </suite>
-  <suite name="Firefox Contact Form" duration-ms="0" started-at="2014-05-22T14:00:41Z" finished-at="2014-05-22T14:00:41Z">
-    <groups>
-    </groups>
-    <test name="Contact Form" duration-ms="0" started-at="2014-05-22T14:00:41Z" finished-at="2014-05-22T14:00:41Z">
-    </test>
-  </suite>
-  <suite name="Tablet Contact Form" duration-ms="127165" started-at="2014-05-22T13:58:34Z" finished-at="2014-05-22T14:00:41Z">
-    <groups>
-      <group name="Tablet">
-        <method signature="ContactFormTablet.testMe(java.lang.String)[pri:0, instance:com.nestle.test.ContactFormTablet@7f5f987f]" name="testMe" class="com.nestle.test.ContactFormTablet"/>
+      <group name="Chrome">
+        <method signature="Firefox.browserChrome(java.lang.String)[pri:0, instance:test.nestle.CreateNewAccount.Firefox@7394743b]" name="browserChrome" class="test.nestle.CreateNewAccount.Firefox"/>
       </group>
     </groups>
-    <test name="Contact Form" duration-ms="127165" started-at="2014-05-22T13:58:34Z" finished-at="2014-05-22T14:00:41Z">
-      <class name="com.nestle.test.ContactFormTablet">
-        <test-method status="FAIL" signature="testMe(java.lang.String)[pri:0, instance:com.nestle.test.ContactFormTablet@7f5f987f]" name="testMe" duration-ms="127022" started-at="2014-05-22T13:58:34Z" finished-at="2014-05-22T14:00:41Z">
+    <test name="New Contact Form" duration-ms="30345" started-at="2014-05-23T22:02:36Z" finished-at="2014-05-23T22:03:06Z">
+      <class name="test.nestle.CreateNewAccount.Firefox">
+        <test-method status="FAIL" signature="browserChrome(java.lang.String)[pri:0, instance:test.nestle.CreateNewAccount.Firefox@7394743b]" name="browserChrome" duration-ms="30329" started-at="2014-05-23T22:02:36Z" finished-at="2014-05-23T22:03:06Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Tablet Contact Form]]>
+                <![CDATA[Chrome]]>
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.WebDriverException">
+          <exception class="org.openqa.selenium.remote.UnreachableBrowserException">
             <message>
-              <![CDATA[Unable to communicate to node (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 100.67 seconds
+              <![CDATA[Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
 Build info: version: '2.37.0', revision: 'a7c61cbd68657e133ae96672cf995890bad2ee42', time: '2013-10-18 09:51:02'
 System info: host: 'nycpusagolube.local', ip: '10.211.55.2', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.8.5', java.version: '1.7.0_40'
-Session ID: adeb4450add2d2da35b8f21cf4bfa4deeb7e2596
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities [{platform=MAC, databaseEnabled=true, javascriptEnabled=true, browserName=iPad, webStorageEnabled=true, locationContextEnabled=true, takesScreenshot=true, version=6.0}]]]>
+Driver info: driver.version: RemoteWebDriver]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: Unable to communicate to node (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 100.67 seconds
+              <![CDATA[org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
 Build info: version: '2.37.0', revision: 'a7c61cbd68657e133ae96672cf995890bad2ee42', time: '2013-10-18 09:51:02'
 System info: host: 'nycpusagolube.local', ip: '10.211.55.2', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.8.5', java.version: '1.7.0_40'
-Session ID: adeb4450add2d2da35b8f21cf4bfa4deeb7e2596
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities [{platform=MAC, databaseEnabled=true, javascriptEnabled=true, browserName=iPad, webStorageEnabled=true, locationContextEnabled=true, takesScreenshot=true, version=6.0}]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:193)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:145)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:554)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:307)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:348)
-	at org.openqa.selenium.By$ById.findElement(By.java:220)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:299)
-	at com.nestle.test.ContactFormTablet.testMe(ContactFormTablet.java:85)
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:216)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:111)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:129)
+	at test.nestle.CreateNewAccount.Firefox.browserChrome(Firefox.java:87)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.lang.reflect.Method.invoke(Method.java:606)
 	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:122)
@@ -70,17 +47,32 @@ Capabilities [{platform=MAC, databaseEnabled=true, javascriptEnabled=true, brows
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+Caused by: java.net.UnknownHostException: hub.browserstack.com: nodename nor servname provided, or not known
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$1.lookupAllHostAddr(InetAddress.java:894)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1286)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1239)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1155)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1091)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.resolveHostname(DefaultClientConnectionOperator.java:260)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:160)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:131)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:610)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:445)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:57)
+	at org.openqa.selenium.remote.HttpCommandExecutor.fallBackExecute(HttpCommandExecutor.java:319)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:298)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:527)
+	... 16 more
 ]]>
             </full-stacktrace>
           </exception>
         </test-method>
       </class>
-    </test>
-  </suite>
-  <suite name="Chrome Contact Form" duration-ms="0" started-at="2014-05-22T14:00:41Z" finished-at="2014-05-22T14:00:41Z">
-    <groups>
-    </groups>
-    <test name="Contact Form" duration-ms="0" started-at="2014-05-22T14:00:41Z" finished-at="2014-05-22T14:00:41Z">
     </test>
   </suite>
 </testng-results>

@@ -121,11 +121,8 @@
                   <threadCount>10</threadCount>
                     <suiteXmlFiles>
                      
-                         <suiteXmlFile>chrome.xml</suiteXmlFile>
-                        <suiteXmlFile>ie9.xml</suiteXmlFile>
-                        <suiteXmlFile>firefox.xml</suiteXmlFile>
-                           <suiteXmlFile>tablet.xml</suiteXmlFile>
-                              <suiteXmlFile>android.xml</suiteXmlFile>
+                         <suiteXmlFile>testng.xml</suiteXmlFile>
+                     
                        
                     </suiteXmlFiles>
                 </configuration>

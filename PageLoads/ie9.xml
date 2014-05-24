@@ -6,7 +6,7 @@
     <test name="Contact Form">
     
         <classes>
-            <class name="com.nestle.test.ContactFormIE9"/>
+            <class name="test.nestle.ContactForm.IE9"/>
         </classes>
  
         <groups>

@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite verbose="0" name="Failed suite [Suite]" parallel="none">
-  <test name="Test(failed)" parallel="none">
+  <test name="Test(failed)" parallel="none" preserve-order="true">
+    <groups>
+      <run>
+        <include name="Chrome"/>
+      </run>
+    </groups>
     <classes>
-      <class name="com.trihonda.test.PageLoads.ContactFormChrome">
+      <class name="test.nestle.CreateNewAccount.Firefox">
         <methods>
-          <include name="beforeClass"/>
-          <include name="afterClass"/>
-          <include name="afterTest"/>
-          <include name="testMe"/>
+          <include name="browserChrome"/>
         </methods>
-      </class> <!-- com.trihonda.test.PageLoads.ContactFormChrome -->
+      </class>
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test>
+</suite>

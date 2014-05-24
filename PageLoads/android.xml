@@ -6,7 +6,7 @@
     <test name="Contact Form">
     
         <classes>
-            <class name="com.nestle.test.ContactFormAndroid"/>
+            <class name="test.nestle.ContactForm.Android"/>
         </classes>
  
         <groups>
