@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite hostname="nycpusagolube.local" name="com.trihonda.test.PageLoads.ContactFormFirefox" tests="1" failures="0" timestamp="21 May 2014 22:04:05 GMT" time="34.015" errors="0">
-  <testcase name="testMe" time="34.015" classname="com.trihonda.test.PageLoads.ContactFormFirefox"/>
-</testsuite>

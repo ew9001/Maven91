@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
  
-<suite name="Create New Contact" verbose="1">
-    <parameter name="param" value="Chrome"/>
-    <test name="New Contact Form">
+<suite name="IE9 Contact Form" verbose="1">
+   
+    <parameter name="browser" value="firefox"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="browser" value="ie9"/>
+   
+    <test name="Contact Form">
     
         <classes>
-            <class name="test.nestle.CreateNewAccount.Firefox"/>
+            <class name="test.nestle.CreateAccount"/>
         </classes>
  
         <groups>
             <run>
-                <include name="Chrome"/>
+              
+                <include name="Create"/>
+              
             </run>
         </groups>
     </test>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+ 
+<suite name="Firefox Contact Form" verbose="1">
+    <parameter name="param" value="Firefox Contact Form"/>
+    <test name="Contact Form">
+    
+        <classes>
+            <class name="test.nestle.ContactForm.Firefox"/>
+        </classes>
+ 
+        <groups>
+            <run>
+                <include name="Firefox"/>
+            </run>
+        </groups>
+    </test>
+    
+    <parameter name="param" value="Firefox"/>
+    <test name="Firefox New Account">
+    
+        <classes>
+            <class name="test.nestle.CreateNewAccount.Firefox"/>
+        </classes>
+ 
+        <groups>
+            <run>
+                <include name="Firefox"/>
+            </run>
+        </groups>
+    </test>
+     </test>
+    
+    <parameter name="param" value="Chrome"/>
+    <test name="Chrome New Account">
+    
+        <classes>
+            <class name="test.nestle.CreateNewAccount.Firefox"/>
+        </classes>
+ 
+        <groups>
+            <run>
+                <include name="Chrome"/>
+            </run>
+        </groups>
+    </test>
+</suite>

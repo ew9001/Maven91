@@ -3,14 +3,12 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.nestle.test.ContactFormTablet">
+      <class name="test.nestle.CreateAccount">
         <methods>
-          <include name="afterTest"/>
-          <include name="testMe"/>
-          <include name="afterClass"/>
-          <include name="beforeClass"/>
+          <include name="beforeTest"/>
+          <include name="f"/>
         </methods>
-      </class> <!-- com.nestle.test.ContactFormTablet -->
+      </class> <!-- test.nestle.CreateAccount -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

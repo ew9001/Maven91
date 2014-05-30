@@ -16,4 +16,16 @@
             </run>
         </groups>
     </test>
+    <test name="Contact Form">
+    
+        <classes>
+            <class name="test.nestle.CreateNewAccount.Firefox"/>
+        </classes>
+ 
+        <groups>
+            <run>
+                <include name="Firefox"/>
+            </run>
+        </groups>
+    </test>
 </suite>
