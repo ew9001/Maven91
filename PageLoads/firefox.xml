@@ -3,7 +3,7 @@
 
 
  
-<suite name="Tablet Contact Form" verbose="1">
+<suite name="Firefox Contact Form" verbose="1">
     <parameter name="browser" value="firefox"/>
     <test name="Contact Form">
     
