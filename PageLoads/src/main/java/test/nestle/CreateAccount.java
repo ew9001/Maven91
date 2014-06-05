@@ -144,7 +144,7 @@ public class CreateAccount
 	 String URL = "http://" + USERNAME + ":" + AUTOMATE_KEY + "@hub.browserstack.com/wd/hub";
 	 DesiredCapabilities caps = DesiredCapabilities.firefox();
 	  caps.setCapability("browser", "FireFox");
-	  caps.setCapability("browser_version", "22.0");
+	  caps.setCapability("browser_version", "29.0");
 	  caps.setCapability("os", "Windows");
 	  caps.setCapability("os_version", "7");
 	  caps.setCapability("browserstack.debug", "true");

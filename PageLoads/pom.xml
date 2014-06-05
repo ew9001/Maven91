@@ -124,6 +124,11 @@
 
 
 <suiteXmlFile>tablet.xml</suiteXmlFile>
+<suiteXmlFile>ie9.xml</suiteXmlFile>
+<suiteXmlFile>firefox.xml</suiteXmlFile>
+<suiteXmlFile>chrome.xml</suiteXmlFile>
+<suiteXmlFile>android.xml</suiteXmlFile>
+
 
 </suiteXmlFiles> 
 </configuration> 
