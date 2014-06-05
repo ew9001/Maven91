@@ -13,6 +13,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
@@ -28,6 +29,7 @@ public class CreateAccount
   private static WebDriver driver;
   public static final String USERNAME = "earlwillis1";
   public String browser_type;
+  public  String name="Screenshot/" + timeStamp + "_" + "Successful-Contact-Submit.png";
 	public static final String AUTOMATE_KEY = "XsPyFTirN4mH8aCLMB9A";
 	public String browser = System.getProperty("browser");
 	static String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
@@ -37,8 +39,10 @@ public class CreateAccount
   {	   
 	  
 	  
+	  
 	  if (browser.equals("firefox")) {
 		  driver=browserFirefox();
+		  
 		}
 	  
 
@@ -51,7 +55,7 @@ public class CreateAccount
 		}
 	  
 
-	  else if (browser.equals("tablet")) {
+	  else if (browser.equals("iPad")) {
 		  driver=browserIpad();
 		}
 	  
@@ -110,8 +114,7 @@ public class CreateAccount
    		driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
        	Thread.sleep(4000);
    		
-   		   File scrFile1 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-   		   FileUtils.copyFile(scrFile1, new File("Screenshots/" + browser + "/" + timeStamp + "/" + "Successful-Registration-2.png"));
+       	takeScreen();
    		  driver.quit();
   }
   @BeforeTest
@@ -238,6 +241,17 @@ public class CreateAccount
       return driver;
    
     
+ }
+ 
+ public void takeScreen() throws IOException
+ {
+	 WebDriver augmentedDriver = new Augmenter().augment(driver);
+	    System.out.println("Take a screenshot for  " +driver);
+	    File screenshot = ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
+	    String myTitle = driver.getTitle();
+	     System.out.println("Looking at the page " +myTitle);
+	    FileUtils.copyFile(screenshot, new File(name));
+ 
  }
 
 }  

@@ -4,7 +4,7 @@
 
  
 <suite name="Tablet Contact Form" verbose="1">
-    <parameter name="param" value="tablet"/>
+    <parameter name="browser" value="iPad"/>
     <test name="Contact Form">
     
         <classes>
