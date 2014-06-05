@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+
+ 
+<suite name="Tablet Contact Form" verbose="1">
+    <parameter name="browser" value="chrome"/>
+    <test name="Contact Form">
+    
+        <classes>
+            <class name="test.nestle.CreateAccount"/>
+        </classes>
+ 
+        <groups>
+            <run>
+                <include name="create"/>
+            </run>
+        </groups>
+    </test>
+</suite>
