@@ -33,7 +33,7 @@ public class ContactUS {
 	  public String baseUrl = "http://stage.coffee-mate.com";
 		public static final String AUTOMATE_KEY = "XsPyFTirN4mH8aCLMB9A";
 		static String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
-		String name="Chrome/" + timeStamp + "_" + "Successful-Contact-Submit-Chrome-1.png";
+		
 		String local=(new java.io.File("").getAbsolutePath());
 		String data="" + local + "/" + "infoqa.xls";	
 		String myTitle;
@@ -67,8 +67,7 @@ public class ContactUS {
 			  driver=browserAndroid();
 			}
 		  
-		  
-		  
+		
 		 
 			  System.out.println("Let me see which one get tested " +browser);
 
@@ -119,6 +118,7 @@ public class ContactUS {
 		    System.out.println("Take a screenshot for  " + browser);
 		    File screenshot = ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
 		    myTitle = driver.getTitle();
+		    String name= ""+ browser + "/" + timeStamp + "_" + "Successful-Contact-Submit-Chrome-1.png";
 		    FileUtils.copyFile(screenshot, new File(name));
 	    	//Reporter.log("<a href='"+ local+"/" + name + "'> <img src='"+ local+"/"+ name + " ' height='100' width='100'/>" + "<a href='"+ urlname+"'>'"+ urlname+"'</a> " + " </a>");
 	    	Reporter.log("<a href='"+ safe+"/" + name + "'> <img src='"+ safe+"/"+ name + " ' height='100' width='100'/>" + "<a href='"+  myTitle+"'>'"+  myTitle+"'</a> " + " </a>");
