@@ -97,7 +97,7 @@ public class CreateAccount
        driver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_chkEmailCommunication")).click();
       //  driver.findElement(By.name("flavorTheme")).click();
        driver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_btnRegister")).click();
-   	driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
+   	driver.manage().timeouts().implicitlyWait(700, TimeUnit.SECONDS);
    	
 
    	   
@@ -235,7 +235,7 @@ public class CreateAccount
 
 	    driver = new RemoteWebDriver(new URL(URL), caps);
       System.out.println("Let me run IE9");
-      driver.get("http://stage.coffee-mate.com/Registration/Create-Account.aspx?email=" + timeStamp +"%40yahoo.com&stt=True");
+      driver.get("http://stage.coffee-mate.com/Registration/Create-Account.aspx?email=" + timeStamp +"%40google.com&stt=True");
       
       return driver;
    
