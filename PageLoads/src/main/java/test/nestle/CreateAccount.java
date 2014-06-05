@@ -114,7 +114,7 @@ public class CreateAccount {
 			 driver.findElement(By.cssSelector("option[value=\"138A6025-F98D-4A64-B36C-4A08DAB4F075\"]")).click();
 			 driver.findElement(By.id("ctl00_ContentPlaceHolder1_btnSubmit")).click();
 				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		    	Thread.sleep(4000);
+		    	Thread.sleep(10000);
 		    	
 		    WebDriver augmentedDriver = new Augmenter().augment(driver);
 		    System.out.println("Take a screenshot for  " + browser);
