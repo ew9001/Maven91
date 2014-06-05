@@ -2,16 +2,16 @@
 <!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
  
 <suite name="Android Contact Form" verbose="1">
-    <parameter name="param" value="IE9 Contact Form"/>
+    <parameter name="param" value="android"/>
     <test name="Contact Form">
     
         <classes>
-            <class name="test.nestle.ContactForm.Android"/>
+            <class name="test.nestle.CreateAccount"/>
         </classes>
  
         <groups>
             <run>
-                <include name="Android"/>
+                <include name="create"/>
             </run>
         </groups>
     </test>

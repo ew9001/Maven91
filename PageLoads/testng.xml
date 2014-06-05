@@ -1,24 +1,32 @@
+
+
+
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
- 
-<suite name="IE9 Contact Form" verbose="1">
-   
-    <parameter name="browser" value="firefox"/>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="smoke" parallel="false">
+     <parameter name="browser" value="firefox"/>
     <parameter name="browser" value="chrome"/>
     <parameter name="browser" value="ie9"/>
-   
-    <test name="Contact Form">
+    <test name="smoke" preserve-order="true">
     
-        <classes>
-            <class name="test.nestle.CreateAccount"/>
-        </classes>
- 
+     <packages>
+            <package name="test.nestle" />
+            
+        </packages>
         <groups>
+            <define name="all">
+                <include name="create"/>
+            </define>
             <run>
-              
-                <include name="Create"/>
-              
+                <include name="all" />
+                <exclude name="failed" />
             </run>
         </groups>
+ 
+        <classes>
+            <class name="test.nestle.CreateAccount" />  
+            <class name="test.nestle.ContactUS" />         
+        </classes>
     </test>
+    <dependencies></dependencies>
 </suite>

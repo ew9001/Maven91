@@ -1,6 +1,0 @@
-#surefire
-#Fri May 30 11:04:55 EDT 2014
-user.dir=/Users/agolubev1/Desktop/Maven91/PageLoads
-parameters=firefox
-localRepository=/Users/agolubev1/.m2/repository
-basedir=/Users/agolubev1/Desktop/Maven91/PageLoads

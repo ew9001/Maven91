@@ -2,16 +2,16 @@
 <!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
  
 <suite name="Tablet Contact Form" verbose="1">
-    <parameter name="param" value="Tablet Contact Form"/>
+    <parameter name="param" value="tablet"/>
     <test name="Contact Form">
     
         <classes>
-            <class name="test.nestle.ContactForm.Tablet"/>
+            <class name="test.nestle.CreateAccount"/>
         </classes>
  
         <groups>
             <run>
-                <include name="Tablet"/>
+                <include name="create"/>
             </run>
         </groups>
     </test>

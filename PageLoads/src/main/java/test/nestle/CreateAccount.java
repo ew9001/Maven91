@@ -7,7 +7,7 @@ import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
-
+import java.io.InputStream;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
@@ -29,10 +29,10 @@ public class CreateAccount
   public static final String USERNAME = "earlwillis1";
   public String browser_type;
 	public static final String AUTOMATE_KEY = "XsPyFTirN4mH8aCLMB9A";
+	public String browser = System.getProperty("browser");
 	static String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
-  @Test(groups = {"Create"})
-	@Parameters({"browser"})
-  @BeforeClass
+  @Test(groups = "create")
+	@Parameters("browser")
   public void beforeClass(String browser) throws IOException, InterruptedException
   {	   
 	  
@@ -47,7 +47,7 @@ public class CreateAccount
 		}
 	  
 	  else if (browser.equals("ie9")) {
-		  driver=browserIE9();
+		 // driver=browserIE9();
 		}
 	  
 
@@ -135,7 +135,7 @@ public class CreateAccount
      driver.quit();
  }
 
- public WebDriver browserFirefox() throws MalformedURLException  
+ public WebDriver browserFirefox() throws IOException  
  {  
   
 	 System.out.println("Let me run Firefox");
@@ -158,7 +158,7 @@ public class CreateAccount
     
  }  
 
- public WebDriver browserChrome() throws MalformedURLException  
+ public WebDriver browserChrome() throws IOException  
  {  
   
 	 browser_type="chrome";
@@ -179,28 +179,9 @@ public class CreateAccount
     
  }  
  
- public WebDriver browserIE9() throws MalformedURLException  
- {  
-  
-	
-	 String URL = "http://" + USERNAME + ":" + AUTOMATE_KEY + "@hub.browserstack.com/wd/hub";
-	 DesiredCapabilities caps = new DesiredCapabilities();
-	 caps.setCapability("browser", "IE");
-	 caps.setCapability("browser_version", "9.0");
-	 caps.setCapability("os", "Windows");
-	 caps.setCapability("os_version", "7");
-	 caps.setCapability("resolution", "1024x768");
-
-	    driver = new RemoteWebDriver(new URL(URL), caps);
-      System.out.println("Let me run IE9");
-      driver.get("http://stage.coffee-mate.com/Registration/Create-Account.aspx?email=" + timeStamp +"%40yahoo.com&stt=True");
-      
-      return driver;
-   
-    
- }
  
- public WebDriver browserIpad() throws MalformedURLException  
+ 
+ public WebDriver browserIpad() throws IOException   
  {  
   
 
@@ -219,7 +200,7 @@ public class CreateAccount
     
  }
  
- public WebDriver browserAndroid() throws MalformedURLException  
+ public WebDriver browserAndroid() throws IOException  
  {  
   
 	
@@ -231,6 +212,27 @@ public class CreateAccount
 
 	    driver = new RemoteWebDriver(new URL(URL), caps);
       System.out.println("Let me run Android");
+      driver.get("http://stage.coffee-mate.com/Registration/Create-Account.aspx?email=" + timeStamp +"%40yahoo.com&stt=True");
+      
+      return driver;
+   
+    
+ }
+ 
+ public WebDriver browserIE9() throws IOException 
+ {  
+  
+	
+	 String URL = "http://" + USERNAME + ":" + AUTOMATE_KEY + "@hub.browserstack.com/wd/hub";
+	 DesiredCapabilities caps = new DesiredCapabilities();
+	 caps.setCapability("browser", "IE");
+	 caps.setCapability("browser_version", "9.0");
+	 caps.setCapability("os", "Windows");
+	 caps.setCapability("os_version", "7");
+	 caps.setCapability("resolution", "1024x768");
+
+	    driver = new RemoteWebDriver(new URL(URL), caps);
+      System.out.println("Let me run IE9");
       driver.get("http://stage.coffee-mate.com/Registration/Create-Account.aspx?email=" + timeStamp +"%40yahoo.com&stt=True");
       
       return driver;

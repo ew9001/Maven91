@@ -6,12 +6,12 @@
     <test name="Contact Form">
     
         <classes>
-            <class name="test.nestle.ContactForm.IE9"/>
+            <class name="test.nestle.CreateAccount"/>
         </classes>
  
         <groups>
             <run>
-                <include name="IE9"/>
+                <include name="create"/>
             </run>
         </groups>
     </test>

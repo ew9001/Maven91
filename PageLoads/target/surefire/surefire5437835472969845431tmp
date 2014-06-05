@@ -1,6 +1,0 @@
-#surefire
-#Fri May 30 11:06:09 EDT 2014
-groups=Create,-Dparameters\=firefox
-user.dir=/Users/agolubev1/Desktop/Maven91/PageLoads
-localRepository=/Users/agolubev1/.m2/repository
-basedir=/Users/agolubev1/Desktop/Maven91/PageLoads
