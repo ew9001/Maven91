@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
  
 <suite name="IE9 Contact Form" verbose="1">
-    <parameter name="param" value="IE9 Contact Form"/>
+    <parameter name="browser" value="ie9"/>
     <test name="Contact Form">
     
         <classes>
