@@ -122,11 +122,9 @@
 <configuration> 
 <suiteXmlFiles> 
 
-<suiteXmlFile>chrome.xml</suiteXmlFile>
-<suiteXmlFile>ie9.xml</suiteXmlFile>
-<suiteXmlFile>chrome.xml</suiteXmlFile>
-<suiteXmlFile>firefox.xml</suiteXmlFile>
-<suiteXmlFile>tablet.xml</suiteXmlFile>
+
+<suiteXmlFile>testng.xml</suiteXmlFile>
+
 </suiteXmlFiles> 
 </configuration> 
 </plugin> 
