@@ -64,6 +64,10 @@ public class CreateAccount {
 			  driver=browserIpad();
 			}
 		  
+		  else if (browser.equals("safari")) {
+			  driver=browserSafari();
+			}
+		  
 		  else if (browser.equals("Android")) {
 			  driver=browserAndroid();
 			}
