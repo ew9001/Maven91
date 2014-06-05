@@ -122,10 +122,13 @@
 <configuration> 
 <suiteXmlFiles> 
 <suiteXmlFile>testng.xml</suiteXmlFile> 
+<<<<<<< HEAD
 <suiteXmlFile>tablet.xml</suiteXmlFile> 
 <suiteXmlFile>ie9.xml</suiteXmlFile> 
 <suiteXmlFile>firefox.xml</suiteXmlFile>
 <suiteXmlFile>chrome.xml</suiteXmlFile>
+=======
+>>>>>>> FETCH_HEAD
 </suiteXmlFiles> 
 </configuration> 
 </plugin> 
