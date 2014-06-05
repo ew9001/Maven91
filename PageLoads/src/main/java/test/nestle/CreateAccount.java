@@ -17,6 +17,7 @@ import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
@@ -26,6 +27,7 @@ import org.testng.annotations.Test;
 
 public class CreateAccount   
 {  
+  public String safe = "http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads";	
   private static WebDriver driver;
   public static final String USERNAME = "earlwillis1";
   public String browser_type;
@@ -108,11 +110,17 @@ public class CreateAccount
        	
        	
        	
-       	takeScreen();
-   		  driver.quit();
-   		if (stop==1) {
-            return;
-        }
+      
+        WebDriver augmentedDriver = new Augmenter().augment(driver);
+	    System.out.println("Take a screenshot for  " + browser);
+	    File screenshot = ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
+	    String myTitle = driver.getTitle();
+	    String name= ""+ browser + "/" + timeStamp + "_" + "Successful-Contact-Submit " +browser+ "-1.png";
+	    System.out.println("this is " +name);
+	    FileUtils.copyFile(screenshot, new File(name));
+    	//Reporter.log("<a href='"+ local+"/" + name + "'> <img src='"+ local+"/"+ name + " ' height='100' width='100'/>" + "<a href='"+ urlname+"'>'"+ urlname+"'</a> " + " </a>");
+    	Reporter.log("<a href='"+ safe+"/" + name + "'> <img src='"+ safe+"/"+ name + " ' height='100' width='100'/>" + "<a href='"+  myTitle+"'>'"+  myTitle+"'</a> " + " </a>");
+    	 driver.quit();   
   }
   @BeforeTest
   public void beforeTest()
@@ -238,15 +246,6 @@ public class CreateAccount
     
  }
  
- public void takeScreen() throws IOException
- {
-	 WebDriver augmentedDriver = new Augmenter().augment(driver);
-	    System.out.println("Take a screenshot for  " +driver);
-	    File screenshot = ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
-	    String myTitle = driver.getTitle();
-	     System.out.println("Looking at the page " +myTitle);
-	    FileUtils.copyFile(screenshot, new File(name));
  
- }
 
 }  
