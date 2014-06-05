@@ -68,14 +68,6 @@ public class CreateAccount
 	 
 		  System.out.println("Let me see which one get tested " +browser);
 
-		  
-	 
-	  System.out.println("Let me run get driver "+driver);
-      driver.get("http://stage.coffee-mate.com/Registration/Create-Account.aspx?email=" + timeStamp +"%40google.com&stt=True");
-		 
-		
-	
-	  System.out.println("Let me see which one get tested " +browser);
        System.out.println("Let me run get driver "+driver);
        driver.get("http://stage.coffee-mate.com/Registration/Create-Account.aspx?email=" + timeStamp +"%40yahoo.com&stt=True");
        //driver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_txtFirstName")).clear();
