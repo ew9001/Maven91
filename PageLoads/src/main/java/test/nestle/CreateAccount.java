@@ -112,7 +112,7 @@ public class CreateAccount
        	
       
         WebDriver augmentedDriver = new Augmenter().augment(driver);
-	    System.out.println("Take a screenshot for  " + browser);
+	    System.out.println("Take a screenshot using  " + browser);
 	    File screenshot = ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
 	    String myTitle = driver.getTitle();
 	    String name= ""+ browser + "/create_account/" + timeStamp + "_" + "Successful-Created-Account- " +browser+ "-1.png";
