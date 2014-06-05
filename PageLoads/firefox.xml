@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
  
 <suite name="Firefox Contact Form" verbose="1">
-    <parameter name="param" value="firefox"/>
+    <parameter name="browser" value="firefox"/>
     <test name="Contact Form">
     
         <classes>

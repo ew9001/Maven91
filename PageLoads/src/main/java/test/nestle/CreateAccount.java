@@ -32,7 +32,7 @@ public class CreateAccount
 	public String browser = System.getProperty("browser");
 	static String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
   @Test(groups = "create")
-	@Parameters("browser")
+	@Parameters("param")
   public void beforeClass(String browser) throws IOException, InterruptedException
   {	   
 	  
