@@ -51,7 +51,7 @@ public class CreateAccount
 		}
 	  
 	  else if (browser.equals("ie9")) {
-		 // driver=browserIE9();
+		 driver=browserIE9();
 		}
 	  
 
@@ -99,7 +99,7 @@ public class CreateAccount
        driver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_btnRegister")).click();
    	driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
    	
-   	takeScreen();
+
    	   
    	   
    	   
