@@ -99,8 +99,7 @@ public class CreateAccount
        driver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_btnRegister")).click();
    	driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
    	
-   	   File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-   	   FileUtils.copyFile(scrFile, new File("Screenshots/" + timeStamp + "/" + "Successful-Registration-1.png"));
+   	takeScreen();
    	   
    	   
    	   
