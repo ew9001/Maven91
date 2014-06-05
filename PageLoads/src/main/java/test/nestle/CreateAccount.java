@@ -34,7 +34,7 @@ public class CreateAccount
 	public String browser = System.getProperty("browser");
 	static String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
 	 public int stop=1;
-  @Test(groups = "create")
+  @Test(groups = "newaccount")
 	@Parameters("browser")
  
   public void beforeClass(String browser) throws IOException, InterruptedException
@@ -68,7 +68,7 @@ public class CreateAccount
 	  
 	  
 	 
-	  System.out.println("Let me see which one get tested " +browser);
+	  System.out.println("I'm about to create new account in  " +browser);
 
        driver.get("http://stage.coffee-mate.com/Registration/Create-Account.aspx?email=" + timeStamp +"%40yahoo.com&stt=True");
        //driver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_txtFirstName")).clear();
