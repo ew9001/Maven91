@@ -32,7 +32,7 @@ public class CreateAccount
 	public String browser = System.getProperty("browser");
 	static String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
   @Test(groups = "create")
-	@Parameters("param")
+	@Parameters("browser")
   public void beforeClass(String browser) throws IOException, InterruptedException
   {	   
 	  
@@ -51,7 +51,7 @@ public class CreateAccount
 		}
 	  
 
-	  else if (browser.equals("iPad")) {
+	  else if (browser.equals("tablet")) {
 		  driver=browserIpad();
 		}
 	  
