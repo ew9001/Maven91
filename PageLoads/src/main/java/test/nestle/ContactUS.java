@@ -118,7 +118,7 @@ public class ContactUS {
 		    System.out.println("Take a screenshot for  " + browser);
 		    File screenshot = ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
 		    myTitle = driver.getTitle();
-		    String name= ""+ browser + "/" + timeStamp + "_" + "Successful-Contact-Submit " +browser+ "-1.png";
+		    String name= ""+ browser + "/contact_us/" + timeStamp + "_" + "Successful-Contact-Submit " +browser+ "-1.png";
 		   
 		    FileUtils.copyFile(screenshot, new File(name));
 	    	//Reporter.log("<a href='"+ local+"/" + name + "'> <img src='"+ local+"/"+ name + " ' height='100' width='100'/>" + "<a href='"+ urlname+"'>'"+ urlname+"'</a> " + " </a>");
