@@ -251,5 +251,26 @@ public class CreateAccount {
 	   
 	    
 	 }
+	 
+	 public WebDriver browserSafari() throws MalformedURLException  
+	 {  
+	  
+		
+		 String URL = "http://" + USERNAME + ":" + AUTOMATE_KEY + "@hub.browserstack.com/wd/hub";
+		 DesiredCapabilities caps = new DesiredCapabilities();
+		 caps.setCapability("browser", "Safari");
+		 caps.setCapability("browser_version", "6.0");
+		 caps.setCapability("os", "OS X");
+		 caps.setCapability("os_version", "Lion");
+		 caps.setCapability("resolution", "1024x768");
+
+		    driver = new RemoteWebDriver(new URL(URL), caps);
+	      System.out.println("Let me run Safari");
+	      driver.get("http://stage.coffee-mate.com/Registration/Create-Account.aspx?email=" + timeStamp +"%40yahoo.com&stt=True");
+	      
+	      return driver;
+	   
+	    
+	 }
 
 	}  
