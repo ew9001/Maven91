@@ -33,8 +33,10 @@ public class CreateAccount
 	public static final String AUTOMATE_KEY = "XsPyFTirN4mH8aCLMB9A";
 	public String browser = System.getProperty("browser");
 	static String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
+	 public int stop=1;
   @Test(groups = "create")
 	@Parameters("browser")
+ 
   public void beforeClass(String browser) throws IOException, InterruptedException
   {	   
 	  
@@ -103,9 +105,14 @@ public class CreateAccount
    	Thread.sleep(4000);
    		driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
        	Thread.sleep(4000);
-   		
+       	
+       	
+       	
        	takeScreen();
    		  driver.quit();
+   		if (stop==1) {
+            return;
+        }
   }
   @BeforeTest
   public void beforeTest()
@@ -164,7 +171,6 @@ public class CreateAccount
 	 caps.setCapability("resolution", "1024x768");
 
 	    driver = new RemoteWebDriver(new URL(URL), caps);
-      System.out.println("Let me run Chrome");
       driver.get("http://stage.coffee-mate.com/Registration/Create-Account.aspx?email=" + timeStamp +"%40yahoo.com&stt=True");
       
       return driver;

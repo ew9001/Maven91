@@ -1,13 +1,14 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+
  
-<suite name="IE9 Contact Form" verbose="1">
-    <parameter name="param" value="chrome"/>
+<suite name="Tablet Contact Form" verbose="1">
+    <parameter name="browser" value="chrome"/>
     <test name="Contact Form">
     
         <classes>
-            <class name="test.nestle.CreateAccount"/>
+            <class name="test.nestle.ContactUS"/>
         </classes>
  
         <groups>
@@ -16,5 +17,4 @@
             </run>
         </groups>
     </test>
-   
 </suite>

@@ -8,7 +8,7 @@
     <test name="Contact Form">
     
         <classes>
-            <class name="test.nestle.CreateAccount"/>
+            <class name="test.nestle.ContactUS"/>
         </classes>
  
         <groups>
