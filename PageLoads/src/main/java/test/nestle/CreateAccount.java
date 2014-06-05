@@ -46,20 +46,20 @@ public class CreateAccount
 		}
 	  
 
-	  else if (browser.equals("chrome")) {
+	 if (browser.equals("chrome")) {
 		  driver=browserChrome();
 		}
 	  
-	  else if (browser.equals("ie9")) {
+	 if (browser.equals("ie9")) {
 		 driver=browserIE9();
 		}
 	  
 
-	  else if (browser.equals("iPad")) {
+	if (browser.equals("iPad")) {
 		  driver=browserIpad();
 		}
 	  
-	  else if (browser.equals("Android")) {
+	  if (browser.equals("Android")) {
 		  driver=browserAndroid();
 		}
 	  
@@ -71,7 +71,7 @@ public class CreateAccount
 		  
 	 
 	  System.out.println("Let me run get driver "+driver);
-	  
+      driver.get("http://stage.coffee-mate.com/Registration/Create-Account.aspx?email=" + timeStamp +"%40google.com&stt=True");
 		 
 		
 	
@@ -234,8 +234,7 @@ public class CreateAccount
 	 caps.setCapability("resolution", "1024x768");
 
 	    driver = new RemoteWebDriver(new URL(URL), caps);
-      System.out.println("Let me run IE9");
-      driver.get("http://stage.coffee-mate.com/Registration/Create-Account.aspx?email=" + timeStamp +"%40google.com&stt=True");
+    
       
       return driver;
    
