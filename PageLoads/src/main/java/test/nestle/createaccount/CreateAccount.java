@@ -1,5 +1,4 @@
-package test.nestle;
-
+package test.nestle.createaccount;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,6 +24,12 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.Augmenter;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class CreateAccount {
 
@@ -34,7 +39,7 @@ public class CreateAccount {
 	  public String baseUrl = "http://stage.coffee-mate.com";
 		public static final String AUTOMATE_KEY = "XsPyFTirN4mH8aCLMB9A";
 		static String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
-		
+		public  String name="Screenshots/" + timeStamp + "_" + "Successful-Created-Account.png";
 		String local=(new java.io.File("").getAbsolutePath());
 		String data="" + local + "/" + "infoqa.xls";	
 		String myTitle;
@@ -107,9 +112,8 @@ public class CreateAccount {
 		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_btnRegister")).click();
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			
-			   File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-			   FileUtils.copyFile(scrFile, new File("Screenshots/" + timeStamp + "/" + "Successful-Registration-1.png"));
-			   
+
+			  takeScreen();
 			   
 			   
 			 new Select(driver.findElement(By.id("ctl00_ContentPlaceHolder1_lvQuestions_ctrl0_ucSurveyQuestion_ddlAnswers"))).selectByVisibleText("0");
@@ -121,15 +125,13 @@ public class CreateAccount {
 		    	Thread.sleep(10000);
 		    	
 		  
-		    String name= ""+ browser + "/" + timeStamp + "_" + "Successful-Created-Account " +browser+ "-1.png";
+		 
 		   
-		    WebDriver augmentedDriver = new Augmenter().augment(driver);
-		    System.out.println("Take a screenshot for  " +driver);
-		    File screenshot = ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
+	       takeScreen();
 		    
-		    myTitle = driver.getTitle();
-		     System.out.println("Looking at the page " +myTitle);
-		    FileUtils.copyFile(screenshot, new File(name));
+		     
+		    
+		  
 	    	//Reporter.log("<a href='"+ local+"/" + name + "'> <img src='"+ local+"/"+ name + " ' height='100' width='100'/>" + "<a href='"+ urlname+"'>'"+ urlname+"'</a> " + " </a>");
 	    	//Reporter.log("<a href='"+ safe+"/" + name + "'> <img src='"+ safe+"/"+ name + " ' height='100' width='100'/>" + "<a href='"+  myTitle+"'>'"+  myTitle+"'</a> " + " </a>");
 	    	 driver.quit();   
@@ -211,10 +213,9 @@ public class CreateAccount {
 		 caps.setCapability("os", "Windows");
 		 caps.setCapability("os_version", "7");
 		 caps.setCapability("resolution", "1024x768");
-
+		 caps.setCapability("browserstack.debug", "true");
 		    driver = new RemoteWebDriver(new URL(URL), caps);
-	      System.out.println("Let me run IE9");
-	      driver.get("http://stage.coffee-mate.com/Registration/Create-Account.aspx?email=" + timeStamp +"%40yahoo.com&stt=True");
+	      
 	      
 	      return driver;
 	   
@@ -273,12 +274,26 @@ public class CreateAccount {
 		 caps.setCapability("browserstack.debug", "true");
 
 		    driver = new RemoteWebDriver(new URL(URL), caps);
-	      System.out.println("Let me run Safari");
-	      driver.get("http://stage.coffee-mate.com/Registration/Create-Account.aspx?email=" + timeStamp +"%40yahoo.com&stt=True");
+	     
 	      
 	      return driver;
 	   
 	    
+	 }
+	 
+	 public WebDriver takeScreen() throws IOException
+	 {
+		 WebDriver augmentedDriver = new Augmenter().augment(driver);
+	     System.out.println("Let me take a sceenshot");
+		  
+		    	
+		    File screenshot = ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
+		    myTitle = driver.getTitle();
+		    String name="Screenshot/" + timeStamp + "_" + "Successful-Created-Account.png";
+		   
+		    FileUtils.copyFile(screenshot, new File(name));
+		    
+		    return driver;
 	 }
 
 	}  
