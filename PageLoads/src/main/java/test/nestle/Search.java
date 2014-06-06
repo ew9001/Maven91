@@ -75,7 +75,7 @@ public class Search {
 		 System.out.println("This script will test the Seach Functionality. Asssertions are made on the Search Results for the first 5 pages of results");
 
 		    driver.get(baseUrl + "/");
-			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
 			   driver.findElement(By.id("ctl00_ucThemeSearchMain_txtSiteSearch")).clear();
 			    driver.findElement(By.id("ctl00_ucThemeSearchMain_txtSiteSearch")).sendKeys("coffee");
