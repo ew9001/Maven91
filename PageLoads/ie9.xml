@@ -42,4 +42,16 @@
     <class name="existinguser.User"/> 
   </classes> 
 </test>
+
+     <test name="Savings Calculator"> 
+  <groups> 
+    <run> 
+      <include name="calculate"/> 
+    </run> 
+  </groups> 
+  <classes> 
+    <class name="test.nestle.SavingsCalculator"/> 
+  </classes> 
+</test>
+
 </suite>

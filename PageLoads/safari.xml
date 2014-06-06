@@ -1,44 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-
-
  
-<suite name="Tablet Contact Form" verbose="1">
-    <parameter name="browser"  preserve-order="false" value="safari"/>
-    <test name="Contact Form">
+<suite name="Android Contact Form"  verbose="1">
+    <parameter name="browser" value="safari"/>
+ 
+  
+    <test name="Contact Form" >
+         
+  <groups> 
+    <run> 
+      <include name="create"/> 
+    </run> 
+  </groups> 
+  <classes> 
+    <class name="test.nestle.ContactUS"/> 
+  </classes> 
+</test>
     
-        <classes>
-            <class name="test.nestle.ContactUS"/>
-        </classes>
- 
-        <groups>
-            <run>
-                <include name="create"/>
-            </run>
-        </groups>
-    </test>
-    <test name="Create Account Form">
-    
-        <classes>
-            <class name="test.nestle.CreateAccount"/>
-        </classes>
- 
-        <groups>
-            <run>
-                <include name="newaccount"/>
-            </run>
-        </groups>
-    </test>
-    <test name="Forgot Password">
-    
-        <classes>
-            <class name="test.nestle.ForgotPassword"/>
-        </classes>
- 
-        <groups>
-            <run>
-                <include name="forgotpassword"/>
-            </run>
-        </groups>
-    </test>
+     
+     <test name="Forgot Password"> 
+  <groups> 
+    <run> 
+      <include name="user"/> 
+    </run> 
+  </groups> 
+  <classes> 
+    <class name="password.ForgotPassword"/> 
+  </classes> 
+</test>
+     
+     
+     
+     
+    <test name="Existing User"> 
+  <groups> 
+    <run> 
+      <include name="user"/> 
+    </run> 
+  </groups> 
+  <classes> 
+    <class name="existinguser.User"/> 
+  </classes> 
+</test>
 </suite>
