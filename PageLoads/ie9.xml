@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-
-
  
-<suite name="Tablet Contact Form" verbose="1">
-    <parameter name="browser" value="ie9"/>
+<suite name="Android Contact Form" verbose="1">
+    <parameter name="param"  preserve-order="false" value="ie9"/>
     <test name="Contact Form">
     
         <classes>
@@ -17,22 +15,10 @@
             </run>
         </groups>
     </test>
-   <test name="Create Account Form">
-    
+     <test name="Forgot Password">
+    	<parameter name = "browser" value = "ie9"/>
         <classes>
-            <class name="test.nestle.CreateAccount"/>
-        </classes>
- 
-        <groups>
-            <run>
-                <include name="newaccount"/>
-            </run>
-        </groups>
-    </test>
-    <test name="Forgot Password">
-    
-        <classes>
-            <class name="test.nestle.ForgotPassword"/>
+            <class name="password.ForgotPassword"/>
         </classes>
  
         <groups>

@@ -4,7 +4,7 @@
 
  
 <suite name="Tablet Contact Form" verbose="1">
-    <parameter name="browser" value="chrome"/>
+    <parameter name="browser"  preserve-order="false" value="chrome"/>
     <test name="Contact Form">
     
         <classes>

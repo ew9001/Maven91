@@ -1,4 +1,4 @@
-package test.nestle;
+package password;
 
 import java.io.File;
 import java.io.IOException;
@@ -80,11 +80,11 @@ public class ForgotPassword {
 		  
 		
 		 
-			  System.out.println("Let me see which one get tested " +browser);
+			  System.out.println("Let me retrive my password using  " +browser);
 
 			  
 		 
-		  System.out.println("Let me run get driver "+driver);
+		  System.out.println("I'm running driver "+driver);
 		  
 		String name=""+ browser+"/" + timeStamp + "_" + "Successful-Forget-1.png";
 		System.out.println("This script will request to Reset Password after user has forgotten password... Asssertions are made on the success lightbox");

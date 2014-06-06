@@ -3,8 +3,8 @@
 
 
  
-<suite name="Firefox Contact Form" verbose="1">
-    <parameter name="browser" value="firefox"/>
+<suite name="Firefox Contact Form">
+    <parameter name="browser"  preserve-order="false" value="firefox"/>
     <test name="Contact Form">
     
         <classes>
