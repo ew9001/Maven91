@@ -20,7 +20,7 @@
     <test name="Create Account Form">
     
         <classes>
-            <class name="test.nestle.CreateAccount"/>
+          <class name="test.nestle.createaccount.CreateAccount"/>
         </classes>
  
         <groups>
