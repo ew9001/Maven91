@@ -16,6 +16,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
@@ -24,8 +25,14 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.Augmenter;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
-public class ContactUS {
+public class ForgotPassword {
 
 	 private static WebDriver driver;
 	  public static final String USERNAME = "earlwillis1";
@@ -38,7 +45,7 @@ public class ContactUS {
 		String data="" + local + "/" + "infoqa.xls";	
 		String myTitle;
 	    String safe = "http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads";
-	  @Test(groups = {"create"})
+	  @Test(groups = {"forgotpassword"})
 		@Parameters({"browser"})
 	  @BeforeClass
 	  public void beforeClass(String browser) throws IOException, InterruptedException
@@ -50,24 +57,28 @@ public class ContactUS {
 			}
 		  
 
-		  else if (browser.equals("chrome")) {
+		 if (browser.equals("chrome")) {
 			  driver=browserChrome();
 			}
 		  
-		  else if (browser.equals("ie9")) {
+		 if (browser.equals("ie9")) {
 			  driver=browserIE9();
 			}
 		  
 
-		  else if (browser.equals("iPad")) {
+		if (browser.equals("iPad")) {
 			  driver=browserIpad();
 			}
 		  
-		  else if (browser.equals("Android")) {
+		  if (browser.equals("safari")) {
+			  driver=browserSafari();
+			}
+		  
+		 if (browser.equals("Android")) {
 			  driver=browserAndroid();
 			}
 		  
-		  String name=""+ browser+"/" + timeStamp + "_" + "Successful-Completed-ContactUS.png";
+		
 		 
 			  System.out.println("Let me see which one get tested " +browser);
 
@@ -75,47 +86,31 @@ public class ContactUS {
 		 
 		  System.out.println("Let me run get driver "+driver);
 		  
-			 
-			
-		  driver.get(baseUrl + "/Contact-Us.aspx");
-		    new Select(driver.findElement(By.id("ctl00_ContentPlaceHolder1_ddlReason"))).selectByVisibleText("General Inquiry or Question");
-		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtFirstName")).clear();
-		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtFirstName")).sendKeys("PubmoTestFirst");
-		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtLastName")).clear();
-		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtLastName")).sendKeys("PubmoTestLast");
-		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtEmail")).clear();
-		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtEmail")).sendKeys("xxxxx@yahoo.com");
-		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtAddress1")).clear();
-		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtAddress1")).sendKeys("75 W. 10th Street");
-		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtAddress2")).clear();
-		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtAddress2")).sendKeys("Apt. 3B");
-		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtCity")).clear();
-		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtCity")).sendKeys("New York");
-		    new Select(driver.findElement(By.id("ctl00_ContentPlaceHolder1_ddlStates"))).selectByVisibleText("New York");
-		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtZip")).clear();
-		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtZip")).sendKeys("10003");
-		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtHomePhone1")).clear();
-		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtHomePhone1")).sendKeys("212");
-		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtHomePhone2")).clear();
-		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtHomePhone2")).sendKeys("222");
-		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtHomePhone3")).clear();
-		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtHomePhone3")).sendKeys("2222");
-		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtWorkPhone1")).clear();
-		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtWorkPhone1")).sendKeys("212");
-		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtWorkPhone2")).clear();
-		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtWorkPhone2")).sendKeys("456");
-		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtWorkPhone3")).clear();
-		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtWorkPhone3")).sendKeys("7890");
-		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtComments")).clear();
-		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtComments")).sendKeys("Please do not contact this test account.");
-		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_imgbtnSubmit")).click();
-		    for (int second = 0;; second++) {
-		    	
-		    	try { if (driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Thanks for taking the time to get in touch with us[\\s\\S]*$")) break; } catch (Exception e) {}
-		    	Thread.sleep(1000);
-		    }
-		    takeScreen(name);
-	    	 driver.quit();   
+		String name=""+ browser+"/" + timeStamp + "_" + "Successful-Forget-1.png";
+		System.out.println("This script will request to Reset Password after user has forgotten password... Asssertions are made on the success lightbox");
+
+	    driver.get(baseUrl + "/");
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	    	driver.findElement(By.linkText("Sign in")).click();
+	    	driver.findElement(By.linkText("Forgot your password?")).click();
+		    driver.findElement(By.id("ctl00_ucForgotPasswordMain_txtEmail")).clear();
+		    driver.findElement(By.id("ctl00_ucForgotPasswordMain_txtEmail")).sendKeys("earl.willis@publicismodem.com");
+		    driver.findElement(By.id("ctl00_ucForgotPasswordMain_btnForgotPassword")).click();
+	    // Warning: waitForTextPresent may require manual changes
+	    for (int second = 0;; second++) {
+	    	
+	    	try { if (driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Your request has been submitted and in a short while we'll email you a link to reset your password. Please check your inbox soon\\.[\\s\\S]*$")) break; } catch (Exception e) {}
+	    	Thread.sleep(1000);
+	    }
+
+		    	takeScreen(name);
+			      	 
+		    
+		     	   
+		  
+	    	//Reporter.log("<a href='"+ local+"/" + name + "'> <img src='"+ local+"/"+ name + " ' height='100' width='100'/>" + "<a href='"+ urlname+"'>'"+ urlname+"'</a> " + " </a>");
+	    	//Reporter.log("<a href='"+ safe+"/" + name + "'> <img src='"+ safe+"/"+ name + " ' height='100' width='100'/>" + "<a href='"+  myTitle+"'>'"+  myTitle+"'</a> " + " </a>");
+	    	  
 		
 	  }
 	  @BeforeTest
@@ -173,7 +168,7 @@ public class ContactUS {
 		 caps.setCapability("os", "Windows");
 		 caps.setCapability("os_version", "7");
 		 caps.setCapability("resolution", "1024x768");
-
+		 caps.setCapability("browserstack.debug", "true");
 		    driver = new RemoteWebDriver(new URL(URL), caps);
 	      System.out.println("Let me run Chrome");
 	      driver.get("http://stage.coffee-mate.com/Registration/Create-Account.aspx?email=" + timeStamp +"%40yahoo.com&stt=True");
@@ -194,10 +189,9 @@ public class ContactUS {
 		 caps.setCapability("os", "Windows");
 		 caps.setCapability("os_version", "7");
 		 caps.setCapability("resolution", "1024x768");
-
+		 caps.setCapability("browserstack.debug", "true");
 		    driver = new RemoteWebDriver(new URL(URL), caps);
-	      System.out.println("Let me run IE9");
-	      driver.get("http://stage.coffee-mate.com/Registration/Create-Account.aspx?email=" + timeStamp +"%40yahoo.com&stt=True");
+	      
 	      
 	      return driver;
 	   
@@ -241,6 +235,28 @@ public class ContactUS {
 	   
 	    
 	 }
+	 
+	 public WebDriver browserSafari() throws MalformedURLException  
+	 {  
+	  
+		
+		 String URL = "http://" + USERNAME + ":" + AUTOMATE_KEY + "@hub.browserstack.com/wd/hub";
+		 DesiredCapabilities caps = new DesiredCapabilities();
+		 caps.setCapability("browser", "Safari");
+		 caps.setCapability("browser_version", "6.0");
+		 caps.setCapability("os", "OS X");
+		 caps.setCapability("os_version", "Lion");
+		 caps.setCapability("resolution", "1024x768");
+		 caps.setCapability("browserstack.debug", "true");
+
+		    driver = new RemoteWebDriver(new URL(URL), caps);
+	     
+	      
+	      return driver;
+	   
+	    
+	 }
+	 
 	 public WebDriver takeScreen(String name) throws IOException
 	 {
 		 WebDriver augmentedDriver = new Augmenter().augment(driver);

@@ -29,4 +29,16 @@
             </run>
         </groups>
     </test>
+    <test name="Forgot Password">
+    
+        <classes>
+            <class name="test.nestle.ForgotPassword"/>
+        </classes>
+ 
+        <groups>
+            <run>
+                <include name="forgotpassword"/>
+            </run>
+        </groups>
+    </test>
 </suite>
