@@ -16,6 +16,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
@@ -89,8 +90,7 @@ public class CreateAccount {
 		   baseUrl = "http://stage.coffee-mate.com";
 		    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		  
-			// User has to change the email address field for each run for script to run  
-			   driver.get("http://stage.coffee-mate.com/Registration/Create-Account.aspx?email=" + timeStamp +"%40yahoo.com&stt=True");
+		    driver.get("http://stage.coffee-mate.com/Registration/Create-Account.aspx?email=" + timeStamp +"%40yahoo.com&stt=True");
 		    //driver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_txtFirstName")).clear();
 		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_txtFirstName")).sendKeys("PubmoTestFirst");
 		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_txtLastName")).clear();
@@ -110,31 +110,36 @@ public class CreateAccount {
 		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_chkEmailCommunication")).click();
 		   //  driver.findElement(By.name("flavorTheme")).click();
 		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_btnRegister")).click();
-			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 			
 
-			  takeScreen(name);
-			   
-			   
+			 takeScreen(name);
+
+
+
 			 new Select(driver.findElement(By.id("ctl00_ContentPlaceHolder1_lvQuestions_ctrl0_ucSurveyQuestion_ddlAnswers"))).selectByVisibleText("0");
 			 driver.findElement(By.cssSelector("option[value=\"1E4C6A78-1980-459F-BE01-049AB4CB432C\"]")).click();
+			 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			 new Select(driver.findElement(By.id("ctl00_ContentPlaceHolder1_lvQuestions_ctrl1_ucSurveyQuestion_ddlAnswers"))).selectByVisibleText("0");
 			 driver.findElement(By.cssSelector("option[value=\"138A6025-F98D-4A64-B36C-4A08DAB4F075\"]")).click();
+			 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			 driver.findElement(By.id("ctl00_ContentPlaceHolder1_btnSubmit")).click();
-				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		    	Thread.sleep(10000);
-		    	
-		  
-		 
-		   
-	       takeScreen(name);
+			 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		    	Thread.sleep(4000);
+
+		    	takeScreen(name);
+			   
+
+
+			    	 
 		    
 		     
 		    
 		  
 	    	//Reporter.log("<a href='"+ local+"/" + name + "'> <img src='"+ local+"/"+ name + " ' height='100' width='100'/>" + "<a href='"+ urlname+"'>'"+ urlname+"'</a> " + " </a>");
 	    	//Reporter.log("<a href='"+ safe+"/" + name + "'> <img src='"+ safe+"/"+ name + " ' height='100' width='100'/>" + "<a href='"+  myTitle+"'>'"+  myTitle+"'</a> " + " </a>");
-	    	 driver.quit();   
+	    	  
 		
 	  }
 	  @BeforeTest
@@ -192,7 +197,7 @@ public class CreateAccount {
 		 caps.setCapability("os", "Windows");
 		 caps.setCapability("os_version", "7");
 		 caps.setCapability("resolution", "1024x768");
-
+		 caps.setCapability("browserstack.debug", "true");
 		    driver = new RemoteWebDriver(new URL(URL), caps);
 	      System.out.println("Let me run Chrome");
 	      driver.get("http://stage.coffee-mate.com/Registration/Create-Account.aspx?email=" + timeStamp +"%40yahoo.com&stt=True");
@@ -284,7 +289,7 @@ public class CreateAccount {
 	 public WebDriver takeScreen(String name) throws IOException
 	 {
 		 WebDriver augmentedDriver = new Augmenter().augment(driver);
-	     System.out.println("Let me take a sceenshot");
+	     System.out.println("Let me take a sceenshot" +name);
 		  
 		    	
 		    File screenshot = ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
