@@ -98,7 +98,9 @@ public class User {
 		    }
 		    System.out.println("I signed in then ");
 		    takeScreen(name);
-
+		    
+		    
+		    System.out.println("Profile ");
 		    // Warning: assertTextPresent may require manual changes
 		  	Assert.assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Thank you for logging in\\.[\\s\\S]*$"));
 		    driver.findElement(By.id("ctl00_ucJoinNowMain_Img2")).click();
@@ -111,7 +113,8 @@ public class User {
 		    }
 		 
 		    // Warning: assertTextPresent may require manual changes
-		 	
+
+		    System.out.println("Sign In 1 ");
 		    Assert.assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*My Profile[\\s\\S]*$"));
 		    driver.findElement(By.id("ctl00_ucProfilePanelMain_btnLogout")).click();
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
