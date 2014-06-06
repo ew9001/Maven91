@@ -1,30 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
  
-<suite name="Android Contact Form" verbose="1">
-    <parameter name="param"  preserve-order="false" value="ie9"/>
-    <test name="Contact Form">
+<suite name="Android Contact Form"  verbose="1">
+    <parameter name="browser" value="ie9"/>
+ 
+  
+    <test name="Contact Form" >
+         
+  <groups> 
+    <run> 
+      <include name="create"/> 
+    </run> 
+  </groups> 
+  <classes> 
+    <class name="test.nestle.ContactUS"/> 
+  </classes> 
+</test>
     
-        <classes>
-            <class name="test.nestle.ContactUS"/>
-        </classes>
- 
-        <groups>
-            <run>
-                <include name="create"/>
-            </run>
-        </groups>
-    </test>
-     <test name="Forgot Password">
-    	<parameter name = "browser" value = "ie9"/>
-        <classes>
-            <class name="password.ForgotPassword"/>
-        </classes>
- 
-        <groups>
-            <run>
-                <include name="forgotpassword"/>
-            </run>
-        </groups>
-    </test>
+     
+     <test name="Forgot Password"> 
+  <groups> 
+    <run> 
+      <include name="user"/> 
+    </run> 
+  </groups> 
+  <classes> 
+    <class name="password.ForgotPassword"/> 
+  </classes> 
+</test>
+     
+     
+     
+     
+    <test name="Existing User"> 
+  <groups> 
+    <run> 
+      <include name="user"/> 
+    </run> 
+  </groups> 
+  <classes> 
+    <class name="existinguser.User"/> 
+  </classes> 
+</test>
 </suite>
