@@ -7,7 +7,8 @@ import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
-
+import org.testng.annotations.Test;
+import static org.testng.Assert.*;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
@@ -92,7 +93,7 @@ public class User {
 		    driver.findElement(By.id("ctl00_ucJoinNowMain_btnSignIn")).click();
 		    // Warning: waitForTextPresent may require manual changes
 		    for (int second = 0;; second++) {
-		    	if (second >= 60)
+		    	 if (second >= 60) fail("timeout");
 		    	try { if (driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Thank you for logging in\\.[\\s\\S]*$")) break; } catch (Exception e) {}
 		    	Thread.sleep(1000);
 		    }
@@ -106,7 +107,7 @@ public class User {
 		    driver.findElement(By.id("ctl00_ucJoinNowMain_Img2")).click();
 		    // Warning: waitForTextPresent may require manual changes
 		    for (int second = 0;; second++) {
-		    	if (second >= 60)
+		    	 if (second >= 60) fail("timeout");
 		    	try { if (driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*My Profile[\\s\\S]*$")) break; } catch (Exception e) {}
 		    	Thread.sleep(2000);
 		    	
@@ -120,7 +121,7 @@ public class User {
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		    // Warning: waitForTextPresent may require manual changes
 		    for (int second = 0;; second++) {
-		    	if (second >= 60)
+		    	 if (second >= 60) fail("timeout");
 		    	try { if (driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Already registered[\\s\\S] Sign in[\\s\\S]*$")) break; } catch (Exception e) {}
 
 		    }
