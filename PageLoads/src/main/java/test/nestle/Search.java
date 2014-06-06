@@ -73,21 +73,22 @@ public class Search {
 		
 		 String name=""+ browser+"/Search/" + timeStamp + "_" + "Search-1.png";
 		 System.out.println("This script will test the Seach Functionality. Asssertions are made on the Search Results for the first 5 pages of results");
-		 System.out.println("Phase 1");
+		 System.out.println("Phase 12");
 		    driver.get(baseUrl + "/");
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		    driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
 			   driver.findElement(By.id("ctl00_ucThemeSearchMain_txtSiteSearch")).clear();
-				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+				driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 			    driver.findElement(By.id("ctl00_ucThemeSearchMain_txtSiteSearch")).sendKeys("coffee");
-				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			    driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 			    driver.findElement(By.id("ctl00_ucThemeSearchMain_btnSiteSearch")).click();
-				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			    driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 			    for (int second = 0;; second++) {
 			    	if (second >= 60) fail("timeout");
 			    	try { if ("Page 1 of 148".equals(driver.findElement(By.cssSelector("div.restop > p")).getText())) break; } catch (Exception e) {}
 			    	Thread.sleep(1000);
 			    }
+			    driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 			    System.out.println("Phase 11");
 			    Assert.assertEquals("Page 1 of 148", driver.findElement(By.cssSelector("div.restop > p")).getText());
 			    driver.findElement(By.linkText("Next >>")).click();

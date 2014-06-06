@@ -64,15 +64,6 @@
     <class name="test.nestle.SubmitRecipe"/> 
   </classes> 
 </test>
-<test name="Search"> 
-  <groups> 
-    <run> 
-      <include name="search"/> 
-    </run> 
-  </groups> 
-  <classes> 
-    <class name="test.nestle.Search"/> 
-  </classes> 
-</test>
+
 
 </suite>
