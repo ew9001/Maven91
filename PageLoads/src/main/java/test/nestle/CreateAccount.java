@@ -1,4 +1,4 @@
-package test.nestle.createaccount;
+package test.nestle;
 
 import java.io.File;
 import java.io.IOException;
@@ -39,7 +39,7 @@ public class CreateAccount {
 	  public String baseUrl = "http://stage.coffee-mate.com";
 		public static final String AUTOMATE_KEY = "XsPyFTirN4mH8aCLMB9A";
 		static String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
-		public  String name="Screenshots/" + timeStamp + "_" + "Successful-Created-Account.png";
+		
 		String local=(new java.io.File("").getAbsolutePath());
 		String data="" + local + "/" + "infoqa.xls";	
 		String myTitle;
@@ -85,7 +85,7 @@ public class CreateAccount {
 		 
 		  System.out.println("Let me run get driver "+driver);
 		  
-			 
+		String name=""+ browser+"/" + timeStamp + "_" + "Successful-Created-Account.png";
 		   baseUrl = "http://stage.coffee-mate.com";
 		    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		  
@@ -113,7 +113,7 @@ public class CreateAccount {
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			
 
-			  takeScreen();
+			  takeScreen(name);
 			   
 			   
 			 new Select(driver.findElement(By.id("ctl00_ContentPlaceHolder1_lvQuestions_ctrl0_ucSurveyQuestion_ddlAnswers"))).selectByVisibleText("0");
@@ -127,7 +127,7 @@ public class CreateAccount {
 		  
 		 
 		   
-	       takeScreen();
+	       takeScreen(name);
 		    
 		     
 		    
@@ -281,7 +281,7 @@ public class CreateAccount {
 	    
 	 }
 	 
-	 public WebDriver takeScreen() throws IOException
+	 public WebDriver takeScreen(String name) throws IOException
 	 {
 		 WebDriver augmentedDriver = new Augmenter().augment(driver);
 	     System.out.println("Let me take a sceenshot");
@@ -289,7 +289,6 @@ public class CreateAccount {
 		    	
 		    File screenshot = ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
 		    myTitle = driver.getTitle();
-		    String name="Screenshot/" + timeStamp + "_" + "Successful-Created-Account.png";
 		   
 		    FileUtils.copyFile(screenshot, new File(name));
 		    

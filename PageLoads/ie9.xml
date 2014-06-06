@@ -17,10 +17,10 @@
             </run>
         </groups>
     </test>
-    <test name="Create Account Form">
+   <test name="Create Account Form">
     
         <classes>
-            <class name="test.nestle.createaccount.CreateAccount"/>
+            <class name="test.nestle.CreateAccount"/>
         </classes>
  
         <groups>
