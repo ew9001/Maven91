@@ -86,7 +86,7 @@ public class CreateAccount {
 		 
 		  System.out.println("Let me run get driver "+driver);
 		  
-		String name=""+ browser+"/" + timeStamp + "_" + "Successful-Created-Account.png";
+		String name=""+ browser+"/CreateAccount/" + timeStamp + "_" + "Successful-Created-Account.png";
 		   baseUrl = "http://stage.coffee-mate.com";
 		    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		  

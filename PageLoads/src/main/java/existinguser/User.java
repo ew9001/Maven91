@@ -79,7 +79,7 @@ public class User {
 			}
 		  
 		
-		 String name=""+ browser+"/" + timeStamp + "_" + "Successful-Logout-1.png";
+		 String name=""+ browser+"/ExistingUser/" + timeStamp + "_" + "Successful-Logout-1.png";
 		 System.out.println("This script will log an existing user in...and then log the user out. Asssertions are made on the Welcome Page and the Home Page");
 
 		    driver.get(baseUrl + "/");

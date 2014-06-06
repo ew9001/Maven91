@@ -67,7 +67,7 @@ public class ContactUS {
 			  driver=browserAndroid();
 			}
 		  
-		  String name=""+ browser+"/" + timeStamp + "_" + "Successful-Completed-ContactUS.png";
+		  String name=""+ browser+"/ContactUs/" + timeStamp + "_" + "Successful-Completed-ContactUS.png";
 		 
 			  System.out.println("Let me see which one get tested " +browser);
 

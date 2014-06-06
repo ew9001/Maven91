@@ -82,7 +82,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 				}
 			  
 			
-			 String name=""+ browser+"/" + timeStamp + "_" + "Savings-Calculator-1.png";
+			 String name=""+ browser+"/SavingsCalculator/" + timeStamp + "_" + "Savings-Calculator-1.png";
 			 System.out.println("This script will navigate to the Saving Calculator Page and verify the Search is pulling up results for: 5 cups, Regular - $1.50");
 
 			    driver.get(baseUrl + "/My-Cafe/Default.aspx");

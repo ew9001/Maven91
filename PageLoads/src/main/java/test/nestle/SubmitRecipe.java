@@ -1,4 +1,6 @@
-package password;
+package test.nestle;
+
+import static org.testng.Assert.fail;
 
 import java.io.File;
 import java.io.IOException;
@@ -16,25 +18,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Reporter;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterTest;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.Augmenter;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 
-public class ForgotPassword {
+public class SubmitRecipe {
 
-	 private static WebDriver driver;
+	private static WebDriver driver;
 	  public static final String USERNAME = "earlwillis1";
 	  public String browser_type;
 	  public String baseUrl = "http://stage.coffee-mate.com";
@@ -45,7 +37,7 @@ public class ForgotPassword {
 		String data="" + local + "/" + "infoqa.xls";	
 		String myTitle;
 	    String safe = "http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads";
-	  @Test(groups = {"forgotpassword"})
+	  @Test(groups = {"recipe"})
 		@Parameters({"browser"})
 	  @BeforeClass
 	  public void beforeClass(String browser) throws IOException, InterruptedException
@@ -79,33 +71,64 @@ public class ForgotPassword {
 			}
 		  
 		
-		 
-			  System.out.println("Let me retrive my password using  " +browser);
+		 String name=""+ browser+"/SubmitRecipe/" + timeStamp + "_" + "Savings-Calculator-1.png";
+		 System.out.println("This script will Submit a Recipe from a user that is not logged in. Script will log the user in first");
 
-			  
-		 
-		  System.out.println("I'm running driver "+driver);
+		    driver.get(baseUrl + "/Recipes/Default.aspx");
+		  //  driver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRightNav_ucSubmitRecipe_txtTitle")).clear();
+		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRightNav_ucSubmitRecipe_txtTitle")).sendKeys("Lemon Pie");
+		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRightNav_ucSubmitRecipe_imgbtnContinue")).click();
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		    driver.findElement(By.id("ctl00_ucLoginMain_txtEmail")).click();
+
+		    driver.findElement(By.id("ctl00_ucLoginMain_txtEmail")).clear();
+			//Thread.sleep(2000);
+		    driver.findElement(By.id("ctl00_ucLoginMain_txtEmail")).sendKeys("earl.willis@publicismodem.com");
+		  //  driver.findElement(By.id("ctl00_ucLoginMain_txtPassword")).clear();
+		    driver.findElement(By.id("ctl00_ucLoginMain_txtPassword")).sendKeys("Zaq12wsx!");
+		    driver.findElement(By.id("ctl00_ucLoginMain_btnLogin")).click();
+		    driver.findElement(By.cssSelector("#ctl00_ucLoginMain_hCloseThankYou > img[alt=\"Close\"]")).click();
+		    new Select(driver.findElement(By.id("ctl00_ContentPlaceHolder1_cddlRecipeType"))).selectByVisibleText("Dessert");
+		  //  driver.findElement(By.id("ctl00_ContentPlaceHolder1_ctDescription")).clear();
+		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_ctDescription")).sendKeys("This is my recipe for Lemon Pie");
+		    new Select(driver.findElement(By.id("ctl00_ContentPlaceHolder1_cddlServings"))).selectByVisibleText("1");
+		  //  driver.findElement(By.id("ctl00_ContentPlaceHolder1_CoffeeMateIngredientControl0_txtAmount")).clear();
+		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_CoffeeMateIngredientControl0_txtAmount")).sendKeys("cup");
+		    new Select(driver.findElement(By.id("ctl00_ContentPlaceHolder1_CoffeeMateIngredientControl0_ddlProductType"))).selectByVisibleText("Liquid");
+			Thread.sleep(3000);
+		    new Select(driver.findElement(By.id("ctl00_ContentPlaceHolder1_CoffeeMateIngredientControl0_ddlFlavorType"))).selectByVisibleText("Amaretto");
+		   // driver.findElement(By.id("ctl00_ContentPlaceHolder1_btnAddCoffeeMateIngredient")).click();
+		  //  driver.findElement(By.id("ctl00_ContentPlaceHolder1_CoffeeMateIngredientControl1_txtAmount")).clear();
+		  //  driver.findElement(By.id("ctl00_ContentPlaceHolder1_CoffeeMateIngredientControl1_txtAmount")).sendKeys("Cream");
+		  //  new Select(driver.findElement(By.id("ctl00_ContentPlaceHolder1_CoffeeMateIngredientControl1_ddlProductType"))).selectByVisibleText("Powder");
+		  //  new Select(driver.findElement(By.id("ctl00_ContentPlaceHolder1_CoffeeMateIngredientControl1_ddlFlavorType"))).selectByVisibleText("Parisian Almond Crme");
+		  //  driver.findElement(By.id("ctl00_ContentPlaceHolder1_ctInstructions")).clear();
+		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_ctInstructions")).sendKeys("This is my recipe for Lemon Pie.");
+
+		  //  driver.findElement(By.id("ctl00_ContentPlaceHolder1_OtherIngredientControl0_txtAmount")).clear();
+		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_OtherIngredientControl0_txtAmount")).sendKeys("1 cup");
+		  //  driver.findElement(By.id("ctl00_ContentPlaceHolder1_OtherIngredientControl0_txtDescription")).clear();
+		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_OtherIngredientControl0_txtDescription")).sendKeys("Vanilla");
+		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_CoreImageButton")).click();
+		    for (int second = 0;; second++) {
+		    	if (second >= 60) fail("timeout");
+		    	try { if ("Thanks for sharing your recipe. We'll send it through our test kitchen to make sure we can make it just as tasty as you can, before we add it to Coffee-mate.com.".equals(driver.findElement(By.cssSelector("div.popinner.thxmsg > p")).getText())) break; } catch (Exception e) {}
+		    	Thread.sleep(1000);
+		    }
+		    takeScreen(name);
+		    Assert.assertEquals("Thanks for sharing your recipe. We'll send it through our test kitchen to make sure we can make it just as tasty as you can, before we add it to Coffee-mate.com.", driver.findElement(By.cssSelector("div.popinner.thxmsg > p")).getText());
+		    driver.findElement(By.cssSelector("img[alt=\"Close\"]")).click();
+		    driver.findElement(By.id("ctl00_ucProfilePanelMain_btnLogout")).click();
+		    driver.findElement(By.cssSelector("#ctl00_ContentPlaceHolder1_pnlRecipeSubmission > div.poptop > span.closer > a > img[alt=\"Close\"]")).click();
+		    driver.quit();
+		  }
+
+
+
+		   
 		  
-		String name=""+ browser+"/ForgotPassword/" + timeStamp + "_" + "Successful-Forget-1.png";
-		System.out.println("This script will request to Reset Password after user has forgotten password... Asssertions are made on the success lightbox");
 
-	    driver.get(baseUrl + "/");
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-	    	driver.findElement(By.linkText("Sign in")).click();
-	    	 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-	    	driver.findElement(By.linkText("Forgot your password?")).click();
-	    	 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		    driver.findElement(By.id("ctl00_ucForgotPasswordMain_txtEmail")).clear();
-		    driver.findElement(By.id("ctl00_ucForgotPasswordMain_txtEmail")).sendKeys("earl.willis@publicismodem.com");
-		    driver.findElement(By.id("ctl00_ucForgotPasswordMain_btnForgotPassword")).click();
-	    // Warning: waitForTextPresent may require manual changes
-	    for (int second = 0;; second++) {
-	    	
-	    	try { if (driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Your request has been submitted and in a short while we'll email you a link to reset your password. Please check your inbox soon\\.[\\s\\S]*$")) break; } catch (Exception e) {}
-	    	Thread.sleep(1000);
-	    }
-
-		    	takeScreen(name);
+		    	
 			      	 
 		    
 		     	   
@@ -114,27 +137,8 @@ public class ForgotPassword {
 	    	//Reporter.log("<a href='"+ safe+"/" + name + "'> <img src='"+ safe+"/"+ name + " ' height='100' width='100'/>" + "<a href='"+  myTitle+"'>'"+  myTitle+"'</a> " + " </a>");
 	    	  
 		
-	  }
-	  @BeforeTest
-	  public void beforeTest()
-	  {
-		  System.out.println("Let me run beforeTest");
-	  }  
-	  @Test
-	  public void f()
-	  {
-	       //your test code here
-		  System.out.println("I'm out here print f");
-	  }
-	 @AfterTest
-	 public void afterTest()
-	 {
-	 }
-	 @AfterClass
-	 public void afterClass()
-	 {
-	     driver.quit();
-	 }
+	  
+
 
 	 public WebDriver browserFirefox() throws MalformedURLException  
 	 {  
@@ -272,5 +276,10 @@ public class ForgotPassword {
 		    
 		    return driver;
 	 }
+	
+	  public void tearDown() throws Exception {
+	    driver.quit();
+	    
+	  }
 
 	}  

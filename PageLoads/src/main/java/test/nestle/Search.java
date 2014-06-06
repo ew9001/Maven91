@@ -1,4 +1,6 @@
-package password;
+package test.nestle;
+
+import static org.testng.Assert.fail;
 
 import java.io.File;
 import java.io.IOException;
@@ -16,25 +18,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Reporter;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterTest;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.Augmenter;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 
-public class ForgotPassword {
+public class Search {
 
-	 private static WebDriver driver;
+	private static WebDriver driver;
 	  public static final String USERNAME = "earlwillis1";
 	  public String browser_type;
 	  public String baseUrl = "http://stage.coffee-mate.com";
@@ -45,7 +37,7 @@ public class ForgotPassword {
 		String data="" + local + "/" + "infoqa.xls";	
 		String myTitle;
 	    String safe = "http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads";
-	  @Test(groups = {"forgotpassword"})
+	  @Test(groups = {"search"})
 		@Parameters({"browser"})
 	  @BeforeClass
 	  public void beforeClass(String browser) throws IOException, InterruptedException
@@ -79,33 +71,77 @@ public class ForgotPassword {
 			}
 		  
 		
-		 
-			  System.out.println("Let me retrive my password using  " +browser);
+		 String name=""+ browser+"/Search/" + timeStamp + "_" + "Search-1.png";
+		 System.out.println("This script will test the Seach Functionality. Asssertions are made on the Search Results for the first 5 pages of results");
 
-			  
-		 
-		  System.out.println("I'm running driver "+driver);
-		  
-		String name=""+ browser+"/ForgotPassword/" + timeStamp + "_" + "Successful-Forget-1.png";
-		System.out.println("This script will request to Reset Password after user has forgotten password... Asssertions are made on the success lightbox");
+		    driver.get(baseUrl + "/");
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-	    driver.get(baseUrl + "/");
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-	    	driver.findElement(By.linkText("Sign in")).click();
-	    	 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-	    	driver.findElement(By.linkText("Forgot your password?")).click();
-	    	 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		    driver.findElement(By.id("ctl00_ucForgotPasswordMain_txtEmail")).clear();
-		    driver.findElement(By.id("ctl00_ucForgotPasswordMain_txtEmail")).sendKeys("earl.willis@publicismodem.com");
-		    driver.findElement(By.id("ctl00_ucForgotPasswordMain_btnForgotPassword")).click();
-	    // Warning: waitForTextPresent may require manual changes
-	    for (int second = 0;; second++) {
-	    	
-	    	try { if (driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Your request has been submitted and in a short while we'll email you a link to reset your password. Please check your inbox soon\\.[\\s\\S]*$")) break; } catch (Exception e) {}
-	    	Thread.sleep(1000);
-	    }
+			   driver.findElement(By.id("ctl00_ucThemeSearchMain_txtSiteSearch")).clear();
+			    driver.findElement(By.id("ctl00_ucThemeSearchMain_txtSiteSearch")).sendKeys("coffee");
+			    driver.findElement(By.id("ctl00_ucThemeSearchMain_btnSiteSearch")).click();
+			    for (int second = 0;; second++) {
+			    	if (second >= 60) fail("timeout");
+			    	try { if ("Page 1 of 148".equals(driver.findElement(By.cssSelector("div.restop > p")).getText())) break; } catch (Exception e) {}
+			    	Thread.sleep(1000);
+			    }
 
-		    	takeScreen(name);
+			    Assert.assertEquals("Page 1 of 148", driver.findElement(By.cssSelector("div.restop > p")).getText());
+			    driver.findElement(By.linkText("Next >>")).click();
+			    System.out.println("First Page of Results loaded successfully");
+			    File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+			  	FileUtils.copyFile(scrFile, new File("Screenshots/" + timeStamp + "/" + ".png"));
+
+			    for (int second = 0;; second++) {
+			    	if (second >= 60) fail("timeout");
+			    	try { if ("Page 2 of 148".equals(driver.findElement(By.cssSelector("div.restop > p")).getText())) break; } catch (Exception e) {}
+			    	Thread.sleep(1000);
+			    }
+
+			    Assert.assertEquals("Page 2 of 148", driver.findElement(By.cssSelector("div.restop > p")).getText());
+			    driver.findElement(By.linkText("Next >>")).click();
+			    System.out.println("Second Page of Results loaded successfully");
+			    File scrFile1 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+			  	FileUtils.copyFile(scrFile1, new File("Screenshots/" + timeStamp + "/" + ".png"));
+			    for (int second = 0;; second++) {
+			    	if (second >= 60) fail("timeout");
+			    	try { if ("Page 3 of 148".equals(driver.findElement(By.cssSelector("div.restop > p")).getText())) break; } catch (Exception e) {}
+			    	Thread.sleep(1000);
+			    }
+
+			    Assert.assertEquals("Page 3 of 148", driver.findElement(By.cssSelector("div.restop > p")).getText());
+			    driver.findElement(By.linkText("Next >>")).click();
+			    System.out.println("Third Page of Results loaded successfully");
+			    File scrFile2 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+			  	FileUtils.copyFile(scrFile2, new File("Screenshots/" + timeStamp + "/" + ".png"));
+			    for (int second = 0;; second++) {
+			    	if (second >= 60) fail("timeout");
+			    	try { if ("Page 4 of 148".equals(driver.findElement(By.cssSelector("div.restop > p")).getText())) break; } catch (Exception e) {}
+			    	Thread.sleep(1000);
+			    }
+
+			    Assert.assertEquals("Page 4 of 148", driver.findElement(By.cssSelector("div.restop > p")).getText());
+			    driver.findElement(By.linkText("Next >>")).click();
+			    System.out.println("Fourth Page of Results loaded successfully");
+			    File scrFile3 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+			  	FileUtils.copyFile(scrFile3, new File("Screenshots/" + timeStamp + "/" + ".png"));
+			    for (int second = 0;; second++) {
+			    	if (second >= 60) fail("timeout");
+			    	try { if ("Page 5 of 148".equals(driver.findElement(By.cssSelector("div.restop > p")).getText())) break; } catch (Exception e) {}
+			    	Thread.sleep(1000);
+			    }
+
+			    Assert.assertEquals("Page 5 of 148", driver.findElement(By.cssSelector("div.restop > p")).getText());
+			    System.out.println("Fifth Page of Results loaded successfully");
+			    File scrFile5 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+			  	FileUtils.copyFile(scrFile5, new File("Screenshots/" + timeStamp + "/" + ".png"));
+
+
+		    takeScreen(name);
+		    driver.quit();
+		  }
+
+		    	
 			      	 
 		    
 		     	   
@@ -114,27 +150,8 @@ public class ForgotPassword {
 	    	//Reporter.log("<a href='"+ safe+"/" + name + "'> <img src='"+ safe+"/"+ name + " ' height='100' width='100'/>" + "<a href='"+  myTitle+"'>'"+  myTitle+"'</a> " + " </a>");
 	    	  
 		
-	  }
-	  @BeforeTest
-	  public void beforeTest()
-	  {
-		  System.out.println("Let me run beforeTest");
-	  }  
-	  @Test
-	  public void f()
-	  {
-	       //your test code here
-		  System.out.println("I'm out here print f");
-	  }
-	 @AfterTest
-	 public void afterTest()
-	 {
-	 }
-	 @AfterClass
-	 public void afterClass()
-	 {
-	     driver.quit();
-	 }
+	  
+
 
 	 public WebDriver browserFirefox() throws MalformedURLException  
 	 {  
@@ -272,5 +289,11 @@ public class ForgotPassword {
 		    
 		    return driver;
 	 }
+	
+	  public void tearDown() throws Exception {
+	    driver.quit();
+	    
+	  }
 
 	}  
+
