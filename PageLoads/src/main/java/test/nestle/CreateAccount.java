@@ -51,24 +51,24 @@ public class CreateAccount {
 			}
 		  
 
-		  else if (browser.equals("chrome")) {
+		 if (browser.equals("chrome")) {
 			  driver=browserChrome();
 			}
 		  
-		  else if (browser.equals("ie9")) {
+		 if (browser.equals("ie9")) {
 			  driver=browserIE9();
 			}
 		  
 
-		  else if (browser.equals("iPad")) {
+		if (browser.equals("iPad")) {
 			  driver=browserIpad();
 			}
 		  
-		  else if (browser.equals("safari")) {
+		  if (browser.equals("safari")) {
 			  driver=browserSafari();
 			}
 		  
-		  else if (browser.equals("Android")) {
+		 if (browser.equals("Android")) {
 			  driver=browserAndroid();
 			}
 		  
@@ -126,6 +126,7 @@ public class CreateAccount {
 		    WebDriver augmentedDriver = new Augmenter().augment(driver);
 		    System.out.println("Take a screenshot for  " +driver);
 		    File screenshot = ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
+		    
 		    myTitle = driver.getTitle();
 		     System.out.println("Looking at the page " +myTitle);
 		    FileUtils.copyFile(screenshot, new File(name));
@@ -269,6 +270,7 @@ public class CreateAccount {
 		 caps.setCapability("os", "OS X");
 		 caps.setCapability("os_version", "Lion");
 		 caps.setCapability("resolution", "1024x768");
+		 caps.setCapability("browserstack.debug", "true");
 
 		    driver = new RemoteWebDriver(new URL(URL), caps);
 	      System.out.println("Let me run Safari");
