@@ -69,7 +69,7 @@ public class Search {
 		 if (browser.equals("Android")) {
 			  driver=browserAndroid();
 			}
-		  
+		 System.out.println("Phase 1");
 		
 		 String name=""+ browser+"/Search/" + timeStamp + "_" + "Search-1.png";
 		 System.out.println("This script will test the Seach Functionality. Asssertions are made on the Search Results for the first 5 pages of results");
@@ -85,7 +85,7 @@ public class Search {
 			    	try { if ("Page 1 of 148".equals(driver.findElement(By.cssSelector("div.restop > p")).getText())) break; } catch (Exception e) {}
 			    	Thread.sleep(1000);
 			    }
-
+			    System.out.println("Phase 11");
 			    Assert.assertEquals("Page 1 of 148", driver.findElement(By.cssSelector("div.restop > p")).getText());
 			    driver.findElement(By.linkText("Next >>")).click();
 			    System.out.println("First Page of Results loaded successfully");
@@ -97,7 +97,7 @@ public class Search {
 			    	try { if ("Page 2 of 148".equals(driver.findElement(By.cssSelector("div.restop > p")).getText())) break; } catch (Exception e) {}
 			    	Thread.sleep(1000);
 			    }
-
+			    System.out.println("Phase 22");
 			    Assert.assertEquals("Page 2 of 148", driver.findElement(By.cssSelector("div.restop > p")).getText());
 			    driver.findElement(By.linkText("Next >>")).click();
 			    System.out.println("Second Page of Results loaded successfully");
@@ -108,7 +108,7 @@ public class Search {
 			    	try { if ("Page 3 of 148".equals(driver.findElement(By.cssSelector("div.restop > p")).getText())) break; } catch (Exception e) {}
 			    	Thread.sleep(1000);
 			    }
-
+			    System.out.println("Phase 33");
 			    Assert.assertEquals("Page 3 of 148", driver.findElement(By.cssSelector("div.restop > p")).getText());
 			    driver.findElement(By.linkText("Next >>")).click();
 			    System.out.println("Third Page of Results loaded successfully");
