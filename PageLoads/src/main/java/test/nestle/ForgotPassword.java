@@ -92,7 +92,9 @@ public class ForgotPassword {
 	    driver.get(baseUrl + "/");
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	    	driver.findElement(By.linkText("Sign in")).click();
+	    	 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	    	driver.findElement(By.linkText("Forgot your password?")).click();
+	    	 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		    driver.findElement(By.id("ctl00_ucForgotPasswordMain_txtEmail")).clear();
 		    driver.findElement(By.id("ctl00_ucForgotPasswordMain_txtEmail")).sendKeys("earl.willis@publicismodem.com");
 		    driver.findElement(By.id("ctl00_ucForgotPasswordMain_btnForgotPassword")).click();
