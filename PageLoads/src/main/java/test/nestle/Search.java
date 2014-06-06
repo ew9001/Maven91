@@ -32,14 +32,14 @@ public class Search {
 	  public String baseUrl = "http://stage.coffee-mate.com";
 		public static final String AUTOMATE_KEY = "XsPyFTirN4mH8aCLMB9A";
 		static String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
-		
 		String local=(new java.io.File("").getAbsolutePath());
 		String data="" + local + "/" + "infoqa.xls";	
 		String myTitle;
 	    String safe = "http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads";
 	  @Test(groups = {"search"})
 		@Parameters({"browser"})
-	  @BeforeClass
+	 // @BeforeClass
+	  
 	  public void beforeClass(String browser) throws IOException, InterruptedException
 	  {	   
 		  
@@ -73,13 +73,16 @@ public class Search {
 		
 		 String name=""+ browser+"/Search/" + timeStamp + "_" + "Search-1.png";
 		 System.out.println("This script will test the Seach Functionality. Asssertions are made on the Search Results for the first 5 pages of results");
-
+		 System.out.println("Phase 1");
 		    driver.get(baseUrl + "/");
-			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
 			   driver.findElement(By.id("ctl00_ucThemeSearchMain_txtSiteSearch")).clear();
+				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			    driver.findElement(By.id("ctl00_ucThemeSearchMain_txtSiteSearch")).sendKeys("coffee");
+				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			    driver.findElement(By.id("ctl00_ucThemeSearchMain_btnSiteSearch")).click();
+				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			    for (int second = 0;; second++) {
 			    	if (second >= 60) fail("timeout");
 			    	try { if ("Page 1 of 148".equals(driver.findElement(By.cssSelector("div.restop > p")).getText())) break; } catch (Exception e) {}
@@ -112,8 +115,7 @@ public class Search {
 			    Assert.assertEquals("Page 3 of 148", driver.findElement(By.cssSelector("div.restop > p")).getText());
 			    driver.findElement(By.linkText("Next >>")).click();
 			    System.out.println("Third Page of Results loaded successfully");
-			    File scrFile2 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-			  	FileUtils.copyFile(scrFile2, new File("Screenshots/" + timeStamp + "/" + ".png"));
+			    takeScreen(name);
 			    for (int second = 0;; second++) {
 			    	if (second >= 60) fail("timeout");
 			    	try { if ("Page 4 of 148".equals(driver.findElement(By.cssSelector("div.restop > p")).getText())) break; } catch (Exception e) {}
