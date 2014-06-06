@@ -73,35 +73,30 @@ public class Search {
 		
 		 String name=""+ browser+"/Search/" + timeStamp + "_" + "Search-1.png";
 		 System.out.println("This script will test the Seach Functionality. Asssertions are made on the Search Results for the first 5 pages of results");
-		 System.out.println("Phase 12");
+			
 		    driver.get(baseUrl + "/");
-		    driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			
 			   driver.findElement(By.id("ctl00_ucThemeSearchMain_txtSiteSearch")).clear();
-				driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 			    driver.findElement(By.id("ctl00_ucThemeSearchMain_txtSiteSearch")).sendKeys("coffee");
-			    driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 			    driver.findElement(By.id("ctl00_ucThemeSearchMain_btnSiteSearch")).click();
-			    driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 			    for (int second = 0;; second++) {
 			    	if (second >= 60) fail("timeout");
 			    	try { if ("Page 1 of 148".equals(driver.findElement(By.cssSelector("div.restop > p")).getText())) break; } catch (Exception e) {}
 			    	Thread.sleep(1000);
 			    }
-			    driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-			    System.out.println("Phase 11");
+
 			    Assert.assertEquals("Page 1 of 148", driver.findElement(By.cssSelector("div.restop > p")).getText());
 			    driver.findElement(By.linkText("Next >>")).click();
 			    System.out.println("First Page of Results loaded successfully");
-			    File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-			  	FileUtils.copyFile(scrFile, new File("Screenshots/" + timeStamp + "/" + ".png"));
-
+			   takeScreen(name);
+			    
 			    for (int second = 0;; second++) {
 			    	if (second >= 60) fail("timeout");
 			    	try { if ("Page 2 of 148".equals(driver.findElement(By.cssSelector("div.restop > p")).getText())) break; } catch (Exception e) {}
 			    	Thread.sleep(1000);
 			    }
-			    System.out.println("Phase 22");
+
 			    Assert.assertEquals("Page 2 of 148", driver.findElement(By.cssSelector("div.restop > p")).getText());
 			    driver.findElement(By.linkText("Next >>")).click();
 			    System.out.println("Second Page of Results loaded successfully");
@@ -112,11 +107,12 @@ public class Search {
 			    	try { if ("Page 3 of 148".equals(driver.findElement(By.cssSelector("div.restop > p")).getText())) break; } catch (Exception e) {}
 			    	Thread.sleep(1000);
 			    }
-			    System.out.println("Phase 33");
+
 			    Assert.assertEquals("Page 3 of 148", driver.findElement(By.cssSelector("div.restop > p")).getText());
 			    driver.findElement(By.linkText("Next >>")).click();
 			    System.out.println("Third Page of Results loaded successfully");
-			    takeScreen(name);
+			    File scrFile2 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+			  	FileUtils.copyFile(scrFile2, new File("Screenshots/" + timeStamp + "/" + ".png"));
 			    for (int second = 0;; second++) {
 			    	if (second >= 60) fail("timeout");
 			    	try { if ("Page 4 of 148".equals(driver.findElement(By.cssSelector("div.restop > p")).getText())) break; } catch (Exception e) {}
@@ -134,14 +130,10 @@ public class Search {
 			    	Thread.sleep(1000);
 			    }
 
-			    Assert.assertEquals("Page 5 of 148", driver.findElement(By.cssSelector("div.restop > p")).getText());
-			    System.out.println("Fifth Page of Results loaded successfully");
-			    File scrFile5 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-			  	FileUtils.copyFile(scrFile5, new File("Screenshots/" + timeStamp + "/" + ".png"));
+			    Assert.assertEquals("Page 5  of 148", driver.findElement(By.cssSelector("div.restop > p")).getText());
+			    takeScreen(name);
 
-
-		    takeScreen(name);
-		    driver.quit();
+			
 		  }
 
 		    	
