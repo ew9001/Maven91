@@ -29,7 +29,7 @@
   </classes> 
 </test>
 
-      <test name="Create Account"> 
+      <test name="Create Account "> 
   <groups> 
     <run> 
       <include name="newaccount"/> 
