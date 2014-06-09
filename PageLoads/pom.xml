@@ -118,7 +118,7 @@
 <suiteXmlFiles> 
 
 
-<suiteXmlFile>{$tests}</suiteXmlFile>
+<suiteXmlFile>{$test}</suiteXmlFile>
 
 
 
