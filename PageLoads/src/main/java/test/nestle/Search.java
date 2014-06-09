@@ -93,6 +93,7 @@ import org.testng.annotations.Test;
 				    Assert.assertEquals(PageNum, driver.findElement(By.cssSelector("div.restop > p")).getText());
 				    driver.findElement(By.linkText("Next >>")).click();
 				    System.out.println("First Page of Results loaded successfully");
+				    name=""+ browser+"/Search/" + timeStamp + "_" + "Search-Coffee-1.png";
 				    takeScreen(name);
 
 				    PageNum=driver.findElement(By.cssSelector("div.restop > p")).getText();
@@ -105,6 +106,7 @@ import org.testng.annotations.Test;
 				    Assert.assertEquals(PageNum, driver.findElement(By.cssSelector("div.restop > p")).getText());
 				    driver.findElement(By.linkText("Next >>")).click();
 				    System.out.println("Second Page of Results loaded successfully");
+				    name=""+ browser+"/Search/" + timeStamp + "_" + "Search-Coffee-2.png";
 				    takeScreen(name);
 				    PageNum=driver.findElement(By.cssSelector("div.restop > p")).getText();
 				    for (int second = 0;; second++) {
@@ -116,6 +118,7 @@ import org.testng.annotations.Test;
 				    Assert.assertEquals(PageNum, driver.findElement(By.cssSelector("div.restop > p")).getText());
 				    driver.findElement(By.linkText("Next >>")).click();
 				    System.out.println("Third Page of Results loaded successfully");
+				    name=""+ browser+"/Search/" + timeStamp + "_" + "Search-Coffee-3.png";
 				    takeScreen(name);
 				    PageNum=driver.findElement(By.cssSelector("div.restop > p")).getText();
 				    for (int second = 0;; second++) {
@@ -127,6 +130,7 @@ import org.testng.annotations.Test;
 				    Assert.assertEquals(PageNum, driver.findElement(By.cssSelector("div.restop > p")).getText());
 				    driver.findElement(By.linkText("Next >>")).click();
 				    System.out.println("Fourth Page of Results loaded successfully");
+				    name=""+ browser+"/Search/" + timeStamp + "_" + "Search-Coffee-4.png";
 				    takeScreen(name);
 				    PageNum=driver.findElement(By.cssSelector("div.restop > p")).getText();
 				    for (int second = 0;; second++) {
@@ -137,6 +141,7 @@ import org.testng.annotations.Test;
 
 				    Assert.assertEquals(PageNum, driver.findElement(By.cssSelector("div.restop > p")).getText());
 				    System.out.println("Fifth Page of Results loaded successfully");
+				    name=""+ browser+"/Search/" + timeStamp + "_" + "Search-Coffee-5.png";
 				    takeScreen(name);
 
 
@@ -306,7 +311,7 @@ import org.testng.annotations.Test;
 			    myTitle = driver.getTitle();
 			   
 			    FileUtils.copyFile(screenshot, new File(name));
-			    
+			 
 			    return driver;
 		 }
 		
