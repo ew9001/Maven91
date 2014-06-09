@@ -73,7 +73,7 @@ import org.testng.annotations.Test;
 				}
 			  
 			
-			 String name=""+ browser+"/earch/" + timeStamp + "_" + "Search-Coffee-1.png";
+			 String name=""+ browser+"/Search/" + timeStamp + "_" + "Search-Coffee-1.png";
 			 System.out.println("This script will test the Seach Functionality. Asssertions are made on the Search Results for the first 5 pages of results");
 			 driver.get(baseUrl + "/");
 				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
