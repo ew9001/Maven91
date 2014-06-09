@@ -119,7 +119,7 @@
 
 
 <suiteXmlFile>ie9.xml</suiteXmlFile>
-<suiteXmlFile>firefox.xml</suiteXmlFile>
+<suiteXmlFile>mozila.xml</suiteXmlFile>
 <suiteXmlFile>safari.xml</suiteXmlFile>
 <suiteXmlFile>chrome.xml</suiteXmlFile>
 
