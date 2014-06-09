@@ -50,7 +50,7 @@
     </run> 
   </groups> 
   <classes> 
-    <class name="existinguser.User"/> 
+    <class name="test.nestle.User"/> 
   </classes> 
 </test>
 
