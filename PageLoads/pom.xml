@@ -118,7 +118,10 @@
 <suiteXmlFiles> 
 
 
-<suiteXmlFile>{$test}</suiteXmlFile>
+<suiteXmlFile>ie9.xml</suiteXmlFile>
+<suiteXmlFile>chrome.xml</suiteXmlFile>
+<suiteXmlFile>mozila.xml</suiteXmlFile>
+<suiteXmlFile>safari.xml</suiteXmlFile>
 
 
 
