@@ -9,11 +9,11 @@
          
   <groups> 
     <run> 
-      <include name="search"/> 
+      <include name="calculate"/> 
     </run> 
   </groups> 
   <classes> 
-    <class name="test.nestle.Search"/> 
+    <class name="test.nestle.SavingsCalculator"/> 
   </classes> 
 </test>
 
