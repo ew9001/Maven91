@@ -118,7 +118,7 @@
     <skipTests>false</skipTests>
 <suiteXmlFiles> 
 
-<suiteXmlFile>${tests}</suiteXmlFile>
+<suiteXmlFile>${suiteFile}</suiteXmlFile>
 
 
 </suiteXmlFiles> 
