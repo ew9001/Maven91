@@ -98,6 +98,7 @@ public class User {
 		    	Thread.sleep(1000);
 		    }
 		    System.out.println("I signed in then ");
+		    name=""+ browser+"/User/" + timeStamp + "_" + "Successful-SignIn-1.png";
 		    takeScreen(name);
 		    
 		    
@@ -129,6 +130,7 @@ public class User {
 		    driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		    // Warning: assertTextPresent may require manual changes
 		    Assert.assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Already registered[\\s\\S] Sign in[\\s\\S]*$"));
+		    name=""+ browser+"/User/" + timeStamp + "_" + "Successful-Logout-1.png";
 		    takeScreen(name);
 		    driver.quit();
 		  }
