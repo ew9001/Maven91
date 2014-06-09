@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+ 
+<suite name="Android Contact Form"  verbose="1">
+    <parameter name="browser" value="ie9"/>
+ 
+  
+    <test name="Contact Form" >
+         
+  <groups> 
+    <run> 
+      <include name="search"/> 
+    </run> 
+  </groups> 
+  <classes> 
+    <class name="test.nestle.Search"/> 
+  </classes> 
+</test>
+
+
+
+
+</suite>
