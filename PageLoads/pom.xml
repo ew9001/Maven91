@@ -118,7 +118,8 @@
     <skipTests>false</skipTests>
 <suiteXmlFiles> 
 
-<suiteXmlFile>${suiteFile}</suiteXmlFile>
+<suiteXmlFile>ie9.xml</suiteXmlFile>
+<suiteXmlFile>mozila.xml</suiteXmlFile>
 
 
 </suiteXmlFiles> 
