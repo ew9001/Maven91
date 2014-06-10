@@ -89,7 +89,7 @@
 <configuration>
 <skipTests>false</skipTests>
 <suiteXmlFiles>
-<suiteXmlFile>{$tests}</suiteXmlFile>
+<suiteXmlFile>${tests}</suiteXmlFile>
 </suiteXmlFiles>
 </configuration>
 </plugin>
