@@ -23,6 +23,7 @@ import org.testng.Assert;
 import org.testng.ISuite;
 import org.testng.ISuiteListener;
 import org.testng.ITestContext;
+import org.testng.TestListenerAdapter;
 import org.testng.TestRunner;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -31,7 +32,7 @@ import org.testng.annotations.Test;
 
 import com.thoughtworks.selenium.ScreenshotListener;
 
-public class RunFail implements ISuiteListener {
+public class RunFail extends TestListenerAdapter {
 
 	private static WebDriver driver;
 	  public static final String USERNAME = "earlwillis1";

@@ -87,6 +87,12 @@
 <artifactId>maven-surefire-plugin</artifactId>
 <version>2.9</version>
 <configuration>
+     <systemPropertyVariables>
+            <propertyName>chrome</propertyName>
+            <propertyName>ie9</propertyName>
+          </systemPropertyVariables>
+          <groups>create,user</groups>
+     
 <skipTests>false</skipTests>
 <suiteXmlFiles>
 <suiteXmlFile>${tests}</suiteXmlFile>

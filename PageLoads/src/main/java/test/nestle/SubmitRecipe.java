@@ -122,8 +122,7 @@ public class SubmitRecipe {
 		    	try { if ("Thanks for sharing your recipe. We'll send it through our test kitchen to make sure we can make it just as tasty as you can, before we add it to Coffee-mate.com.".equals(driver.findElement(By.cssSelector("div.popinner.thxmsg > p")).getText())) break; } catch (Exception e) {}
 		    	Thread.sleep(1000);
 		    }
-		    File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		   	FileUtils.copyFile(scrFile, new File("Screenshots" + timeStamp + "_" + "dd.png"));
+		    takeScreen(name);
 
 		    Assert.assertEquals("Thanks for sharing your recipe. We'll send it through our test kitchen to make sure we can make it just as tasty as you can, before we add it to Coffee-mate.com.", driver.findElement(By.cssSelector("div.popinner.thxmsg > p")).getText());
 		    driver.findElement(By.cssSelector("img[alt=\"Close\"]")).click();
