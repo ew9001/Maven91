@@ -155,10 +155,11 @@ public class SubmitRecipe {
 		 System.out.println("Let me run Firefox");
 		 String URL = "http://" + USERNAME + ":" + AUTOMATE_KEY + "@hub.browserstack.com/wd/hub";
 		 DesiredCapabilities caps = DesiredCapabilities.firefox();
-		  caps.setCapability("browser", "FireFox");
-		  caps.setCapability("browser_version", "22.0");
-		  caps.setCapability("os", "Windows");
-		  caps.setCapability("os_version", "7");
+		 caps.setCapability("browser", "Firefox");
+		 caps.setCapability("browser_version", "29.0");
+		 caps.setCapability("os", "Windows");
+		 caps.setCapability("os_version", "7");
+		 caps.setCapability("resolution", "1024x768");
 		  caps.setCapability("browserstack.debug", "true");
 
 		    driver = new RemoteWebDriver(new URL(URL), caps);
