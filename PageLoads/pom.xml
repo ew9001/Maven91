@@ -91,7 +91,7 @@
      
 <skipTests>false</skipTests>
 <suiteXmlFiles>
-<suiteXmlFile>${test}</suiteXmlFile>
+<suiteXmlFile>${suiteFile}</suiteXmlFile>
 </suiteXmlFiles>
 </configuration>
 </plugin>
