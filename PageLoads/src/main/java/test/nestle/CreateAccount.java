@@ -39,7 +39,7 @@ public class CreateAccount {
 
 	 private static WebDriver driver;
 	  public static final String USERNAME = "earlwillis1";
-	  public String browser_type;
+	  public String browser_type,fail;
 	  public String baseUrl = "http://stage.coffee-mate.com";
 		public static final String AUTOMATE_KEY = "XsPyFTirN4mH8aCLMB9A";
 		static String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
@@ -90,7 +90,7 @@ public class CreateAccount {
 		  System.out.println("Let me run get driver "+driver);
 		  
 		String name=""+ browser+"/CreateAccount/" + timeStamp + "_" + "Successful-Created-Account.png";
-		String fail=""+ browser+"/Failed/" + timeStamp + "_" + "create_account.png";
+		fail=""+ browser+"/Failed/" + timeStamp + "_" + "create_account.png";
 		   baseUrl = "http://stage.coffee-mate.com";
 		    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		  
@@ -305,7 +305,7 @@ public class CreateAccount {
 	 }
 	 
 	 @AfterMethod(alwaysRun = true, description = "take screenshot on fail") 
-	 public void afterMethod_takeScreenshot(ITestResult result, String fail) throws Exception { 
+	 public void afterMethod_takeScreenshot(ITestResult result) throws Exception { 
 	 if (!result.isSuccess()) { 
 		 
 
