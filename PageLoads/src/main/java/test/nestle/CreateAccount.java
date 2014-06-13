@@ -280,9 +280,9 @@ public class CreateAccount {
 		 String URL = "http://" + USERNAME + ":" + AUTOMATE_KEY + "@hub.browserstack.com/wd/hub";
 		 DesiredCapabilities caps = new DesiredCapabilities();
 		 caps.setCapability("browser", "Safari");
-		 caps.setCapability("browser_version", "6.0");
+		 caps.setCapability("browser_version", "6.1");
 		 caps.setCapability("os", "OS X");
-		 caps.setCapability("os_version", "Lion");
+		 caps.setCapability("os_version", "Mountain Lion");
 		 caps.setCapability("resolution", "1024x768");
 		 caps.setCapability("browserstack.debug", "true");
 
