@@ -201,7 +201,7 @@ public class CreateAccount {
 		 String URL = "http://" + USERNAME + ":" + AUTOMATE_KEY + "@hub.browserstack.com/wd/hub";
 		 DesiredCapabilities caps = DesiredCapabilities.firefox();
 		 caps.setCapability("browser", "Chrome");
-		 caps.setCapability("browser_version", "32.0");
+		 caps.setCapability("browser_version", "35.0");
 		 caps.setCapability("os", "Windows");
 		 caps.setCapability("os_version", "7");
 		 caps.setCapability("resolution", "1024x768");
