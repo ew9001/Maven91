@@ -2,6 +2,7 @@ package test.nestle;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
@@ -18,8 +19,10 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
@@ -298,6 +301,19 @@ public class CreateAccount {
 		    FileUtils.copyFile(screenshot, new File(name));
 		    
 		    return driver;
+	 }
+	 
+	 @AfterMethod(alwaysRun = true, description = "take screenshot on fail") 
+	 public void afterMethod_takeScreenshot(ITestResult result, Method m) throws Exception { 
+	 if (!result.isSuccess()) { 
+		 
+		 WebDriver augmentedDriver = new Augmenter().augment(driver);
+		 File fileScreen = ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
+		 File fileTarget = new File("failure_" + m.getName() + ".png");
+		 FileUtils.forceMkdir(fileTarget.getParentFile()); 
+		 FileUtils.copyFile(fileScreen, fileTarget);
+	
+	 } 
 	 }
 
 	}  
