@@ -87,13 +87,16 @@ import org.testng.annotations.Test;
 				    
 				    String PageNum=driver.findElement(By.cssSelector("div.restop > p")).getText();
 				    
+				    
+				    driver.get(baseUrl + "/Search.aspx?squery=coffee");
 				    for (int second = 0;; second++) {
 				    	if (second >= 60) fail("timeout");
-				    	try { if (PageNum.equals(driver.findElement(By.cssSelector("div.restop > p")).getText())) break; } catch (Exception e) {}
+				    	try { if ("Next >>".equals(driver.findElement(By.linkText("Next >>")).getText())) break; } catch (Exception e) {}
 				    	Thread.sleep(1000);
 				    }
 
-				    Assert.assertEquals(PageNum, driver.findElement(By.cssSelector("div.restop > p")).getText());
+				    driver.findElement(By.linkText("Next >>")).click();
+		  
 				    driver.findElement(By.linkText("Next >>")).click();
 				    System.out.println("First Page of Results loaded successfully");
 				    name=""+ browser+"/Search/" + timeStamp + "_" + "Search-Coffee-1.png";
