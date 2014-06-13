@@ -43,7 +43,7 @@ public class CreateAccount {
 	  public String baseUrl = "http://stage.coffee-mate.com";
 		public static final String AUTOMATE_KEY = "XsPyFTirN4mH8aCLMB9A";
 		static String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
-		
+	
 		String local=(new java.io.File("").getAbsolutePath());
 		String data="" + local + "/" + "infoqa.xls";	
 		String myTitle;
@@ -90,6 +90,7 @@ public class CreateAccount {
 		  System.out.println("Let me run get driver "+driver);
 		  
 		String name=""+ browser+"/CreateAccount/" + timeStamp + "_" + "Successful-Created-Account.png";
+		String fail=""+ browser+"/Failed/" + timeStamp + "_" + "create_account.png";
 		   baseUrl = "http://stage.coffee-mate.com";
 		    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		  
@@ -304,14 +305,18 @@ public class CreateAccount {
 	 }
 	 
 	 @AfterMethod(alwaysRun = true, description = "take screenshot on fail") 
-	 public void afterMethod_takeScreenshot(ITestResult result, Method m) throws Exception { 
+	 public void afterMethod_takeScreenshot(ITestResult result, String fail) throws Exception { 
 	 if (!result.isSuccess()) { 
 		 
+
 		 WebDriver augmentedDriver = new Augmenter().augment(driver);
-		 File fileScreen = ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
-		 File fileTarget = new File("failure_" + m.getName() + ".png");
-		 FileUtils.forceMkdir(fileTarget.getParentFile()); 
-		 FileUtils.copyFile(fileScreen, fileTarget);
+	     System.out.println("Let me take a sceenshot" +fail);
+		  
+		    	
+		    File screenshot = ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
+		    myTitle = driver.getTitle();
+		   
+		    FileUtils.copyFile(screenshot, new File(fail));
 	
 	 } 
 	 }
