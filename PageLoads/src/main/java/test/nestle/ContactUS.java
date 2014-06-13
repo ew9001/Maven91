@@ -32,7 +32,7 @@ public class ContactUS {
 	 private static WebDriver driver;
 	  public static final String USERNAME = "earlwillis1";
 	  public String browser_type;
-	  public String fail;
+	  public String fail,error;
 	  public String baseUrl = "http://stage.coffee-mate.com";
 		public static final String AUTOMATE_KEY = "XsPyFTirN4mH8aCLMB9A";
 		static String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
@@ -81,7 +81,10 @@ public class ContactUS {
 			 
 			
 		  driver.get(baseUrl + "/Contact-Us.aspx");
-		    new Select(driver.findElement(By.id("ctl00_ContentPlaceHolder1_ddlReason"))).selectByVisibleText("General Inquiry or Question");
+		 
+		    Select droplist1 = new Select(driver.findElement(By.id("ctl00_ContentPlaceHolder1_ddlReason")));   
+			 droplist1.selectByVisibleText("General Inquiry or Question");
+			 
 		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtFirstName")).clear();
 		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtFirstName")).sendKeys("PubmoTestFirst");
 		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtLastName")).clear();
@@ -94,7 +97,14 @@ public class ContactUS {
 		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtAddress2")).sendKeys("Apt. 3B");
 		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtCity")).clear();
 		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtCity")).sendKeys("New York");
-		    new Select(driver.findElement(By.id("ctl00_ContentPlaceHolder1_ddlStates"))).selectByVisibleText("New York");
+		    
+		    
+		    
+		    Select droplist2 = new Select(driver.findElement(By.id("ctl00_ContentPlaceHolder1_ddlStates")));   
+			 droplist2.selectByVisibleText("New York");
+		    
+		    
+		   
 		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtZip")).clear();
 		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtZip")).sendKeys("10003");
 		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtHomePhone1")).clear();
@@ -263,7 +273,7 @@ public class ContactUS {
 		 
 
 		 WebDriver augmentedDriver = new Augmenter().augment(driver);
-	     System.out.println("I found a bug placed a screen shot @ " +fail);
+	     System.out.println("I found a bug placed a screen shot @ ContactUS");
 		  
 		    	
 		    File screenshot = ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
