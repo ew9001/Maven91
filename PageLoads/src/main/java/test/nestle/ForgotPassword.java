@@ -2,42 +2,45 @@ package test.nestle;
 
 
 	import java.io.File;
-	import java.io.IOException;
-	import java.net.MalformedURLException;
-	import java.net.URL;
-	import java.text.SimpleDateFormat;
-	import java.util.Calendar;
-	import java.util.concurrent.TimeUnit;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.concurrent.TimeUnit;
 
 	import org.apache.commons.io.FileUtils;
-	import org.openqa.selenium.By;
-	import org.openqa.selenium.OutputType;
-	import org.openqa.selenium.TakesScreenshot;
-	import org.openqa.selenium.WebDriver;
-	import org.openqa.selenium.remote.Augmenter;
-	import org.openqa.selenium.remote.DesiredCapabilities;
-	import org.openqa.selenium.remote.RemoteWebDriver;
-	import org.openqa.selenium.support.ui.ExpectedConditions;
-	import org.openqa.selenium.support.ui.Select;
-	import org.testng.Reporter;
-	import org.testng.annotations.AfterClass;
-	import org.testng.annotations.AfterTest;
-	import org.testng.annotations.BeforeClass;
-	import org.testng.annotations.BeforeTest;
-	import org.testng.annotations.Parameters;
-	import org.testng.annotations.Test;
-	import org.openqa.selenium.OutputType;
-	import org.openqa.selenium.TakesScreenshot;
-	import org.openqa.selenium.WebDriver;
-	import org.openqa.selenium.remote.Augmenter;
-	import org.openqa.selenium.remote.DesiredCapabilities;
-	import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.Augmenter;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.ITestResult;
+import org.testng.Reporter;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.Augmenter;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 	public class ForgotPassword {
 
 		 private static WebDriver driver;
 		  public static final String USERNAME = "earlwillis1";
 		  public String browser_type;
+		  public String fail;
 		  public String baseUrl = "http://stage.coffee-mate.com";
 			public static final String AUTOMATE_KEY = "XsPyFTirN4mH8aCLMB9A";
 			static String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
@@ -83,7 +86,7 @@ package test.nestle;
 			 
 				  System.out.println("Let me retrive my password using  " +browser);
 
-				  
+				  fail=""+ browser+"/Failed/" + timeStamp + "_" + "forgot_password.png";
 			 
 			  System.out.println("I'm running driver "+driver);
 			  
@@ -272,6 +275,22 @@ package test.nestle;
 			    FileUtils.copyFile(screenshot, new File(name));
 			    
 			    return driver;
+		 }
+		 @AfterMethod(alwaysRun = true, description = "take screenshot on fail") 
+		 public void afterMethod_takeScreenshot(ITestResult result) throws Exception { 
+		 if (!result.isSuccess()) { 
+			 
+
+			 WebDriver augmentedDriver = new Augmenter().augment(driver);
+		     System.out.println("I found a bug placed a screen shot @ " +fail);
+			  
+			    	
+			    File screenshot = ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
+
+			   
+			    FileUtils.copyFile(screenshot, new File(fail));
+		
+		 } 
 		 }
 
 		}  

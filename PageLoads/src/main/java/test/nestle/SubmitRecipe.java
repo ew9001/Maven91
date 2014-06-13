@@ -21,6 +21,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.ITestContext;
+import org.testng.ITestResult;
 import org.testng.TestRunner;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -34,7 +35,7 @@ public class SubmitRecipe {
 
 	private static WebDriver driver;
 	  public static final String USERNAME = "earlwillis1";
-	  public String browser_type;
+	  public String browser_type,fail;
 	  public String baseUrl = "http://stage.coffee-mate.com";
 		public static final String AUTOMATE_KEY = "XsPyFTirN4mH8aCLMB9A";
 		static String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
@@ -80,7 +81,7 @@ public class SubmitRecipe {
 		 
 		  String name=""+ browser+"/SubmitRecipe/" + timeStamp + "_" + "Successful-Submited-1.png";
 		  System.out.println("This script will Submit a Recipe from a user that is not logged in. Script will log the user in first");
-
+		  fail=""+ browser+"/Failed/" + timeStamp + "_" + "submit_recipe.png";
 		    driver.get(baseUrl + "/Recipes/Default.aspx");
 		  //  driver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRightNav_ucSubmitRecipe_txtTitle")).clear();
 		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRightNav_ucSubmitRecipe_txtTitle")).sendKeys("Lemon Pie");
@@ -291,6 +292,23 @@ public class SubmitRecipe {
 	    driver.quit();
 	    
 	  }
+	  
+	  @AfterMethod(alwaysRun = true, description = "take screenshot on fail") 
+		 public void afterMethod_takeScreenshot(ITestResult result) throws Exception { 
+		 if (!result.isSuccess()) { 
+			 
+
+			 WebDriver augmentedDriver = new Augmenter().augment(driver);
+		     System.out.println("I found a bug placed a screen shot @ " +fail);
+			  
+			    	
+			    File screenshot = ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
+
+			   
+			    FileUtils.copyFile(screenshot, new File(fail));
+		
+		 } 
+		 }
 	  
 	 
 

@@ -22,6 +22,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -30,7 +32,7 @@ import org.testng.annotations.Test;
 
 		private static WebDriver driver;
 		  public static final String USERNAME = "earlwillis1";
-		  public String browser_type;
+		  public String browser_type,fail;
 		  public String baseUrl = "http://stage.coffee-mate.com";
 			public static final String AUTOMATE_KEY = "XsPyFTirN4mH8aCLMB9A";
 			static String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
@@ -74,6 +76,7 @@ import org.testng.annotations.Test;
 			  
 			
 			 String name=""+ browser+"/Search/" + timeStamp + "_" + "Search-Coffee-1.png";
+			 fail=""+ browser+"/Failed/" + timeStamp + "_" + "search.png";
 			 System.out.println("This script will test the Seach Functionality. Asssertions are made on the Search Results for the first 5 pages of results");
 			 driver.get(baseUrl + "/");
 				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -313,6 +316,22 @@ import org.testng.annotations.Test;
 			    FileUtils.copyFile(screenshot, new File(name));
 			 
 			    return driver;
+		 }
+		 @AfterMethod(alwaysRun = true, description = "take screenshot on fail") 
+		 public void afterMethod_takeScreenshot(ITestResult result) throws Exception { 
+		 if (!result.isSuccess()) { 
+			 
+
+			 WebDriver augmentedDriver = new Augmenter().augment(driver);
+		     System.out.println("I found a bug placed a screen shot @ " +fail);
+			  
+			    	
+			    File screenshot = ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
+
+			   
+			    FileUtils.copyFile(screenshot, new File(fail));
+		
+		 } 
 		 }
 		
 		  public void tearDown() throws Exception {

@@ -17,8 +17,10 @@ import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
@@ -30,6 +32,7 @@ public class ContactUS {
 	 private static WebDriver driver;
 	  public static final String USERNAME = "earlwillis1";
 	  public String browser_type;
+	  public String fail;
 	  public String baseUrl = "http://stage.coffee-mate.com";
 		public static final String AUTOMATE_KEY = "XsPyFTirN4mH8aCLMB9A";
 		static String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
@@ -74,7 +77,7 @@ public class ContactUS {
 			  
 		 
 		  System.out.println("Let me run get driver "+driver);
-		  
+		  fail=""+ browser+"/Failed/" + timeStamp + "_" + "contact_us.png";
 			 
 			
 		  driver.get(baseUrl + "/Contact-Us.aspx");
@@ -253,6 +256,22 @@ public class ContactUS {
 		    FileUtils.copyFile(screenshot, new File(name));
 		    
 		    return driver;
+	 }
+	 @AfterMethod(alwaysRun = true, description = "take screenshot on fail") 
+	 public void afterMethod_takeScreenshot(ITestResult result) throws Exception { 
+	 if (!result.isSuccess()) { 
+		 
+
+		 WebDriver augmentedDriver = new Augmenter().augment(driver);
+	     System.out.println("I found a bug placed a screen shot @ " +fail);
+		  
+		    	
+		    File screenshot = ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
+
+		   
+		    FileUtils.copyFile(screenshot, new File(fail));
+	
+	 } 
 	 }
 
 	}  

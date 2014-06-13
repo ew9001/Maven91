@@ -22,7 +22,9 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
@@ -40,6 +42,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 		 private static WebDriver driver;
 		  public static final String USERNAME = "earlwillis1";
 		  public String browser_type;
+		  public String fail;
 		  public String baseUrl = "http://stage.coffee-mate.com";
 			public static final String AUTOMATE_KEY = "XsPyFTirN4mH8aCLMB9A";
 			static String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
@@ -84,7 +87,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 			
 			 String name=""+ browser+"/SavingsCalculator/" + timeStamp + "_" + "Savings-Calculator-1.png";
 			 System.out.println("This script will navigate to the Saving Calculator Page and verify the Search is pulling up results for: 5 cups, Regular - $1.50");
-
+			 fail=""+ browser+"/Failed/" + timeStamp + "_" + "Savings_Calculator.png";
 			    driver.get(baseUrl + "/My-Cafe/Default.aspx");
 				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			    new Select(driver.findElement(By.id("ctl00_ContentPlaceHolder1_ucSavingsCalc_ddlNumDrinks"))).selectByVisibleText("5 cups");
@@ -257,5 +260,21 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 		    driver.quit();
 		    
 		  }
+		  @AfterMethod(alwaysRun = true, description = "take screenshot on fail") 
+			 public void afterMethod_takeScreenshot(ITestResult result) throws Exception { 
+			 if (!result.isSuccess()) { 
+				 
+
+				 WebDriver augmentedDriver = new Augmenter().augment(driver);
+			     System.out.println("I found a bug placed a screen shot @ " +fail);
+				  
+				    	
+				    File screenshot = ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
+
+				   
+				    FileUtils.copyFile(screenshot, new File(fail));
+			
+			 } 
+			 }
 
 		}  
