@@ -119,12 +119,16 @@ public class CreateAccount {
 
 			 takeScreen(name);
 
+			 Select droplist1 = new Select(driver.findElement(By.id("ctl00_ContentPlaceHolder1_lvQuestions_ctrl0_ucSurveyQuestion_ddlAnswers")));   
+			 droplist1.selectByVisibleText("0");
 
-
-			 new Select(driver.findElement(By.id("ctl00_ContentPlaceHolder1_lvQuestions_ctrl0_ucSurveyQuestion_ddlAnswers"))).selectByVisibleText("0");
-			 driver.findElement(By.cssSelector("option[value=\"1E4C6A78-1980-459F-BE01-049AB4CB432C\"]")).click();
+			 
 			 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-			 new Select(driver.findElement(By.id("ctl00_ContentPlaceHolder1_lvQuestions_ctrl1_ucSurveyQuestion_ddlAnswers"))).selectByVisibleText("0");
+			 
+			 Select droplist2 = new Select(driver.findElement(By.id("ctl00_ContentPlaceHolder1_lvQuestions_ctrl1_ucSurveyQuestion_ddlAnswers")));   
+			 droplist2.selectByVisibleText("0");
+			 
+			 driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 			 driver.findElement(By.cssSelector("option[value=\"138A6025-F98D-4A64-B36C-4A08DAB4F075\"]")).click();
 			 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			 driver.findElement(By.id("ctl00_ContentPlaceHolder1_btnSubmit")).click();
@@ -310,11 +314,11 @@ public class CreateAccount {
 		 
 
 		 WebDriver augmentedDriver = new Augmenter().augment(driver);
-	     System.out.println("Let me take a sceenshot" +fail);
+	     System.out.println("I found a bug placed a screen shot @ " +fail);
 		  
 		    	
 		    File screenshot = ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
-		    myTitle = driver.getTitle();
+
 		   
 		    FileUtils.copyFile(screenshot, new File(fail));
 	
