@@ -25,8 +25,10 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
 
 
 public class CreateAccount {
@@ -43,7 +45,8 @@ public class CreateAccount {
 		String myTitle;
 	    String safe = "http://10.10.10.34:8080/job/TESTNG3/ws/PageLoads";
 	  @Parameters({"browser"})
-	  //@BeforeClass
+	  @Test(groups = {"newaccount"})
+	  @BeforeClass
 	  public void beforeClass(String browser) throws IOException, InterruptedException
 	  {	   
 		  
@@ -111,15 +114,16 @@ public class CreateAccount {
 			
 
 			 takeScreen(name);
-				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+			 WebDriverWait wait = new WebDriverWait(driver, 30);
+			 java.util.List<WebElement> results=wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("ctl00_ContentPlaceHolder1_lvQuestions_ctrl0_ucSurveyQuestion_ddlAnswers")));   
 			 Select droplist1 = new Select(driver.findElement(By.id("ctl00_ContentPlaceHolder1_lvQuestions_ctrl0_ucSurveyQuestion_ddlAnswers")));   
-			 droplist1.selectByVisibleText("1");
+			 droplist1.selectByVisibleText("0");
 
 			 
 			 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			 
 			 Select droplist2 = new Select(driver.findElement(By.id("ctl00_ContentPlaceHolder1_lvQuestions_ctrl1_ucSurveyQuestion_ddlAnswers")));   
-			 droplist2.selectByVisibleText("5");
+			 droplist2.selectByVisibleText("0");
 			 
 			 driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 			 driver.findElement(By.cssSelector("option[value=\"138A6025-F98D-4A64-B36C-4A08DAB4F075\"]")).click();

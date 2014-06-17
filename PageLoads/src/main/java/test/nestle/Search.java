@@ -17,10 +17,13 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -84,7 +87,7 @@ import org.testng.annotations.Test;
 				  driver.findElement(By.id("ctl00_ucThemeSearchMain_txtSiteSearch")).clear();
 				   driver.findElement(By.id("ctl00_ucThemeSearchMain_txtSiteSearch")).sendKeys("coffee");
 				    driver.findElement(By.id("ctl00_ucThemeSearchMain_btnSiteSearch")).click();
-				    
+				    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 				   String PageNum=driver.findElement(By.cssSelector("div.restop > p")).getText();
 				    
 				    
@@ -100,7 +103,8 @@ import org.testng.annotations.Test;
 				    System.out.println("First Page of Results loaded successfully");
 				    name=""+ browser+"/Search/" + timeStamp + "_" + "Search-Coffee-1.png";
 				    takeScreen(name);
-
+					 WebDriverWait wait = new WebDriverWait(driver, 30);
+					 java.util.List<WebElement> results=wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("div.restop > p")));   
 				    PageNum=driver.findElement(By.cssSelector("div.restop > p")).getText();
 				    for (int second = 0;; second++) {
 				    	if (second >= 60) fail("timeout");
@@ -113,6 +117,7 @@ import org.testng.annotations.Test;
 				    System.out.println("Second Page of Results loaded successfully");
 				    name=""+ browser+"/Search/" + timeStamp + "_" + "Search-Coffee-2.png";
 				    takeScreen(name);
+					 java.util.List<WebElement> results3=wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("div.restop > p")));   
 				    PageNum=driver.findElement(By.cssSelector("div.restop > p")).getText();
 				    for (int second = 0;; second++) {
 				    	if (second >= 60) fail("timeout");
@@ -125,6 +130,7 @@ import org.testng.annotations.Test;
 				    System.out.println("Third Page of Results loaded successfully");
 				    name=""+ browser+"/Search/" + timeStamp + "_" + "Search-Coffee-3.png";
 				    takeScreen(name);
+					 java.util.List<WebElement> results1=wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("div.restop > p")));   
 				    PageNum=driver.findElement(By.cssSelector("div.restop > p")).getText();
 				    for (int second = 0;; second++) {
 				    	if (second >= 60) fail("timeout");
@@ -137,6 +143,7 @@ import org.testng.annotations.Test;
 				    System.out.println("Fourth Page of Results loaded successfully");
 				    name=""+ browser+"/Search/" + timeStamp + "_" + "Search-Coffee-4.png";
 				    takeScreen(name);
+					 java.util.List<WebElement> results2=wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("div.restop > p")));   
 				    PageNum=driver.findElement(By.cssSelector("div.restop > p")).getText();
 				    for (int second = 0;; second++) {
 				    	if (second >= 60) fail("timeout");
