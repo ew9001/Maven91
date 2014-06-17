@@ -111,8 +111,7 @@ public class CreateAccount {
 			
 
 			 takeScreen(name);
-			 WebDriverWait wait = new WebDriverWait(driver, 30);
-			 java.util.List<WebElement> results=wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("ctl00_ContentPlaceHolder1_lvQuestions_ctrl0_ucSurveyQuestion_ddlAnswers")));   
+				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 			 Select droplist1 = new Select(driver.findElement(By.id("ctl00_ContentPlaceHolder1_lvQuestions_ctrl0_ucSurveyQuestion_ddlAnswers")));   
 			 droplist1.selectByVisibleText("1");
 
