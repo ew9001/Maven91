@@ -81,11 +81,11 @@ import org.testng.annotations.Test;
 			 driver.get(baseUrl + "/");
 				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-				   driver.findElement(By.id("ctl00_ucThemeSearchMain_txtSiteSearch")).clear();
-				    driver.findElement(By.id("ctl00_ucThemeSearchMain_txtSiteSearch")).sendKeys("coffee");
+				  // driver.findElement(By.id("ctl00_ucThemeSearchMain_txtSiteSearch")).clear();
+				   // driver.findElement(By.id("ctl00_ucThemeSearchMain_txtSiteSearch")).sendKeys("coffee");
 				    driver.findElement(By.id("ctl00_ucThemeSearchMain_btnSiteSearch")).click();
 				    
-				    String PageNum=driver.findElement(By.cssSelector("div.restop > p")).getText();
+				   String PageNum=driver.findElement(By.cssSelector("div.restop > p")).getText();
 				    
 				    
 				    driver.get(baseUrl + "/Search.aspx?squery=coffee");
@@ -95,7 +95,6 @@ import org.testng.annotations.Test;
 				    	Thread.sleep(1000);
 				    }
 
-				    driver.findElement(By.linkText("Next >>")).click();
 		  
 				    driver.findElement(By.linkText("Next >>")).click();
 				    System.out.println("First Page of Results loaded successfully");

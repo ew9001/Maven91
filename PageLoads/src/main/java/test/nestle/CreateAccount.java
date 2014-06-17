@@ -120,13 +120,13 @@ public class CreateAccount {
 			 takeScreen(name);
 
 			 Select droplist1 = new Select(driver.findElement(By.id("ctl00_ContentPlaceHolder1_lvQuestions_ctrl0_ucSurveyQuestion_ddlAnswers")));   
-			 droplist1.selectByVisibleText("0");
+			 droplist1.selectByVisibleText("1");
 
 			 
 			 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			 
 			 Select droplist2 = new Select(driver.findElement(By.id("ctl00_ContentPlaceHolder1_lvQuestions_ctrl1_ucSurveyQuestion_ddlAnswers")));   
-			 droplist2.selectByVisibleText("0");
+			 droplist2.selectByVisibleText("5");
 			 
 			 driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 			 driver.findElement(By.cssSelector("option[value=\"138A6025-F98D-4A64-B36C-4A08DAB4F075\"]")).click();
