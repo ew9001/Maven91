@@ -116,21 +116,13 @@ public class CreateAccount {
 			 takeScreen(name);
 			 WebDriverWait wait = new WebDriverWait(driver, 30);
 			 java.util.List<WebElement> results=wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("ctl00_ContentPlaceHolder1_lvQuestions_ctrl0_ucSurveyQuestion_ddlAnswers")));   
-			 Select droplist1 = new Select(driver.findElement(By.id("ctl00_ContentPlaceHolder1_lvQuestions_ctrl0_ucSurveyQuestion_ddlAnswers")));   
-			 droplist1.selectByVisibleText("0");
-
-			 
-			 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-			 
-			 Select droplist2 = new Select(driver.findElement(By.id("ctl00_ContentPlaceHolder1_lvQuestions_ctrl1_ucSurveyQuestion_ddlAnswers")));   
-			 droplist2.selectByVisibleText("0");
-			 
-			 driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+			 new Select(driver.findElement(By.id("ctl00_ContentPlaceHolder1_lvQuestions_ctrl0_ucSurveyQuestion_ddlAnswers"))).selectByVisibleText("0");
+			 driver.findElement(By.cssSelector("option[value=\"1E4C6A78-1980-459F-BE01-049AB4CB432C\"]")).click();
+			 java.util.List<WebElement> results2=wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("ctl00_ContentPlaceHolder1_lvQuestions_ctrl1_ucSurveyQuestion_ddlAnswers")));  
+			 new Select(driver.findElement(By.id("ctl00_ContentPlaceHolder1_lvQuestions_ctrl1_ucSurveyQuestion_ddlAnswers"))).selectByVisibleText("0");
 			 driver.findElement(By.cssSelector("option[value=\"138A6025-F98D-4A64-B36C-4A08DAB4F075\"]")).click();
-			 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			 driver.findElement(By.id("ctl00_ContentPlaceHolder1_btnSubmit")).click();
-			 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		    	Thread.sleep(4000);
 
 		    	takeScreen(name);

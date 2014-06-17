@@ -117,6 +117,7 @@ import org.testng.annotations.Test;
 				    System.out.println("Second Page of Results loaded successfully");
 				    name=""+ browser+"/Search/" + timeStamp + "_" + "Search-Coffee-2.png";
 				    takeScreen(name);
+				   wait = new WebDriverWait(driver, 30);
 					 java.util.List<WebElement> results3=wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("div.restop > p")));   
 				    PageNum=driver.findElement(By.cssSelector("div.restop > p")).getText();
 				    for (int second = 0;; second++) {
@@ -130,6 +131,7 @@ import org.testng.annotations.Test;
 				    System.out.println("Third Page of Results loaded successfully");
 				    name=""+ browser+"/Search/" + timeStamp + "_" + "Search-Coffee-3.png";
 				    takeScreen(name);
+				    wait = new WebDriverWait(driver, 30);
 					 java.util.List<WebElement> results1=wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("div.restop > p")));   
 				    PageNum=driver.findElement(By.cssSelector("div.restop > p")).getText();
 				    for (int second = 0;; second++) {
@@ -143,6 +145,7 @@ import org.testng.annotations.Test;
 				    System.out.println("Fourth Page of Results loaded successfully");
 				    name=""+ browser+"/Search/" + timeStamp + "_" + "Search-Coffee-4.png";
 				    takeScreen(name);
+				    wait = new WebDriverWait(driver, 30);
 					 java.util.List<WebElement> results2=wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("div.restop > p")));   
 				    PageNum=driver.findElement(By.cssSelector("div.restop > p")).getText();
 				    for (int second = 0;; second++) {
