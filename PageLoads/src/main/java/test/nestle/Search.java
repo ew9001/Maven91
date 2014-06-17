@@ -81,8 +81,8 @@ import org.testng.annotations.Test;
 			 driver.get(baseUrl + "/");
 				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-				  // driver.findElement(By.id("ctl00_ucThemeSearchMain_txtSiteSearch")).clear();
-				   // driver.findElement(By.id("ctl00_ucThemeSearchMain_txtSiteSearch")).sendKeys("coffee");
+				  driver.findElement(By.id("ctl00_ucThemeSearchMain_txtSiteSearch")).clear();
+				   driver.findElement(By.id("ctl00_ucThemeSearchMain_txtSiteSearch")).sendKeys("coffee");
 				    driver.findElement(By.id("ctl00_ucThemeSearchMain_btnSiteSearch")).click();
 				    
 				   String PageNum=driver.findElement(By.cssSelector("div.restop > p")).getText();
