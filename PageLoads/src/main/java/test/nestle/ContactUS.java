@@ -17,6 +17,7 @@ import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
@@ -85,10 +86,10 @@ public class ContactUS {
 			 
 			
 		  driver.get(baseUrl + "/Contact-Us.aspx");
-		 
+		  WebDriverWait wait = new WebDriverWait(driver, 30);
 		    Select droplist1 = new Select(driver.findElement(By.id("ctl00_ContentPlaceHolder1_ddlReason")));   
 			 droplist1.selectByVisibleText("General Inquiry or Question");
-			 
+			 wait = new WebDriverWait(driver, 30);
 		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtFirstName")).clear();
 		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtFirstName")).sendKeys("PubmoTestFirst");
 		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtLastName")).clear();
