@@ -319,7 +319,7 @@ import org.testng.annotations.Test;
 		 public WebDriver takeScreen(String name) throws IOException
 		 {
 			 WebDriver augmentedDriver = new Augmenter().augment(driver);
-		     System.out.println("Let me take a sceenshot for " +name);
+		     System.out.println("Let me take a screenshot for " +name);
 			  
 			    	
 			    File screenshot = ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
