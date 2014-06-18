@@ -57,6 +57,10 @@ public class ContactUS {
 			  driver=browserChrome();
 			}
 		  
+		  else if (browser.equals("safari")) {
+			  driver=browserSafari();
+			}
+		  
 		  else if (browser.equals("ie9")) {
 			  driver=browserIE9();
 			}
@@ -192,9 +196,28 @@ public class ContactUS {
 	      driver.get("http://stage.coffee-mate.com/Registration/Create-Account.aspx?email=" + timeStamp +"%40yahoo.com&stt=True");
 	      
 	      return driver;
+	 }
+	 public WebDriver browserSafari() throws MalformedURLException  
+	 {  
+	  
+		 browser_type="safari";
+		 String URL = "http://" + USERNAME + ":" + AUTOMATE_KEY + "@hub.browserstack.com/wd/hub";
+		 DesiredCapabilities caps = new DesiredCapabilities();
+		 caps.setCapability("browser", "Safari");
+		 caps.setCapability("browser_version", "6.1");
+		 caps.setCapability("os", "OS X");
+		 caps.setCapability("os_version", "Mountain Lion");
+		 caps.setCapability("resolution", "1024x768");
+		    driver = new RemoteWebDriver(new URL(URL), caps);
+	      System.out.println("Let me run Safari");
+	      driver.get("http://stage.coffee-mate.com/Registration/Create-Account.aspx?email=" + timeStamp +"%40yahoo.com&stt=True");
+	      
+	      return driver;
 	   
 	    
-	 }  
+	 }
+	    
+
 	 
 	 public WebDriver browserIE9() throws MalformedURLException  
 	 {  
