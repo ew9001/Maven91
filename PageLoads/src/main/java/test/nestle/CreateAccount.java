@@ -118,8 +118,19 @@ public class CreateAccount {
 			 java.util.List<WebElement> results=wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("ctl00_ContentPlaceHolder1_lvQuestions_ctrl0_ucSurveyQuestion_ddlAnswers")));   
 			 new Select(driver.findElement(By.id("ctl00_ContentPlaceHolder1_lvQuestions_ctrl0_ucSurveyQuestion_ddlAnswers"))).selectByVisibleText("0");
 			 driver.findElement(By.cssSelector("option[value=\"1E4C6A78-1980-459F-BE01-049AB4CB432C\"]")).click();
-			 java.util.List<WebElement> results2=wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("ctl00_ContentPlaceHolder1_lvQuestions_ctrl1_ucSurveyQuestion_ddlAnswers")));  
-			 new Select(driver.findElement(By.id("ctl00_ContentPlaceHolder1_lvQuestions_ctrl1_ucSurveyQuestion_ddlAnswers"))).selectByVisibleText("0");
+			 long end = System.currentTimeMillis() + 5000;
+			 while (System.currentTimeMillis() < end) {
+		            WebElement resultsDiv = driver.findElement(By.id("ctl00_ContentPlaceHolder1_lvQuestions_ctrl1_ucSurveyQuestion_ddlAnswers"));
+
+		            // If results have been returned, the results are displayed in a drop down.
+		            if (resultsDiv.isDisplayed()) {
+		            	System.out.println("I found the element");
+		            	new Select(driver.findElement(By.id("ctl00_ContentPlaceHolder1_lvQuestions_ctrl1_ucSurveyQuestion_ddlAnswers"))).selectByVisibleText("0");
+		              break;
+		            }
+		        }
+		        
+			
 			 driver.findElement(By.cssSelector("option[value=\"138A6025-F98D-4A64-B36C-4A08DAB4F075\"]")).click();
 			 driver.findElement(By.id("ctl00_ContentPlaceHolder1_btnSubmit")).click();
 				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);

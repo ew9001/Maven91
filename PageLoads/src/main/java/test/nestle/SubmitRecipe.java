@@ -15,6 +15,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -87,7 +88,19 @@ public class SubmitRecipe {
 		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRightNav_ucSubmitRecipe_txtTitle")).sendKeys("Lemon Pie");
 		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRightNav_ucSubmitRecipe_imgbtnContinue")).click();
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		    driver.findElement(By.id("ctl00_ucLoginMain_txtEmail")).click();
+			
+			long end = System.currentTimeMillis() + 7000;
+			 while (System.currentTimeMillis() < end) {
+		            WebElement resultsDiv = driver.findElement(By.id("ctl00_ucLoginMain_txtEmail"));
+
+		            // If results have been returned, the results are displayed in a drop down.
+		            if (resultsDiv.isDisplayed()) {
+		            	System.out.println("I found the element to input text");
+		            	driver.findElement(By.id("ctl00_ucLoginMain_txtEmail")).click();
+		              break;
+		            }
+		        }
+		    
 
 		    driver.findElement(By.id("ctl00_ucLoginMain_txtEmail")).clear();
 			//Thread.sleep(2000);
