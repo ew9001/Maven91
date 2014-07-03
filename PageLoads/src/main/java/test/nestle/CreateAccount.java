@@ -51,7 +51,7 @@ public class CreateAccount {
 	  @Parameters({"browser"})
 	  @Test(groups = {"newaccount"})
 	  @BeforeClass
-	  public void beforeClass(String browser,EventFiringWebDriver eventFiringDriver) throws IOException, InterruptedException
+	  public void beforeClass(String browser) throws IOException, InterruptedException
 	  {	   
 		  
 		  
@@ -96,25 +96,25 @@ public class CreateAccount {
 		  
 		    driver.get("http://stage.coffee-mate.com/Registration/Create-Account.aspx?email=" + timeStamp +"%40yahoo.com&stt=True");
 		    //driver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_txtFirstName")).clear();
-		    eventFiringDriver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_txtFirstName")).sendKeys("PubmoTestFirst");
-		    eventFiringDriver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_txtLastName")).clear();
-		    eventFiringDriver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_txtLastName")).sendKeys("PubmoTestLast");
-		    eventFiringDriver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_txtPassword")).clear();
-		    eventFiringDriver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_txtPassword")).sendKeys("Password123");
-		    eventFiringDriver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_txtConfirmPassword")).clear();
-		    eventFiringDriver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_txtConfirmPassword")).sendKeys("Password123");
-		    eventFiringDriver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_txtAddress")).clear();
-		    eventFiringDriver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_txtAddress")).sendKeys("1000 BroadwAY LANE");
-		    eventFiringDriver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_txtAddress2")).clear();
-		    eventFiringDriver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_txtAddress2")).sendKeys("Suite 3V");
-		    eventFiringDriver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_txtCity")).sendKeys("New York");
+		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_txtFirstName")).sendKeys("PubmoTestFirst");
+		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_txtLastName")).clear();
+		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_txtLastName")).sendKeys("PubmoTestLast");
+		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_txtPassword")).clear();
+		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_txtPassword")).sendKeys("Password123");
+		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_txtConfirmPassword")).clear();
+		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_txtConfirmPassword")).sendKeys("Password123");
+		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_txtAddress")).clear();
+		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_txtAddress")).sendKeys("1000 BroadwAY LANE");
+		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_txtAddress2")).clear();
+		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_txtAddress2")).sendKeys("Suite 3V");
+		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_txtCity")).sendKeys("New York");
 		    new Select(driver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_ddlStates"))).selectByVisibleText("Florida");
-		    eventFiringDriver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_txtZipCode")).clear();
-		    eventFiringDriver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_txtZipCode")).sendKeys("10003");
-		    eventFiringDriver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_chkEmailCommunication")).click();
+		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_txtZipCode")).clear();
+		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_txtZipCode")).sendKeys("10003");
+		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_chkEmailCommunication")).click();
 		   //  driver.findElement(By.name("flavorTheme")).click();
-		    eventFiringDriver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_btnRegister")).click();
-		    eventFiringDriver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		    driver.findElement(By.id("ctl00_ContentPlaceHolder1_ucRegisterUser_btnRegister")).click();
+			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 			
 
 			 takeScreen(name);
@@ -122,7 +122,7 @@ public class CreateAccount {
 			 java.util.List<WebElement> results=wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("ctl00_ContentPlaceHolder1_lvQuestions_ctrl0_ucSurveyQuestion_ddlAnswers")));   
 			
 			 new Select(driver.findElement(By.id("ctl00_ContentPlaceHolder1_lvQuestions_ctrl0_ucSurveyQuestion_ddlAnswers"))).selectByVisibleText("0");
-			 eventFiringDriver.findElement(By.cssSelector("option[value=\"1E4C6A78-1980-459F-BE01-049AB4CB432C\"]")).click();
+			 driver.findElement(By.cssSelector("option[value=\"1E4C6A78-1980-459F-BE01-049AB4CB432C\"]")).click();
 			 long end = System.currentTimeMillis() + 5000;
 			 while (System.currentTimeMillis() < end) {
 		            WebElement resultsDiv = driver.findElement(By.id("ctl00_ContentPlaceHolder1_lvQuestions_ctrl1_ucSurveyQuestion_ddlAnswers"));
@@ -136,9 +136,9 @@ public class CreateAccount {
 		        }
 		        
 			
-			 eventFiringDriver.findElement(By.cssSelector("option[value=\"138A6025-F98D-4A64-B36C-4A08DAB4F075\"]")).click();
-			 eventFiringDriver.findElement(By.id("ctl00_ContentPlaceHolder1_btnSubmit")).click();
-			 eventFiringDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			 driver.findElement(By.cssSelector("option[value=\"138A6025-F98D-4A64-B36C-4A08DAB4F075\"]")).click();
+			 driver.findElement(By.id("ctl00_ContentPlaceHolder1_btnSubmit")).click();
+				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		    	Thread.sleep(4000);
 
 		    	takeScreen(name);
@@ -291,12 +291,8 @@ public class CreateAccount {
 		 caps.setCapability("browserstack.debug", "true");
 
 		    driver = new RemoteWebDriver(new URL(URL), caps);
-		    EventFiringWebDriver eventFiringDriver = new 
-		    		EventFiringWebDriver(driver);
-		    CreateAccount eventListener = new CreateAccount();
-		    		 eventFiringDriver.register((WebDriverEventListener) eventListener);
-		    		 eventFiringDriver.get("http://www.google.com");
-	      return eventFiringDriver;
+		    
+	      return driver;
 	   
 	    
 	 }
